@@ -1,0 +1,95 @@
+% Kodierung und Sprache
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[ngerman]{babel}
+\RequirePackage{Versuchs_Informationen} 
+
+\RequirePackage{url}
+
+\RequirePackage{xcolor}
+
+\definecolor{SiegelHintergrund}{RGB}{198,24,38}
+\definecolor{SiegelOutline}{RGB}{89,13,8}
+\definecolor{Sand}{RGB}{244,241,234}
+
+% Font
+\RequirePackage{lmodern}
+
+\RequirePackage[
+  a4paper,             % Papierformat
+  left=1.5cm,            % linker Rand
+  right=1.5cm,           % rechter Rand
+  top=2.5cm,           % oberer Rand
+  bottom=2.5cm,        % unterer Rand
+  includehead,         % Kopfzeile in Randberechnung
+  includefoot,          % Fußzeile in Randberechnung
+  headheight=24pt % Höhe der Kopfzeile
+]{geometry}
+
+
+% Mathe und Einheiten
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{siunitx}
+
+% Grafiken
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+% \graphicspath{{img/plots/}{img/versuchsaufbau/}}
+
+% Überschriften
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand\thesection{\arabic{chapter}.\arabic{section}}
+\addtokomafont{chapter}{\color{SiegelHintergrund}}
+\addtokomafont{section}{\color{SiegelOutline}}
+
+% % Formeln
+\renewcommand\theequation{\arabic{equation}}
+
+% KOMA-Paket für Kopf-/Fußzeilen
+\RequirePackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+
+\clearpairofpagestyles
+
+% Automatische Kapitelmarken aktivieren
+\automark[chapter]{chapter}
+
+% Kopfzeile
+\ihead{Annika Künstle, \\ Finn Zeumer}
+\chead{\versuchsname{\versuchsnummer}}
+\ohead{\headmark}
+
+% Fußzeile
+\cfoot{Seite \pagemark}
+
+% Auf allen Seiten anwenden
+\pagestyle{scrheadings}
+
+% Kapitelanfang auch mit gleichen Kopfzeilen (keine Plain-Seiten mehr)
+\renewcommand*{\chapterpagestyle}{scrheadings}
+
+
+% Links und Referenzen
+\RequirePackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=SiegelHintergrund,
+    citecolor=SiegelHintergrund,
+    urlcolor=SiegelHintergrund
+}
+
+\setlength{\columnsep}{1em}     % Abstand zwischen den Spalten
+\setlength{\columnseprule}{0pt} % Stärke der Trennlinie (0pt = keine Linie)
+
+% Tabellen design
+\RequirePackage{booktabs}
+\RequirePackage{siunitx}
+\RequirePackage{longtable}
+\RequirePackage{geometry}
+\geometry{margin=2.5cm}
+
+\sisetup{
+  detect-all,
+  table-number-alignment = center,
+  separate-uncertainty = true
+}
+
