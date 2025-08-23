@@ -22,3 +22,6 @@
 *.synctex.gz
 *.xdv
 *.run.xml
+
+# The pdf files will be stored alswhere; not in the repo
+*.pdf
