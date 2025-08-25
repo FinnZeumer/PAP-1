@@ -1,6 +1,85 @@
 \chapter{Einleitung}
 
 \section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Ziel des Versuchs ist die Bestimmung des Richtmoments $D$ eines Drehpendels sowie die Untersuchung des Trägheitsmoments $J$ eines unregelmäßig geformten Körpers für verschiedene Lagen der Drehachse. Dazu wird einerseits das Richtmoment über die Auslenkung des Pendels durch ein angreifendes Drehmoment bestimmt, andererseits über die Periodendauer einer Schwingung mit aufgesetzten Körpern bekannter Geometrie. Mit Hilfe des Steiner’schen Satzes lässt sich schließlich das Trägheitsmoment für verschiedene Achsen berechnen und mit den experimentell gewonnenen Werten vergleichen.
+
+\section{Physikalische Grundlagen}
+\subsection*{Analogie zwischen Translations- und Rotationsbewegung}
+Die Bewegungsgleichungen für Translationen und Rotationen sind formal analog, wenn die entsprechenden Größen ausgetauscht werden. Dabei gilt:
+
+\begin{table}[h!]
+\renewcommand{\arraystretch}{1.75} % Zeilenhöhe vergrößern
+\centering
+\begin{tabular}{l|l}
+    \textbf{Translation} & \textbf{Rotation} \\
+    \hline
+    Ort $x$ & Winkel $\varphi$ \\
+    Geschwindigkeit $v = \tfrac{dx}{dt}$ & Winkelges. $\omega = \tfrac{d\varphi}{dt}$ \\
+    Beschleunigung $a = \tfrac{d^2x}{dt^2}$ & Winkelbes. $\alpha = \tfrac{d^2\varphi}{dt^2}$ \\
+    Masse $m$ & Trägheitsmoment $J$ \\
+    Kraft $F$ & Drehmoment $M$ \\
+    Impuls $p = mv$ & Drehimpuls $L = J\omega$ \\
+    Trans.En. $E_{kin} = \tfrac{1}{2}mv^2$ & Rot.En. $E_{rot} = \tfrac{1}{2}J\omega^2$ \\
+\end{tabular}
+\caption{Vergleich der Größen in der Translation und Rotation}
+\label{tab:translation-rotation}
+\end{table}
+
+\vspace{0.25cm}
+
+Auch Federpendel und Drehpendel stehen in direkter Analogie:
+
+\begin{equation}
+    F = -kx \quad \Leftrightarrow \quad M = -D\varphi
+\end{equation}
+
+\begin{equation}
+T = 2\pi\sqrt{\frac{m}{k}} \quad \Leftrightarrow \quad T = 2\pi\sqrt{\frac{J}{D}}
+\end{equation}
+
+Das Richtmoment $D$ spielt dabei die Rolle der Federkonstante $k$.
+
+\subsection*{Trägheitsmoment}
+Das Trägheitsmoment $J$ eines Körpers bezüglich einer gegebenen Drehachse ergibt sich aus dem Volumenintegral:
+
+\begin{equation}
+    J = \int_V \rho(\vec{r}) r^2 \, dV,
+\end{equation}
+
+wobei $\rho(\vec{r})$ die Massendichte und $r$ der Abstand des Volumenelements zur Achse ist.  
+Für einfache Körper ergeben sich bekannte Spezialfälle, etwa für eine homogene Scheibe mit Masse $m$ und Radius $r_s$:
+
+\begin{equation}
+    J_S = \tfrac{1}{2} m r_s^2
+\end{equation}
+
+Hierbei ist $J_S$ das Trägheitsmoment der Scheibe, $m$ ihre Masse und $r_s$ ihr Radius.
+
+\subsection*{Steiner’scher Satz}
+Für eine Achse, die parallel zur Symmetrieachse im Abstand $d$ verläuft, gilt:
+
+\begin{equation}
+    J = J_S + md^2
+\end{equation}
+
+mit $J_S$ als Trägheitsmoment bezüglich der Symmetrieachse, $m$ als Masse des Körpers und $d$ als Abstand der Achsen.
+
+\subsection*{Bestimmung des Richtmoments}
+Das Richtmoment $D$ des Drehpendels kann auf zwei Weisen bestimmt werden:
+
+\begin{enumerate}
+    \item Über das Kraftgesetz:
+    \begin{equation}
+        M = r \cdot F = -D\varphi,
+    \end{equation}
+    wobei $M$ das Drehmoment, $r$ der Radius der Aluminiumscheibe, $F = mg$ die Gewichtskraft eines tangential angreifenden Massestücks und $\varphi$ der Auslenkwinkel ist.
+    
+    \item Über die Schwingungsdauer $T$ mit bekannter Massescheibe:
+    \begin{equation}
+        D = \frac{4\pi^2 J_S}{T_2^2 - T_1^2} = \frac{2\pi^2 m r_s^2}{T_2^2 - T_1^2},
+    \end{equation}
+    wobei $T_1$ die Periodendauer des Tisches allein, $T_2$ die Periodendauer mit aufgesetzter Scheibe, $J_S$ das Trägheitsmoment der Scheibe, $m$ ihre Masse und $r_s$ ihr Radius ist.
+\end{enumerate}
+
+\section{Versuchsanordnung}
+    Der Versuch wird mit einem Drehpendel mit senkrechter Achse durchgeführt. Zum Aufbau gehören eine Drehgabel mit Drehtisch, eine Aluminiumscheibe mit Winkelteilung und Schnurnut, eine runde sowie eine unregelmäßig geformte Messingscheibe, ein Gewichtsteller mit Zugschnur, sechs Auflegegewichte zu je 40 g, eine Waage, eine Handstoppuhr, ein Messschieber sowie eine Balancierschneide. Mit diesem Aufbau lassen sich die notwendigen Messungen zur Bestimmung des Richtmoments und der Trägheitsmomente der untersuchten Körper durchführen.
