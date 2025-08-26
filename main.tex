@@ -1,18 +1,17 @@
-\documentclass[10pt,a4paper,twocolumn]{scrreprt}
+\documentclass[8pt,a4paper,twocolumn]{scrreprt}
 
 % Gib die Versuschsnummer an, um den entsprechenden Versuchsprotokoll zu laden
-\newcommand{\versuchsnummer}{13}
+\newcommand{\versuchsnummer}{42}
 \usepackage{Versuchs_Informationen}
 \usepackage{style}
 
 
 \begin{document}
-\include{title} 
+\include{title.tex} 
+% \include{Fehlerrechnung_Formelsammlung.tex}
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \tableofcontents
-
-\include{Fehlerrechnung_Formelsammlung}
 
 % Lade die Versuchsnummer-spezifischen Informationen
 \include{Protokolle/\versuchsnummer/Chapter/0_Messdaten}
