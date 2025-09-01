@@ -4,43 +4,129 @@
 \section*{Fehlerrechnung}
 Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größen definiert \cite{errorSkript25}:
 \begin{align}
-    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetisches Mittel}}\\
-    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}}\\
-    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}}\\
-    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}}\\
-    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}}\\
-    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}}\\
-    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}}\\
-    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}}\\
-    \sigma &= \frac{|a_{lit} - a_{gem}|}{\sqrt{\Delta a_{lit}^2 + \Delta a_{gem}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Berechnung der signifikanten Abweichung}}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetisches Mittel}} \label{eq:arithmetisches_mittel} \\
+    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}} \label{eq:variation} \\
+    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}} \label{eq:standardabweichung} \\
+    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}} \label{eq:fehler_mittelwert} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}} \label{eq:fehler_summe} \\
+    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}} \label{eq:fehler_proportional} \\
+    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}} \label{eq:relativer_fehler} \\
+    \sigma &= \frac{|a_{lit} - a_{gem}|}{\sqrt{\Delta a_{lit}^2 + \Delta a_{gem}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Berechnung der signifikanten Abweichung}} \label{eq:signifikante_abweichung}
 \end{align}
 
 \twocolumn
 
 \section{Fehlerbestimmung zweier Messmethoden}
+Zunächst werden die beiden Methoden unabhänig voneinander ausgewertet und die Ergebnisse miteinander verglichen. Ziel ist es, die Methode mit der geringeren Unsicherheit zu identifizieren und diese für die weiteren Messungen zu verwenden.
 \subsection*{Methode 1}
+Wir schauen uns zunächst die erste Methode an, bei der die Periodendauer $T_{m}$ über die maximale Auslenkung des Pendels gemessen wird. Die Messwerte sind aus dem Protokoll \ref{Protokoll} entnommen. Die in Tabelle \ref{tab:max_Auslenkung} aufgelisteten Werte sind auf die Wesentlichen beschrängt.
+Dabei ist $T_{m}$ die gemessene Periodendauer, $\Delta T_{m}T$ der absolute Fehler und $\Delta T_{m} (\%)$ der relative Fehler in Prozent.
 \messwertetabelle
+\vspace{2pt}
+Der Mittelwert der Periodendauer beträgt:
+\begin{equation}
+    \bar{T}_{m} = \frac{1}{\anzahlmesswerte}\sum_{i=1}^{\anzahlmesswerte} T_{m,i} = \underline{\mittelwert\,\mathrm{s}}.
+\end{equation}
+Über diesen Mittelwert sind auch die Abweichungen der Einzelwerte $\Delta T$ berechnet.
+
+Der mittlere Fehler des Mittelwerts berechnet sich zu:
+\begin{align}
+    \Delta \bar{T}_{m} &= \sqrt{\frac{1}{10(10-1)} \sum_{i=1}^{10} (\bar{x}-x_i)^2}  \\
+    \Delta \bar{T}_{m} &= \underline{\statistischerfehler\,\mathrm{s}}
+\end{align}
+
+Wir kommen also zu dem Ergebnis:
+\begin{equation}
+    \underline{\underline{T_{m} = \bar{T}_{m} \pm \Delta \bar{T}_{m} = (1,587 \pm 0,014)\,\mathrm{s}.}}
+\end{equation}
 
 \subsection*{Methode 2}
+Nun vergleichen wir das mit der zweiten Methode, bei der die Periodendauer $T_{n}$ über den Nulldurchgang des Pendels gemessen wird. Die Messwerte sind aus dem Protokoll \ref{Protokoll} entnommen. Die in Tabelle \ref{tab:null_Auslenkung} aufgelisteten Werte sind auf die Wesentlichen beschrängt.
 \begin{table}[h!]
-    \centering
-    \begin{tabular}{ccccc}\toprule
-         Messung&  $T[s]$&  $\bar T[s]$& $\Delta T [s]$  & $\Delta \bar T [s]$\\\midrule
-         1& 0,000 & 0,000 & 0,000 & 0,000\\
-         2& 0,000 &  &  & \\
-         3& 0,000 &  &  & \\
-         4& 0,000 &  &  & \\
-         5& 0,000 &  &  & \\
-         6& 0,000 &  &  & \\
-         7& 0,000 &  &  & \\
-         8& 0,000 &  &  & \\
-         9& 0,000 &  &  & \\
-        10& 0,000 & & &\\ \bottomrule 
-    \end{tabular}
-    \caption{Periodendauer berechnet durch die Messung bei Maximalauslenkung des Pendels}
-    \label{tab:periodendauer_Max}
+\centering
+
+\begin{tabular}{c|c|c|c}
+Messung & $T_{n} [s]$ & $\Delta T_{n} [s]$ & $\Delta T_{n} [\%]$ \\
+\hline
+1 & 1,687 & -0,002 & -0,12 \\
+2 & 1,713 & 0,024 & 1,42 \\
+3 & 1,697 & 0,008 & 0,47 \\
+4 & 1,713 & 0,024 & 1,42 \\
+5 & 1,713 & 0,024 & 1,42 \\
+6 & 1,697 & 0,008 & 0,47 \\
+7 & 1,643 & -0,046 & -2,72 \\
+8 & 1,687 & -0,002 & -0,12 \\
+9 & 1,673 & -0,016 & -0,95 \\
+10 & 1,667 & -0,022 & -1,30 \\
+\hline
+$\bar{T}_{n}$ & 1,689 & & \\
+\end{tabular}
+\caption{Periodendauer berechnet durch die Messung bei Nullauslenkung des Pendels}
+\label{tab:null_Auslenkung}
 \end{table}
 
+Der Mittelwert der Periodendauer beträgt:
+\begin{equation}
+    \bar{T}_{n} = \frac{1}{\anzahlmesswerte}\sum_{i=1}^{\anzahlmesswerte} T_{n,i} = \underline{1,689\,\mathrm{s}}.
+\end{equation}
+Über diesen Mittelwert sind wieder die Abweichungen der Einzelwerte $\Delta T_{n}$ berechnet.
+Der mittlere Fehler des Mittelwerts berechnet sich zu:
+\begin{align}
+    \Delta \bar{T}_{n} & = \sqrt{\frac{1}{10(10-1)} \sum_{i=1}^{10} (\bar{x}-x_i)^2} \\
+    \Delta \bar{T}_{n} & = \underline{0,096\,\mathrm{s}}.
+\end{align}
+
+Für die zweite Methode ergibt sich somit:
+\begin{equation}
+    \underline{\underline{T_{n} = \bar{T}_{n} \pm \Delta \bar{T}_{n} = (1,689 \pm 0,096)\,\mathrm{s}.}} 
+\end{equation}
+
+\subsection*{Vergleich der Methoden}
+Nun können wir die beiden Methoden miteinander vergleichen. Die erste Methode liefert eine Periodendauer von $T_{m} = (1,587 \pm 0,014)\,\mathrm{s}$, während die zweite Methode eine Periodendauer von $T_{n} = (1,689 \pm 0,096)\,\mathrm{s}$ ergibt.
+Über die Werte bestimmen wir nun die Standardabweichung \eqref{eq:standardabweichung} des Mittelwertes. Die kleinere Standardabweichung deutet auf die genauere Methode hin:
+\begin{align}
+    \sigma_{\bar{T}_m} &= \sqrt{\frac{1}{9} \sum_{i=1}^{10} (\bar{T_m}-T_{m,i})^2} = \underline{0,043\,\mathrm{s}} \\
+    \sigma_{\bar{T}_n} &= \sqrt{\frac{1}{9} \sum_{i=1}^{10} (\bar{T_n}-T_{n,i})^2} = \underline{0,030\,\mathrm{s}}
+\end{align}
+
+Eindeutig zusehen ist, dass Methode 2, also die Messung über den \emph{Nulldurchgang} die kleinere Standardabweichung aufweist und somit die genauere Methode ist. Diese wird im Folgenden für die weiteren Messungen verwendet.
+
 \section{Messen der Schwingungsdauer als Funktion der Masse}
+Nun geht es zum nächsten Schritt: die Abhängigkeit der Schwingungsdauer $T$ von der angehängten Masse $m$ zu untersuchen. Die Messwerte sind aus dem Protokoll \ref{Protokoll} entnommen. Die in Tabelle \ref{tab:verschiedene_massen_messungen} aufgelisteten Werte sind auf die Wesentlichen beschrängt.
+Das Ziel ist es eine Funktion in Abhängigkeit der Federkonstante $D$ zu bestimmen.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c | c | c}
+    Masse [g] & $T$ [s] & $\Delta T$ [s] & $\Delta \bar{T}$ [s] \\
+    \hline
+    50  & 0,927 & 0,933 & 0,004 \\
+        & 0,933 &       &       \\
+        & 0,940 &       &       \\
+    \hline
+    100 & 1,213 & 1,218 & 0,004 \\
+        & 1,213 &       &       \\
+        & 1,227 &       &       \\
+    \hline
+    150 & 1,500 & 1,501 & 0,005 \\
+        & 1,510 &       &       \\
+        & 1,493 &       &       \\
+    \hline
+    200 & 1,673 & 1,680 & 0,014 \\
+        & 1,707 &       &       \\
+        & 1,660 &       &       \\
+    \hline
+    250 & 1,863 & 1,860 & 0,007 \\
+        & 1,870 &       &       \\
+        & 1,847 &       &       \\
+    \hline
+    \end{tabular}
+    \caption{Messungen der Pendelperioden bei verschiedenen Massen}
+    \label{tab:verschiedene_massen_messungen}
+\end{table}
+
+
+
 \section{Bestimmung der Auslenkung als Funktion der Masse}
-\section{Vergleich mit dem Literaturwert}
+\section{Vergleich mit dem Literaturwert} 
