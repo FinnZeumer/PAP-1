@@ -6,34 +6,41 @@ Ziel dieses Versuches ist die experimentelle Bestimmung der Erdbeschleunigung $g
 \section{Physikalische Grundlage}
 Ein Federpendel unterliegt der Hooke'schen Kraft, die proportional zur Auslenkung $x$ ist \cite{skript25,demtroeder17}:
 \begin{equation}
-    F = -D \, x,
+    F = -D \, x
+    \label{eq:hooke}
 \end{equation}
 wobei $D$ die Federkonstante der Feder beschreibt. Die Bewegungsgleichung für das Federpendel lautet demnach:
 \begin{equation}
-    m \, \ddot{x} + D \, x = 0.
+    m \, \ddot{x} + D \, x = 0
+    \label{eq:bewegung}
 \end{equation}
 
 Die Lösung dieser Differentialgleichung für die Anfangsauslenkung $x_0$ zum Zeitpunkt $t = 0$ ergibt:
 \begin{equation}
-    x(t) = x_0 \, \cos(\omega t),
+    x(t) = x_0 \, \cos(\omega t)
+    \label{eq:loesung}
 \end{equation}
 wobei die Kreisfrequenz $\omega$ gegeben ist durch
 \begin{equation}
-    \omega = \sqrt{\frac{D}{m}}.
+    \omega = \sqrt{\frac{D}{m}}
+    \label{eq:kreisfrequenz}
 \end{equation}
 
 Da die Periodendauer $T$ im Zusammenhang mit der Kreisfrequenz $\omega$ steht, lässt sich folgendes berechnen:
 \begin{equation}
-    T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{m}{D}}.
+    T = \frac{2 \pi}{\omega} = 2 \pi \sqrt{\frac{m}{D}}
+    \label{eq:periodendauer}
 \end{equation}
 
 Für die statische Auslenkung $x_\text{stat}$, also dem Equilibrium, der Feder unter der Gewichtskraft $mg$ gilt:
 \begin{equation}
-    x_\text{stat} = \frac{mg}{D}.
+    x_\text{stat} = \frac{mg}{D}
+    \label{eq:stat_ausslenkung}
 \end{equation}
 
 Durch Messung der Schwingungsdauer $T$ für unterschiedliche Massen $m$ kann zunächst die Federkonstante $D$ überprüft und anschließend die Erdbeschleunigung $g$ bestimmt werden. 
-\subsubsection*{Skizze des Veruaufbaus}
+
+\subsubsection*{Skizze des Versuchsaufbaus}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\columnwidth]{img/11/Versuchsaufbau.pdf}

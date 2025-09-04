@@ -4,6 +4,8 @@
 \RequirePackage[ngerman]{babel}
 \RequirePackage{Versuchs_Informationen} 
 
+\RequirePackage{pdfpages}
+
 \RequirePackage{url}
 
 \RequirePackage{xcolor}
@@ -11,6 +13,11 @@
 \definecolor{SiegelHintergrund}{RGB}{198,24,38}
 \definecolor{SiegelOutline}{RGB}{89,13,8}
 \definecolor{Sand}{RGB}{244,241,234}
+
+\definecolor{BluePrime}{RGB}{51, 102, 204}
+\definecolor{BlueSec}{RGB}{102, 153, 255}
+\definecolor{BlueTri}{RGB}{0, 51, 153}
+
 
 % Font
 \RequirePackage{lmodern}
@@ -39,8 +46,8 @@
 % Überschriften
 \renewcommand\thechapter{\Roman{chapter}}
 \renewcommand\thesection{\arabic{chapter}.\arabic{section}}
-\addtokomafont{chapter}{\color{SiegelHintergrund}}
-\addtokomafont{section}{\color{SiegelOutline}}
+\addtokomafont{chapter}{\color{BluePrime}}
+\addtokomafont{section}{\color{BluePrime}}
 
 % % Formeln
 \renewcommand\theequation{\arabic{equation}}
@@ -72,9 +79,9 @@
 \RequirePackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=SiegelHintergrund,
-    citecolor=SiegelHintergrund,
-    urlcolor=SiegelHintergrund
+    linkcolor=BluePrime,
+    citecolor=BluePrime,
+    urlcolor=BluePrime
 }
 
 \setlength{\columnsep}{1em}     % Abstand zwischen den Spalten
