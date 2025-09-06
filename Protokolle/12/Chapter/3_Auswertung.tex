@@ -1,11 +1,27 @@
+\onecolumn
 \chapter{Auswertung}
+% Liste der genutzer Formeln für die Fehlerrechnung
+\section*{Fehlerrechnung}
+Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größen definiert \cite{errorSkript25}:
+\begin{align}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetisches Mittel}} \label{eq:arithmetisches_mittel} \\
+    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}} \label{eq:variation} \\
+    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}} \label{eq:standardabweichung} \\
+    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}} \label{eq:fehler_mittelwert} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}} \label{eq:fehler_summe} \\
+    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}} \label{eq:fehler_proportional} \\
+    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}} \label{eq:relativer_fehler} \\
+    \sigma &= \frac{|a_{lit} - a_{gem}|}{\sqrt{\Delta a_{lit}^2 + \Delta a_{gem}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Berechnung der signifikanten Abweichung}} \label{eq:signifikante_abweichung}
+\end{align}
+
+\twocolumn
 
 \begin{table}[h!]
-    \centering
     \begin{tabular}{c | c | l}
-    Masse [g] & Auslenkung $x$ [deg] & Differenz [deg]\\
+    Masse [g] & $x$ [deg] & Differenz [deg]\\
     \hline
-    0\footnote{Gemeint ist die Auslenkung mit nur dem Massenteller.}   & 0   & --- \\
+    0\footnote{Gemeint ist die Auslenkung mit nur dem Massenteller}   & 0   & --- \\
     50  & 60  & 60 \\
     100 & 122 & 62 \\
     150 & 180 & 58 \\
@@ -14,6 +30,39 @@
     300 & 366 & 64 \\
     \hline
     \end{tabular}
-    \caption{Messungen der Rotationsauslenkung der Aluminum Scheibe. }
+    \caption{Messungen der Rotationsauslenkung der Aluminumscheibe.}
     \label{tab:verschiedene_massen_winkel_auslenkung}
+\end{table}
+
+\begin{table}[h!]
+    \begin{tabular}{c | c | c}
+    Scheibe & Schwingdauer $t \, [s]$ & $\bar{t} \, [s]$ \\
+    \hline
+    Keine       & 23,09 & 23,227\\
+                & 23,31 &\\
+                & 23,28 &\\
+     \hline
+    Messing-    & 34,89 & 34,807\\
+    Platte      & 34,75 &\\
+                & 34,78 &\\
+    \hline
+    \end{tabular}
+    \caption{Messungen der Schwingdauer einer regelmäßigen Messingplatte.}
+    \label{tab:regelmäßige_messingplatte}
+\end{table}
+
+\begin{table}[h!]
+    \begin{tabular}{c | c | c | c}
+    Achse & d $[mm]$ & t $[s]$ & I $[kg \cdot m^2]$ \\
+    \hline
+    $a_0$ & 0,0 & 44,42 & \\ 
+    $a_1$ & 0,5 & 44,58 & \\
+    $a_2$ & 1,0 & 44,73 & \\
+    $a_3$ & 1,5 & 45,10 & \\
+    $a_4$ & 2,0 & 45,90 & \\
+    $a_5$ & 2,5 & 47,67 & \\
+    \hline
+    \end{tabular}
+    \caption{Messung des Trägheitsmomente verschiedener Drehachsen einer unregelmäßigen Messingplatte.}
+    \label{tab:unregelmäßige_messingplatte}
 \end{table}
