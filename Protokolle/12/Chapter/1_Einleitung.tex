@@ -78,28 +78,50 @@ Für eine Achse, die parallel zur Symmetrieachse im Abstand $d$ verläuft, gilt:
 
 \begin{equation}
     J = J_S + md^2
+    \label{eq:steinsatz}
 \end{equation}
 
 mit $J_S$ als Trägheitsmoment bezüglich der Symmetrieachse, $m$ als Masse des Körpers und $d$ als Abstand der Achsen.
 \subsection*{Bestimmung des Richtmoments}
 Das Richtmoment $D$ des Drehpendels kann auf zwei Weisen bestimmt werden:
 
-\begin{enumerate}
-    \item Über das Kraftgesetz:
-    \begin{equation}
-        M = r \cdot F = -D\varphi,
-    \end{equation}
-    wobei $M$ das Drehmoment, $r$ der Radius der Aluminiumscheibe, $F = mg$ die Gewichtskraft eines tangential angreifenden Massestücks und $\varphi$ der Auslenkwinkel ist.
-    
-    \item Über die Schwingungsdauer $T$ mit bekannter Massescheibe:
-    \begin{equation}
-        D = \frac{4\pi^2 J_S}{T_2^2 - T_1^2} = \frac{2\pi^2 m r_s^2}{T_2^2 - T_1^2},
-    \end{equation}
-    wobei $T_1$ die Periodendauer des Tisches allein, $T_2$ die Periodendauer mit aufgesetzter Scheibe, $J_S$ das Trägheitsmoment der Scheibe, $m$ ihre Masse und $r_s$ ihr Radius ist.
-\end{enumerate}
+1. Über das Kraftgesetz:
+\begin{equation}
+    M = r \cdot F = -D\varphi,
+\end{equation}
+wobei $M$ das Drehmoment, $r$ der Radius der Aluminiumscheibe, $F = mg$ die Gewichtskraft eines tangential angreifenden Massestücks und $\varphi$ der Auslenkwinkel ist.
+
+2. Über die Schwingungsdauer $T$ mit bekannter Massescheibe:
+
+\begin{equation}
+    D = \frac{4\pi^2 J_S}{T_2^2 - T_1^2} = \frac{2\pi^2 m r_s^2}{T_2^2 - T_1^2},
+    \label{eq:richtmoment_rechnen}
+\end{equation}
+wobei $T_1$ die Periodendauer des Tisches allein, $T_2$ die Periodendauer mit aufgesetzter Scheibe, $J_S$ das Trägheitsmoment der Scheibe, $m$ ihre Masse und $r_s$ ihr Radius ist. 
+Mathematisch werden die zwei einzelnen Periodendauern also via:
+\begin{align}
+    T_1 &= 2\pi \sqrt{\frac{J_T}{D}}, \\
+    T_2 &= 2\pi \sqrt{\frac{J_T+J_S}{D}}
+    \label{eq:T_def}
+\end{align}
+
+bestimmt. Wir können nun die Gleichung für \hyperref[eq:T_def]{$T_1$ (Gleichung 10)} und \hyperref[eq:T_def]{$T_2$ (Gleichung 11)} quadrieren und jeweils nach $J_T$ umstellen:
+\begin{align}
+    T_1^2 &= 4\pi^2 \frac{J_T}{D} &&\Rightarrow J_T = \frac{T_1^2 \cdot D}{4\pi^2} \\
+    T_2^2 &= 4\pi^2 \frac{J_T+J_S}{D} &&\Rightarrow J_T = \frac{T_1^2 \cdot D}{4\pi^2} - J_S.
+    \label{eq:traegheitsmoment_tisch}
+\end{align}
+
+Logischer weise können wir die Gleichung gleichsetzen und kommen damit auf 
+\begin{equation}
+    \frac{T_1^2 \cdot D}{4\pi^2} = \frac{T_1^2 \cdot D}{4\pi^2} - J_S.
+\end{equation}
+
+Formt man diese Gleichung nach $D$ um, so kommt man wieder zu \hyperref[eq:richtmoment_rechnen]{Gleichung 9}
+
 
 \section{Versuchsanordnung}
-    Der Versuch wird mit einem Drehpendel mit senkrechter Achse durchgeführt. Zum Aufbau gehören eine Drehgabel mit Drehtisch, eine Aluminiumscheibe mit Winkelteilung und Schnurnut, eine runde sowie eine unregelmäßig geformte Messingscheibe, ein Gewichtsteller mit Zugschnur, sechs Auflegegewichte zu je 50g, eine Waage, eine Handstoppuhr, ein Messschieber sowie eine Balancierschneide. Mit diesem Aufbau lassen sich die notwendigen Messungen zur Bestimmung des Richtmoments und der Trägheitsmomente der untersuchten Körper durchführen.
+Der Versuch wird mit einem Drehpendel mit senkrechter Achse durchgeführt. Zum Aufbau gehören eine Drehgabel mit Drehtisch, eine Aluminiumscheibe mit Winkelteilung und Schnurnut, eine runde sowie eine unregelmäßig geformte Messingscheibe, ein Gewichtsteller mit Zugschnur, sechs Auflegegewichte zu je 50g, eine Waage, eine Handstoppuhr, ein Messschieber sowie eine Balancierschneide. Mit diesem Aufbau lassen sich die notwendigen Messungen zur Bestimmung des Richtmoments und der Trägheitsmomente der untersuchten Körper durchführen.
 
 \begin{figure}[h!]
     \centering

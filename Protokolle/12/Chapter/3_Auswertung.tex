@@ -17,25 +17,25 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 
 \twocolumn
 
-\section{Bestimmung des Richtmomentes}
+\section{Graphische Bestimmung des Richtmomentes}
 Kommen wir also nun zur Auswertung der Aufgaben. Dafür Beginnen wir damit, die Werte der Tabelle 1  aus dem \hyperref[Protokoll]{Protokoll}.
 Dabei ist $x$ die Winkelauslenkung der Aluminiumscheibe, $m$ hängende Masse, $F$ die Gewichtskraft mit $\left| g \right| =9,81 \frac{m}{s^2}$, die auf die Masse wirkt $M$ das berechnete Drehmoment nach \hyperref[eq:gleichgewichts_zustand]{Gleichung 2.1} und $\Delta M$ seine Ungenauigkeit nach der \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'schen Fehlerfortpflanzung}:
 \begin{equation}
     \Delta M = \left| m \right| \cdot \left| g \right| \cdot \Delta r
 \end{equation}
 Dabei definieren die 0g den Startpunkt. 0g ist physikalisch in dem Kontest natürlich unsinnig und meint eigentlich die Startmasse, die hier nur aus dem Massenteller besteht, aber keine zusätzliche Masse.
-Der Radius der Aliminumplatte entspricht dabei $r = 10,000 \pm 0,005 cm$, also ist $\Delta r = 0,005$, was der Ungenauigkeit der Schieblehre entspricht.
+Der Radius der Aliminumplatte entspricht dabei $r = 10,000 \pm 0,005 \, 10^{-2}m$, also ist $\Delta r = 0,005 \, 10^{-2}m$, was der Ungenauigkeit der Schieblehre entspricht.
 \begin{table}[h!]
     \begin{tabular}{c | c | c | c }
-    $m [g]$ & $\varphi [^{\circ}]$ & $M \, [10^{-3}Nm]$ & $\Delta M \, [10^{-6}Nm]$ \\
+    $m [g]$ & $\varphi [^{\circ}]$ & $M \, [10^{-2}Nm]$ & $\Delta M \, [10^{-2}Nm]$ \\
     \hline
     0   & 0   & ---     &  ---    \\
-    50  & 60  &  4,9050 &  2,4525 \\
-    100 & 122 &  9,8100 &  4,9050 \\
-    150 & 180 & 14,4150 &  7,3575 \\
-    200 & 242 & 19,6200 &  9,8100 \\
-    250 & 302 & 24,5250 & 12,2625 \\
-    300 & 366 & 29,4300 & 14,7150 \\
+    50  & 60  &  4,9050 & 0,0024525 \\
+    100 & 122 &  9,8100 & 0,0049050 \\
+    150 & 180 & 14,4150 & 0,0073575 \\
+    200 & 242 & 19,6200 & 0,0098100 \\
+    250 & 302 & 24,5250 & 0,0012263 \\
+    300 & 366 & 29,4300 & 0,0014715 \\
     \hline
     \end{tabular}
     \caption{Messungen der Rotationsauslenkung der Aluminumscheibe und die berechneten Drehmomente.}
@@ -44,7 +44,7 @@ Der Radius der Aliminumplatte entspricht dabei $r = 10,000 \pm 0,005 cm$, also i
 
 Stellen wir nun \hyperref[eq:kraft_drehmoment_zusammenhang]{Gleichung 1.3} um, so kommen wir auf:
 \begin{equation}
-    D = - \frac{M}{\varphi}
+    D_G = - \frac{M}{\varphi}
 \end{equation}
 
 Daher plotten wir als nächstes das Drehmoment $M$ gegen den Auslenkungswinkel $\varphi$ und berechnen seine Steigung $m$, welche dem Drehmoment entspricht, nach
@@ -52,27 +52,67 @@ Daher plotten wir als nächstes das Drehmoment $M$ gegen den Auslenkungswinkel $
     m = \frac{\Delta M}{\Delta \varphi}
 \end{equation}
 
-Dies kann der \hyperref[]{Abbildung zur Bestimmung des Richtmomentes} entnommen werden: 
-
+Dies kann der \hyperref[]{Abbildung zur Bestimmung des Richtmomentes} entnommen werden. Dabei rechnen wir Gradmaß in Radiant um. Es gilt:
+\begin{equation}
+    x^\circ \cdot \frac{\pi}{180} = y \, rad
+\end{equation}  
+Somit kommen wir auf Steigungen von:
 \begin{align}
-    m_A = \frac{}{} \\
-    m_F = \frac{(24,5290) [Nm]}{(310) [^\circ]} = 0,0791
+    m_A &= \frac{0,230 Nm}{5,4105 rad} = 0,043 \, \frac{Nm}{rad} = D_{G,A}\\
+    \nonumber \\ 
+    m_F &= \frac{0,259 Nm}{5,4105 rad} = 0,048 \, \frac{Nm}{rad}
 \end{align}
 
 Dabei ist $m_A$ die Steigung der Ausgleichsgeraden und $m_F$ die Steigung der Fehlergeraden, welche über das Min.-Max.-Verfahren bestimmt wurde. $\Delta \varphi$ sind dabei $2^\circ$.
 
-\section{Bestimmung des Richtmomentrs über Trägheitsmoment}
+Zieht man nun deren Differenz, so kommt man auf einen Fehler variation
+\begin{align}
+    \Delta D_G &= \left| m_F - m_A \right| \\ 
+            &= \left| 0,048 - 0,043 \right| = \underline{0,005} \, \Big[\frac{Nm}{rad}\Big]
+\end{align}
+Damit können wir $D_G$ über $D_G = D_{G,A} \pm \Delta D_G$ bestimmen: 
+\begin{equation}
+    \underline{\underline{D_G = (4,3 \pm 0,5) \, 10^{-2}\frac{Nm}{rad}}}
+\end{equation}
+
+
+\section{Rechnerische Bestimmung des Richtmomentrs}
+Wir entnehmen die Werte aus dem \hyperref[Protokoll]{Protokoll} und schauen uns Tabelle 2 an. Wir haben die Schwingdauer $t$ für 20 Schwingungen, 
+woraus sich auch die Periodendauer $T$ bestimmt. Der Durchschnitt der Periodendauer ohne Scheibe ist $\bar{T}_1$, und der mit der Scheibe $\bar{T}_2$.
+Den Fehler der der Periodendauer $\Delta \bar{T}$ wurde über eine Reaktionszeit von $0,2s$ über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlfortpflanzung} berechnet sich der Fehler zu:
+\begin{equation}
+    \Delta \bar{T}_{reak} = 0,20\,\mathrm{s} \cdot \frac{1}{20} = 0,01\,\mathrm{s}
+\end{equation}
+
+Die Berechnung der \hyperref[eq:fehler_mittelwert]{Ungenauigkeit des Mittelwertes} wird zusätzlich vorgenommen:
+\begin{align}
+    \Delta \bar{T}_{1,stat} &= 0,003\,\mathrm{s} \\
+    \Delta \bar{T}_{2,stat} &= 0,002\,\mathrm{s}.
+\end{align}
+
+Nun müssen beide Fehler über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlerfortpflanzung} zu einem zusammengeführt werden:
+\begin{equation}
+\Delta \bar{T}_{i} = \sqrt{(\Delta \bar{T}_{reak})^2 + (\Delta \bar{T}_{i,stat})^2}
+\end{equation}
+
+Wir kommen dabei auf Werte von:
+\begin{align}
+\Delta \bar{T}_1 &= 0,010 \\
+\Delta \bar{T}_2 &= 0,010.
+\end{align}
+
+Wir merken also: die Berechnete statistische Ungenauigkeit war hier nicht von Relevanz.
 
 \begin{table}[h!]
     \begin{tabular}{c | c | c | c | c}
     Scheibe & $t \, [s]$& $T \, [s]$ & $\bar{T} \, [s]$ & $\Delta \bar{T} [s]$\\
     \hline
-    Keine       & 23,09 & 1,155 & 1,162 & 0,01\\
-                & 23,31 & 1,166 & $= T_1$ & \\
+    Keine       & 23,09 & 1,155 & 1,162 & 0,010\\
+                & 23,31 & 1,166 & $= \bar{T}_1$ & \\
                 & 23,28 & 1,164 &  & \\
      \hline
-    Messing-    & 34,89 & 1,745 & 1,741 & 0,01\\
-    Platte      & 34,75 & 1,738 & $= T_2$ & \\
+    Messing-    & 34,89 & 1,745 & 1,741 & 0,010\\
+    Platte      & 34,75 & 1,738 & $= \bar{T}_2$ & \\
                 & 34,78 & 1,739 &  & \\
     \hline
     \end{tabular}
@@ -80,30 +120,122 @@ Dabei ist $m_A$ die Steigung der Ausgleichsgeraden und $m_F$ die Steigung der Fe
     \label{tab:regelmäßige_messingplatte}
 \end{table}
 
-Den Fehler der der Periodendauer $\Delta \bar{T}$ wurde über eine Reaktionszeit von $0,2s$ über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlfortpflanzung} berechnet sich der Fehler zu:
-\begin{equation}
-    \Delta \bar{T} = 0,20s \cdot \frac{1}{20} = 0,01s
-\end{equation}
+Damit stehen unsere zwei Periodendauern fest, die wir für die Bestimmung des Richtmomentes $D_R$ brauchen:
+\begin{align}
+T_1 = (1,162 \pm 0,010)\,\mathrm{s} \\
+T_2 = (1,741 \pm 0,010)\,\mathrm{s}.
+\end{align}
 
-Für die weitere Berechnung brauchen wir die Werte der Messingscheibe:
+Für die weitere Berechnung brauchen wir außerdem die Werte der Messingscheibe:
 \begin{align*}
-    \text{Durchmesser: }         d_M   &= 110mm    &&\pm 0,005mm \\
-    \Rightarrow \text{Radius: }  r_M   &= 55mm     &&\pm 0,0025mm \\
-    \text{Masse: }               m_M   &= 646g     &&\pm 1g
+    \text{Durchmesser: }         d_M   &= 110\,\mathrm{mm}    &&\pm 0,005\,\mathrm{mm} \\
+    \Rightarrow \text{Radius: }  r_M   &= 55\,\mathrm{mm}     &&\pm 0,0025\,\mathrm{mm} \\
+    \text{Masse: }               m_M   &= 646\,\mathrm{g}     &&\pm 1\,\mathrm{g}
 \end{align*}
 
+Wir transferieren diese erstmal in typische SI-Einheiten:
+\begin{align*}
+    \text{Durchmesser: }         d_M   &= (0,110 \pm 0,000005)\,\mathrm{m} \\
+    \Rightarrow \text{Radius: }  r_M   &= (0,055  \pm 0,0000025)\,\mathrm{m} \\
+    \text{Masse: }               m_M   &= (0,646 \pm 0,001)\,\mathrm{kg}
+\end{align*}
+
+Damit greifen wir auf \hyperref[eq:richtmoment_rechnen]{Gleichung 1.9} zurück, um das Richtmoment zu bestimmen:
+\begin{equation}
+    D_R = \frac{2\pi^2 \cdot m_M \cdot r_M^2}{T_2^2-T_1^2}
+\end{equation}
+
+Nur noch bekannte Werte einsetzen:
+
+\begin{align}
+    D_R &= \frac{2\pi^2 \cdot 0,646\,\mathrm{kg} \cdot (0,055\,\mathrm{m})^2}{(1,741\,\mathrm{s})^2-(1,162\,\mathrm{s})^2} \\
+    D_R &= \underline{0,022948 \,\mathrm{\frac{Nm}{rad}}}
+    \label{eq:richtmoment_berechnet}
+\end{align}
+
+Somit brauchen wir für den Aufgabenteil nur noch den Fehler des Richtmomentes $\Delta D_R$. Wir greifen erneut auf die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlerfortpflanzung} zurück:
+
+\begin{equation}
+    \begin{split}
+    \Delta D_R &= \Bigg[ 
+    \left(\frac{\Delta m_M}{m_M}\right)^2 + 
+    \left(\frac{\Delta r_M}{r_M}\right)^2 \\[6pt]
+    &+ \left(\frac{2T_2 \Delta T_2}{T_2^2-T_1^2}\right)^2 
+    + \left(\frac{2T_1 \Delta T_1}{T_2^2-T_1^2}\right)^2
+    \Bigg]^{1/2} \cdot D_R
+    \end{split}
+\end{equation}
+
+Setzen wir alle Werte ein, so kommen wir in unserem Fall auf eine Ungenauigkeit von:
+\begin{equation}
+    \underline{\Delta D_R = 0,00057265 \, \mathrm{\frac{Nm}{rad}}}
+    \label{eq:richtmoment_fehler}
+\end{equation}
+
+Fassen wir \hyperref[eq:richtmoment_berechnet]{Gleichung 3.29} und \hyperref[eq:richtmoment_fehler]{Gleichung 3.31} zusammen und runden alles sinnvoll, so kommen wir auf:
+\begin{equation}
+    \underline{\underline{D_R = (2,29 \pm 0,06) \cdot 10^{-2}\,\mathrm{\frac{Nm}{rad}}}}
+\end{equation}
+
+
+\section{Stein'scher Satz}
+Die Aufgaben 3 bis 5 beschäftigen sich alle mit dem \hyperref[eq:steinsatz]{Stein'schen Satz}. 
+Dabei fassen wir die Tabellen 3 und 4 des \hyperref[Protokoll]{Protokolls} zusammen:
+
 \begin{table}[h!]
-    \begin{tabular}{c | c | c | c}
-    Achse & d $[mm]$ & t $[s]$ & I $[kg \cdot m^2]$ \\
-    \hline
-    $a_0$ & 0,0 & 44,42 & \\ 
-    $a_1$ & 0,5 & 44,58 & \\
-    $a_2$ & 1,0 & 44,73 & \\
-    $a_3$ & 1,5 & 45,10 & \\
-    $a_4$ & 2,0 & 45,90 & \\
-    $a_5$ & 2,5 & 47,67 & \\
+    \begin{tabular}{c | c | c | c |  c}
+    Achse & $d [mm]$ & $t [s]$ & $T [s]$ & $I [kg \cdot m^2]$ \\
+    \hline    
+    $a_0$ &  0 & 44,42 & 2,221 \\ 
+    $a_1$ &  5 & 44,58 & 2,229\\
+    $a_2$ & 10 & 44,73 & 2,237\\
+    $a_3$ & 15 & 45,10 & 2,255\\
+    $a_4$ & 20 & 45,90 & 2,295\\
+    $a_5$ & 25 & 47,67 & 2,354\\
     \hline
     \end{tabular}
     \caption{Messung des Trägheitsmomente verschiedener Drehachsen einer unregelmäßigen Messingplatte.}
     \label{tab:unregelmäßige_messingplatte}
 \end{table}
+
+Der Schwerpunkt bezeichnet dabei die Achse $a_0$. Alle anderen Achsen sind in immer $\Delta d = 0,5cm$ Abständen auf einer Geraden.
+Es wurde wieder die Schwingdauer $t$ für 20 Schwingungen gemessen. 
+
+Zunächst nehmen wir die Gleichung zur \hyperref[eq:T_def]{Berechnung der Periodendauer (1.10)} und stellen diese nach $J_T$ um:
+\begin{equation}
+    J_T = \frac{T_1^2 \cdot D}{4\pi^2}
+    \label{eq:j_t}
+\end{equation}
+
+Wir definieren die Periodendauer $T_P$ für die unregelmäßige Messingplatte, die das Trägheitsmoment $J_P$ hat. Diese benutzt die Formel zur \hyperref[eq:T_def]{Berechnung der Periodendauer (1.11)}:
+\begin{equation}
+    T_P = 2\pi \sqrt{\frac{J_T+J_P}{D}}.
+\end{equation}
+
+Nur noch nach $J_P$ umformen:
+\begin{equation}
+    J_P = \frac{T_P^2 \cdot D}{4\pi^2} - J_T.
+\end{equation}
+
+Nun setzen wir \hyperref[eq:j_t]{$J_T$} noch ein und erhalten:
+\begin{equation}
+    J_P = \frac{T_P^2 \cdot D}{4\pi^2} - \frac{T_1^2 \cdot D}{4\pi^2}.
+\end{equation}
+
+Nur noch vereinfachen:
+\begin{equation}
+    J_P = \frac{D}{4\pi^2}(T_P^2-T_1^2).
+\end{equation}
+
+Zudem wird die Ungenauigkeit nach \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'schen Fehlerfortpflanzung} berechnet zu:
+\begin{align}
+\Delta J_P &= \Bigg[
+    \left( \frac{T_P^2 - T_1^2}{4\pi^2} \, \Delta D \right)^2
+    + \left( \frac{D T_P}{2\pi^2} \, \Delta T_P \right)^2 \notag \\[6pt]
+&\quad
+    + \left( \frac{D T_1}{2\pi^2} \, \Delta T_1 \right)^2
+\Bigg]^{1/2} \cdot J_P
+\end{align}
+
+Dies sind die Formeln, die wir für die weitere Berechnung benötigen. Wir rechnen mit einer Periodendauer von $T_P = (2,221 \pm 0,010)\, \mathrm{s}$.
+Genau so machen wir gebrauch von $T_1 = (1,162 \pm 0,010)\, \mathrm{s}$.
