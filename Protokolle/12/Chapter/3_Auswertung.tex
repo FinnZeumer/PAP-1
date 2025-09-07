@@ -17,39 +17,80 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 
 \twocolumn
 
+\section{Bestimmung des Richtmomentes}
+Kommen wir also nun zur Auswertung der Aufgaben. Dafür Beginnen wir damit, die Werte der Tabelle 1  aus dem \hyperref[Protokoll]{Protokoll}.
+Dabei ist $x$ die Winkelauslenkung der Aluminiumscheibe, $m$ hängende Masse, $F$ die Gewichtskraft mit $\left| g \right| =9,81 \frac{m}{s^2}$, die auf die Masse wirkt $M$ das berechnete Drehmoment nach \hyperref[eq:gleichgewichts_zustand]{Gleichung 2.1} und $\Delta M$ seine Ungenauigkeit nach der \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'schen Fehlerfortpflanzung}:
+\begin{equation}
+    \Delta M = \left| m \right| \cdot \left| g \right| \cdot \Delta r
+\end{equation}
+Dabei definieren die 0g den Startpunkt. 0g ist physikalisch in dem Kontest natürlich unsinnig und meint eigentlich die Startmasse, die hier nur aus dem Massenteller besteht, aber keine zusätzliche Masse.
+Der Radius der Aliminumplatte entspricht dabei $r = 10,000 \pm 0,005 cm$, also ist $\Delta r = 0,005$, was der Ungenauigkeit der Schieblehre entspricht.
 \begin{table}[h!]
-    \begin{tabular}{c | c | l}
-    Masse [g] & $x$ [deg] & Differenz [deg]\\
+    \begin{tabular}{c | c | c | c }
+    $m [g]$ & $\varphi [^{\circ}]$ & $M \, [10^{-3}Nm]$ & $\Delta M \, [10^{-6}Nm]$ \\
     \hline
-    0\footnote{Gemeint ist die Auslenkung mit nur dem Massenteller}   & 0   & --- \\
-    50  & 60  & 60 \\
-    100 & 122 & 62 \\
-    150 & 180 & 58 \\
-    200 & 242 & 62 \\
-    250 & 302 & 60 \\
-    300 & 366 & 64 \\
+    0   & 0   & ---     &  ---    \\
+    50  & 60  &  4,9050 &  2,4525 \\
+    100 & 122 &  9,8100 &  4,9050 \\
+    150 & 180 & 14,4150 &  7,3575 \\
+    200 & 242 & 19,6200 &  9,8100 \\
+    250 & 302 & 24,5250 & 12,2625 \\
+    300 & 366 & 29,4300 & 14,7150 \\
     \hline
     \end{tabular}
-    \caption{Messungen der Rotationsauslenkung der Aluminumscheibe.}
+    \caption{Messungen der Rotationsauslenkung der Aluminumscheibe und die berechneten Drehmomente.}
     \label{tab:verschiedene_massen_winkel_auslenkung}
 \end{table}
 
+Stellen wir nun \hyperref[eq:kraft_drehmoment_zusammenhang]{Gleichung 1.3} um, so kommen wir auf:
+\begin{equation}
+    D = - \frac{M}{\varphi}
+\end{equation}
+
+Daher plotten wir als nächstes das Drehmoment $M$ gegen den Auslenkungswinkel $\varphi$ und berechnen seine Steigung $m$, welche dem Drehmoment entspricht, nach
+\begin{equation}
+    m = \frac{\Delta M}{\Delta \varphi}
+\end{equation}
+
+Dies kann der \hyperref[]{Abbildung zur Bestimmung des Richtmomentes} entnommen werden: 
+
+\begin{align}
+    m_A = \frac{}{} \\
+    m_F = \frac{(24,5290) [Nm]}{(310) [^\circ]} = 0,0791
+\end{align}
+
+Dabei ist $m_A$ die Steigung der Ausgleichsgeraden und $m_F$ die Steigung der Fehlergeraden, welche über das Min.-Max.-Verfahren bestimmt wurde. $\Delta \varphi$ sind dabei $2^\circ$.
+
+\section{Bestimmung des Richtmomentrs über Trägheitsmoment}
+
 \begin{table}[h!]
-    \begin{tabular}{c | c | c}
-    Scheibe & Schwingdauer $t \, [s]$ & $\bar{t} \, [s]$ \\
+    \begin{tabular}{c | c | c | c | c}
+    Scheibe & $t \, [s]$& $T \, [s]$ & $\bar{T} \, [s]$ & $\Delta \bar{T} [s]$\\
     \hline
-    Keine       & 23,09 & 23,227\\
-                & 23,31 &\\
-                & 23,28 &\\
+    Keine       & 23,09 & 1,155 & 1,162 & 0,01\\
+                & 23,31 & 1,166 & $= T_1$ & \\
+                & 23,28 & 1,164 &  & \\
      \hline
-    Messing-    & 34,89 & 34,807\\
-    Platte      & 34,75 &\\
-                & 34,78 &\\
+    Messing-    & 34,89 & 1,745 & 1,741 & 0,01\\
+    Platte      & 34,75 & 1,738 & $= T_2$ & \\
+                & 34,78 & 1,739 &  & \\
     \hline
     \end{tabular}
-    \caption{Messungen der Schwingdauer einer regelmäßigen Messingplatte.}
+    \caption{Messungen der Schwingdauer einer regelmäßigen Messingplatte unter 20 Schwingungen.}
     \label{tab:regelmäßige_messingplatte}
 \end{table}
+
+Den Fehler der der Periodendauer $\Delta \bar{T}$ wurde über eine Reaktionszeit von $0,2s$ über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlfortpflanzung} berechnet sich der Fehler zu:
+\begin{equation}
+    \Delta \bar{T} = 0,20s \cdot \frac{1}{20} = 0,01s
+\end{equation}
+
+Für die weitere Berechnung brauchen wir die Werte der Messingscheibe:
+\begin{align*}
+    \text{Durchmesser: }         d_M   &= 110mm    &&\pm 0,005mm \\
+    \Rightarrow \text{Radius: }  r_M   &= 55mm     &&\pm 0,0025mm \\
+    \text{Masse: }               m_M   &= 646g     &&\pm 1g
+\end{align*}
 
 \begin{table}[h!]
     \begin{tabular}{c | c | c | c}
