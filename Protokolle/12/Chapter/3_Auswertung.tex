@@ -180,25 +180,6 @@ Fassen wir \hyperref[eq:richtmoment_berechnet]{Gleichung 3.29} und \hyperref[eq:
 
 \section{Stein'scher Satz}
 Die Aufgaben 3 bis 5 beschäftigen sich alle mit dem \hyperref[eq:steinsatz]{Stein'schen Satz}. 
-Dabei fassen wir die Tabellen 3 und 4 des \hyperref[Protokoll]{Protokolls} zusammen:
-
-\begin{table}[h!]
-    \begin{tabular}{c | c | c | c |  c}
-    Achse & $d [mm]$ & $t [s]$ & $T [s]$ & $I [kg \cdot m^2]$ \\
-    \hline    
-    $a_0$ &  0 & 44,42 & 2,221 \\ 
-    $a_1$ &  5 & 44,58 & 2,229\\
-    $a_2$ & 10 & 44,73 & 2,237\\
-    $a_3$ & 15 & 45,10 & 2,255\\
-    $a_4$ & 20 & 45,90 & 2,295\\
-    $a_5$ & 25 & 47,67 & 2,354\\
-    \hline
-    \end{tabular}
-    \caption{Messung des Trägheitsmomente verschiedener Drehachsen einer unregelmäßigen Messingplatte.}
-    \label{tab:unregelmäßige_messingplatte}
-\end{table}
-
-Der Schwerpunkt bezeichnet dabei die Achse $a_0$. Alle anderen Achsen sind in immer $\Delta d = 0,5cm$ Abständen auf einer Geraden.
 Es wurde wieder die Schwingdauer $t$ für 20 Schwingungen gemessen. 
 
 Zunächst nehmen wir die Gleichung zur \hyperref[eq:T_def]{Berechnung der Periodendauer (1.10)} und stellen diese nach $J_T$ um:
@@ -239,3 +220,43 @@ Zudem wird die Ungenauigkeit nach \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sc
 
 Dies sind die Formeln, die wir für die weitere Berechnung benötigen. Wir rechnen mit einer Periodendauer von $T_P = (2,221 \pm 0,010)\, \mathrm{s}$.
 Genau so machen wir gebrauch von $T_1 = (1,162 \pm 0,010)\, \mathrm{s}$.
+
+Wir werden zwei Rechnungen durchführen, einmal für $D_G =(4,3 \pm 0,5) 10^{-2} \mathrm{\frac{Nm}{rad}}$ und einmal für
+$D_R =(2,29 \pm 0,06) 10^{-2} \mathrm{\frac{Nm}{rad}}$. Wir werden dann in der \hyperref[Diskussion]{Diskussion} die Graphische und die rechnerische Methode vergleichen.
+
+Wir berechnen zunächst die Drehmomente und anschließend ihre Ungenauigkeiten:
+\begin{equation}
+    J_{P,G} = 3,9022 \mathrm{10^{-3} kg \cdot m^2}
+    \label{eq:J_P_G}
+\end{equation}
+
+\begin{equation}
+    J_{P,R} = 2,0781347 \mathrm{10^{-3} kg \cdot m^2}
+    \label{eq:J_P_R}
+\end{equation}
+
+Nun müssen wir noch deren Ungenauigkeiten bestimmen:
+\begin{equation}
+    \Delta J_{P,G} = 0,0177071 \mathrm{10^{-3} kg \cdot m^2}
+\end{equation}
+
+\begin{equation}
+    \Delta J_{P,R} = 0,0001282 \mathrm{10^{-3} kg \cdot m^2}
+\end{equation}
+
+Nun Fassen wir alle Ergebnisse sinnvoll zusammen und runden entsprechend: 
+\begin{align}
+    &\underline{\underline{J_{P,G} = (39,02 \pm 0,18)\, \mathrm{10^{-4}kg \, m^2}}} \\
+        \notag \\
+    &\underline{\underline{J_{P,R} = (20,78135 \pm 0,00128)\, \mathrm{10^{-4} kg \, m^2}}}
+\end{align}
+
+Nun haben wir für die Schwerpuntkachse $a_0$ das Trägheitsmoment bestimmt. Nun stellt sich noch die Frage nach den anderen Achsen. Erstmal suchen wir uns alle interessanten Größen wieder zusammen:
+
+Dabei fassen wir die Tabellen 3 und 4 des \hyperref[Protokoll]{Protokolls} zusammen:
+Der Schwerpunkt bezeichnet dabei die Achse $a_0$. Alle anderen Achsen sind in immer $\Delta d = 0,5cm$ Abständen auf einer Geraden.
+\begin{table}
+    \begin{tabular}{c | c | c}
+        Achse & $d [mm]$ & 
+    \end{tabular}
+\end{table}
