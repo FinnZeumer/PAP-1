@@ -77,6 +77,7 @@ Damit können wir $D_G$ über $D_G = D_{G,A} \pm \Delta D_G$ bestimmen:
 
 
 \section{Rechnerische Bestimmung des Richtmomentrs}
+\label{aufgabe_3-2}
 Wir entnehmen die Werte aus dem \hyperref[Protokoll]{Protokoll} und schauen uns Tabelle 2 an. Wir haben die Schwingdauer $t$ für 20 Schwingungen, 
 woraus sich auch die Periodendauer $T$ bestimmt. Der Durchschnitt der Periodendauer ohne Scheibe ist $\bar{T}_1$, und der mit der Scheibe $\bar{T}_2$.
 Den Fehler der der Periodendauer $\Delta \bar{T}$ wurde über eine Reaktionszeit von $0,2s$ über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlfortpflanzung} berechnet sich der Fehler zu:
@@ -97,8 +98,9 @@ Nun müssen beide Fehler über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche 
 
 Wir kommen dabei auf Werte von:
 \begin{align}
-\Delta \bar{T}_1 &= 0,010 \\
-\Delta \bar{T}_2 &= 0,010.
+    \Delta \bar{T}_1 &= 0,010 \\
+    \Delta \bar{T}_2 &= 0,010.
+    \label{eq:t_reak}
 \end{align}
 
 Wir merken also: die Berechnete statistische Ungenauigkeit war hier nicht von Relevanz.
@@ -179,6 +181,7 @@ Fassen wir \hyperref[eq:richtmoment_berechnet]{Gleichung 3.29} und \hyperref[eq:
 
 
 \section{Stein'scher Satz}
+\label{aufgabe_3-3}
 Die Aufgaben 3 bis 5 beschäftigen sich alle mit dem \hyperref[eq:steinsatz]{Stein'schen Satz}. 
 Es wurde wieder die Schwingdauer $t$ für 20 Schwingungen gemessen. 
 
@@ -226,37 +229,77 @@ $D_R =(2,29 \pm 0,06) 10^{-2} \mathrm{\frac{Nm}{rad}}$. Wir werden dann in der \
 
 Wir berechnen zunächst die Drehmomente und anschließend ihre Ungenauigkeiten:
 \begin{equation}
-    J_{P,G} = 3,9022 \mathrm{10^{-3} kg \cdot m^2}
+    J_{P,G} = 3,9021744120 \, [\mathrm{10^{-3} kg \cdot m^2}]
     \label{eq:J_P_G}
 \end{equation}
 
 \begin{equation}
-    J_{P,R} = 2,0781347 \mathrm{10^{-3} kg \cdot m^2}
+    J_{P,R} = 2,631699022 \, [\mathrm{10^{-3} kg \cdot m^2}]
     \label{eq:J_P_R}
 \end{equation}
 
 Nun müssen wir noch deren Ungenauigkeiten bestimmen:
 \begin{equation}
-    \Delta J_{P,G} = 0,0177071 \mathrm{10^{-3} kg \cdot m^2}
+    \Delta J_{P,G} = 0,017833522 \, [\mathrm{10^{-3} kg \cdot m^2}]
 \end{equation}
 
 \begin{equation}
-    \Delta J_{P,R} = 0,0001282 \mathrm{10^{-3} kg \cdot m^2}
+    \Delta J_{P,R} = 0,0017299 \, [\mathrm{10^{-3} kg \cdot m^2}]
 \end{equation}
 
 Nun Fassen wir alle Ergebnisse sinnvoll zusammen und runden entsprechend: 
 \begin{align}
-    &\underline{\underline{J_{P,G} = (39,02 \pm 0,18)\, \mathrm{10^{-4}kg \, m^2}}} \\
+    &\underline{\underline{J_{P,G} = (39,022 \pm 0,018)\, \mathrm{10^{-4}kg \, m^2}}} \\
         \notag \\
-    &\underline{\underline{J_{P,R} = (20,78135 \pm 0,00128)\, \mathrm{10^{-4} kg \, m^2}}}
+    &\underline{\underline{J_{P,R} = (26,3170 \pm 0,0017 )\, \mathrm{10^{-4} kg \, m^2}}}
 \end{align}
 
 Nun haben wir für die Schwerpuntkachse $a_0$ das Trägheitsmoment bestimmt. Nun stellt sich noch die Frage nach den anderen Achsen. Erstmal suchen wir uns alle interessanten Größen wieder zusammen:
+Dabei fassen wir die Tabellen 3 und 4 des \hyperref[Protokoll]{Protokolls} zusammen und berechnen die Periodendauer, das Trägheitsmoment $J_{a_i}$ analog zu \hyperref[aufgabe_3-3]{Aufgabe 3.3 (37)}, und darüber das Trägheitsmoment $J_{S_i}$ über den \hyperref[eq:steinsatz]{Stein'schen Satz (1.7)}.
+Die Abstäne sind mit einem Millimetergeodreieck bestimmt wurden, dessen Ungenauigkeit lässt sich auf 
+\begin{equation}
+    \Delta d = 0,5mm = 50\% \cdot 1mm
+\end{equation}
+abschätzen. Für die Ungenauigkeit der $\Delta T$ berufen wir uns auf die Werte aus \hyperref[eq:t_reak]{Aufgabe 3.2 (23)}:
+\begin{equation}
+    \Delta T = 0,010 s.
+\end{equation}
+Zudem sind die Werte in der Tabelle bereits auf signifikante Stellen gerundet. 
+Der Abstand $d$ wir im Stein'schen Satz quadrietr, somit müssen wir seinen Fehler via \hyperref[eq:gauss_fehlfortpflanzung]{Gleichung 3.7} berechnen:
+\begin{equation}
+    \Delta d^2 = 2d \Delta d.
+\end{equation}
 
-Dabei fassen wir die Tabellen 3 und 4 des \hyperref[Protokoll]{Protokolls} zusammen:
-Der Schwerpunkt bezeichnet dabei die Achse $a_0$. Alle anderen Achsen sind in immer $\Delta d = 0,5cm$ Abständen auf einer Geraden.
-\begin{table}
-    \begin{tabular}{c | c | c}
-        Achse & $d [mm]$ & 
+Die gesamte Ungenauigkeit wird sich nach \hyperref[eq:fehler_summe]{Gleichung 3.6} auf
+\begin{equation}
+    \Delta J_{S_i} = \sqrt{(\Delta J_{a_i})^2 + ({d_i}^2 \Delta m)^2 + (m \Delta {d_i}^2)^2}
+\end{equation}
+belaufen. Dabei nutzen wir $\Delta m = 1g$.
+
+Zuletzt werden noch für jedes Trägheitsmomentes die \hyperref[eq:signifikante_abweichung]{$\sigma$-Abweichung} von $J_{a_i}$ zu den Trägheitsmomenten nach der Berechnung mit dem \hyperref[eq:steinsatz]{Stein'schen Satz (1.7)} $J_{S_i}$
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c | c | c | c | c || c}
+        Achse & $d^2 \,[10^{-4}\text{m}^2]$ & $T \,[\text{s}]$ & $J_{a_i}(D_G)\,[10^{-4}\text{kg}\cdot \text{m}^2]$ & $J_{S_i}(D_G)\,[10^{-4}\text{kg}\cdot \text{m}^2]$ & $\sigma_{a_G}$ \\
+        \hline
+        $a_0$ & $0 \pm 0$ & 2,221 $\pm 0,010$ & $39,022 \pm 0,018$ & --- & --- \\
+        $a_1$ & $0,25 \pm 0,05$ & 2,229 $\pm 0,010$ & $39,410 \pm 0,018$ & $39,183 \pm 0,018$ & 0,089$\sigma$ \\
+        $a_2$ & $1,0 \pm 0,1$ & 2,237 $\pm 0,010$ & $39,799 \pm 0,019$ & $39,668 \pm 0,019$ & 0,049$\sigma$ \\
+        $a_3$ & $2,25 \pm 0,15$ & 2,255 $\pm 0,010$ & $40,679 \pm 0,019$ & $40,475 \pm 0,019$ & 0,076$\sigma$\\
+        $a_4$ & $4,0 \pm 0,2$ & 2,295 $\pm 0,010$ & $42,6617 \pm 0,0213$ & $41,60574 \pm 0,02130$ & 0,351$\sigma$\\
+        $a_5$ & $6,25 \pm 0,25$ & 2,384 $\pm 0,010$ & $47,197 \pm 0,026$ & $43,059 \pm 0,026$ & 1,125$\sigma$\\
+        \hline
+        \hline
+        Achse & $d^2 \,[10^{-4}\text{m}^2]$ & $T \,[\text{s}]$ & $J_{a_i}(D_R)\,[10^{-4}\text{kg}\cdot \text{m}^2]$ & $J_{S_i}(D_R)\,[10^{-4}\text{kg}\cdot \text{m}^2]$ & $\sigma_{a_R}$ \\
+        \hline
+        $a_0$ & $0 \pm 0$ & 2,221 $\pm 0,010$ & $26,3170 \pm 0,0017$ & --- & --- \\
+        $a_1$ & $0,25 \pm 0,05$ & 2,229 $\pm 0,010$ & $26,5785 \pm 0,0018$ & $26,478 \pm 0,018$ & 0,056$\sigma$\\
+        $a_2$ & $1,0 \pm 0,1$ & 2,237 $\pm 0,010$ & $26,8410 \pm 0,0018$ & $26,963 \pm 0,019$ & 0,064$\sigma$\\
+        $a_3$ & $2,25 \pm 0,15$ & 2,255 $\pm 0,010$ & $27,4350 \pm 0,0019$ & $27,770 \pm 0,019$ & 0,175$\sigma$\\
+        $a_4$ & $4,0 \pm 0,2$ & 2,295 $\pm 0,010$ & $28,771834 \pm 0,002029$ & $28,90010 \pm 0,02130$ & 0,060$\sigma$\\
+        $a_5$ & $6,25 \pm 0,25$ & 2,384 $\pm 0,010$ & $31,8308 \pm 0,0024$ & $30,354 \pm 0,026$ & 0,566$\sigma$
     \end{tabular}
+    \caption{Messwerte und berechnete Trägheitsmomente für $D_G$ vs. $D_R$.}
+    \label{tab:steinsatzDG_quadriert_10-4}
 \end{table}
