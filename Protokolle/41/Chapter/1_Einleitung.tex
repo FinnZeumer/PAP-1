@@ -5,6 +5,7 @@
 In diesem Versuch beschäftigen wir uns mit verschiedenen Methoden der Temperaturmessung. Zunächst werden ein Gas- und ein Platin-Widerstandsthermometer im Bereich zwischen dem Siedepunkt von Wasser und dem Siedepunkt von flüssigem Stickstoff eingesetzt. Anschließend erfolgen Messungen im Bereich von 0 °C bis 100 °C mit einem Infrarot-Thermometer. Zuletzt wird mithilfe eines Thermoelements die Temperaturverteilung einer Bunsenbrennerflamme untersucht. Ziel des Versuchs ist es, die Ergebnisse der vier Methoden hinsichtlich ihrer Anwendbarkeit in verschiedenen Temperaturbereichen sowie ihrer Genauigkeit zu überprüfen.
 
 \section{Physikalische Grundlagen}
+\cite{skript25, demtroeder17}
 \paragraph{Gasthermometer}
 Die Grundlage bildet die ideale Gasgleichung
 \begin{equation}
@@ -34,19 +35,35 @@ Nachteil: Nur relative Messungen möglich, die Referenztemperatur $T_2$ muss bek
 
 \paragraph{Platin-Widerstandsthermometer}
 Die Temperaturabhängigkeit des Widerstands eines Pt100-Sensors lässt sich durch ein quadratisches Polynom annähern:
+
 \begin{equation}
     R(T) = R_0 \,(1 + A T + B T^2),
 \end{equation}
-mit $R_0 = 100\,\Omega$ bei $0^\circ$C, $A = 3{,}9083 \times 10^{-3}\,\mathrm{^\circ C^{-1}}$, $B = -5{,}775 \times 10^{-7}\,\mathrm{^\circ C^{-2}}$.  
-Umgestellt nach $T$ ergibt sich:
+
+mit dem Nennwiderstand $R_0 = 100\,\Omega$ bei $0^\circ$C und den Koeffizienten 
+\begin{align}
+    A &= 3,9083 \cdot 10^{-3}\,\mathrm{^\circ C^{-1}} \\
+    B &= -5,775 \cdot 10^{-7}\,\mathrm{^\circ C^{-2}}
+\end{align}
+
+Ergibt sich eine Gleichung zur Berechnung der Temperatur $T$ in Anhänigkeit des Widerstandes $R$:
+
 \begin{equation}
     T(R) = \frac{-R_0A + \sqrt{R_0^2 A^2 - 4 R_0 B (R_0 - R)}}{2 R_0 B}.
+    \label{eq:t_pt100}
 \end{equation}
 Der Temperaturfehler für ein Pt100 der Klasse B beträgt
+
 \begin{equation}
     \Delta T = 0{,}30\,^\circ\mathrm{C} + 0{,}005 \cdot |T|.
 \end{equation}
 Die Widerstandsmessung erfolgt im Praktikum mit einer Konstantstromquelle von $1\,$mA. Um Leitungseinflüsse zu vermeiden, wird eine Vierleiterschaltung verwendet.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/41/zwei_vier-Leiter.png}
+    \caption{Schematicher Aufbau einer a) Zweileiterschaltung und b) einer Vierleiterschaltung.}
+\end{figure}
 
 \paragraph{Pyrometer}
 Jeder Körper mit $T > 0\,$K emittiert Wärmestrahlung. Das Plancksche Strahlungsgesetz beschreibt die spektrale Strahlungsleistung:
