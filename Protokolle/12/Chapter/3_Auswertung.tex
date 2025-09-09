@@ -52,7 +52,7 @@ Daher plotten wir als nächstes das Drehmoment $M$ gegen den Auslenkungswinkel $
     m = \frac{\Delta M}{\Delta \varphi}
 \end{equation}
 
-Dies kann der \hyperref[]{Abbildung zur Bestimmung des Richtmomentes} entnommen werden. Dabei rechnen wir Gradmaß in Radiant um. Es gilt:
+Dies kann der \hyperref[img:graphisch_richtmoment]{Abbildung zur Bestimmung des Richtmomentes} entnommen werden. Dabei rechnen wir Gradmaß in Radiant um. Es gilt:
 \begin{equation}
     x^\circ \cdot \frac{\pi}{180} = y \, rad
 \end{equation}  
@@ -73,6 +73,7 @@ Zieht man nun deren Differenz, so kommt man auf einen Fehler variation
 Damit können wir $D_G$ über $D_G = D_{G,A} \pm \Delta D_G$ bestimmen: 
 \begin{equation}
     \underline{\underline{D_G = (4,3 \pm 0,5) \, 10^{-2}\frac{Nm}{rad}}}
+    \label{e:d_g}
 \end{equation}
 
 
@@ -177,6 +178,7 @@ Setzen wir alle Werte ein, so kommen wir in unserem Fall auf eine Ungenauigkeit 
 Fassen wir \hyperref[eq:richtmoment_berechnet]{Gleichung 3.29} und \hyperref[eq:richtmoment_fehler]{Gleichung 3.31} zusammen und runden alles sinnvoll, so kommen wir auf:
 \begin{equation}
     \underline{\underline{D_R = (2,29 \pm 0,06) \cdot 10^{-2}\,\mathrm{\frac{Nm}{rad}}}}
+    \label{e:d_r}
 \end{equation}
 
 
@@ -252,6 +254,7 @@ Nun Fassen wir alle Ergebnisse sinnvoll zusammen und runden entsprechend:
     &\underline{\underline{J_{P,G} = (39,022 \pm 0,018)\, \mathrm{10^{-4}kg \, m^2}}} \\
         \notag \\
     &\underline{\underline{J_{P,R} = (26,3170 \pm 0,0017 )\, \mathrm{10^{-4} kg \, m^2}}}
+    \label{e:s_t}
 \end{align}
 
 Nun haben wir für die Schwerpuntkachse $a_0$ das Trägheitsmoment bestimmt. Nun stellt sich noch die Frage nach den anderen Achsen. Erstmal suchen wir uns alle interessanten Größen wieder zusammen:
@@ -300,6 +303,16 @@ Zuletzt werden noch für jedes Trägheitsmomentes die \hyperref[eq:signifikante_
         $a_4$ & $4,0 \pm 0,2$ & 2,295 $\pm 0,010$ & $28,771834 \pm 0,002029$ & $28,90010 \pm 0,02130$ & 0,060$\sigma$\\
         $a_5$ & $6,25 \pm 0,25$ & 2,384 $\pm 0,010$ & $31,8308 \pm 0,0024$ & $30,354 \pm 0,026$ & 0,566$\sigma$
     \end{tabular}
+    \onecolumn
     \caption{Messwerte und berechnete Trägheitsmomente für $D_G$ vs. $D_R$.}
     \label{tab:steinsatzDG_quadriert_10-4}
 \end{table}
+
+
+\begin{figure}
+    \includegraphics[width=\textwidth, page=3,]{Protokolle/\versuchsnummer/Chapter/Messprotokoll.pdf}
+    \caption{Richtmoment $M$ in Abhänigkeit des Auslenkungswinkel $\varphi$. Eingezeichnet Fehlergerade (F) und Ausgleichsgerade (A).}
+    \label{img:graphisch_richtmoment}
+\end{figure}
+
+\twocolumn
