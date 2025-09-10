@@ -1,7 +1,93 @@
-\chapter{Disskusion}
+\chapter{Diskussion}
 
-\section{Zusammenfassung}
+\section{Zusammenfassung, Diskussion und Kritik}
 
-\section{Disskusion}
+\subsubsection*{Eichung Gasthermometer}
+In der ersten Aufgabe wurde eine Eichkurve des Gasthermometers erstellt. Dafür wurden die Eichpunkte bei $0 \, ^\circ C$ und bei:
+\begin{equation}
+    E_{100^\circ C} = (1254,7 \pm 0,6) \, hPa
+\end{equation}
+nach \hyperref[e:1]{Gleichung 3.14} verwendet.
 
-\section{Kritik}
+Über diese Kurve ergaben sich die Werte für \hyperref[e:3]{Flüssigstickstoff und Trockeneis (3.16/3.17)} sowie für den \hyperref[e:2]{absoluten Nullpunkt (3.15)}:
+\begin{align}
+    T_0 &= (-275,8 \pm 13)  \, ^\circ C  \\
+    T_{N_2} &= (-197,16 \pm 10,4) \, ^\circ C \\
+    T_{TE} &= (-58,346 \pm 5,2) \, ^\circ C
+\end{align}
+
+Der Wert für den Flüssigstickstoff liegt in der $0,13\sigma$-Umgebung des Literaturwerts. Mit der »verbesserten« Eichkurve ergab sich eine Abweichung von 
+$0,16\sigma$, also ein ähnlicher, aber etwas größerer Wert. Dies hängt vermutlich mit der geringeren Unsicherheit des zweiten Werts bei $T_{0,2} = (-271,68 \pm 9,1) \, ^\circ C$ zusammen.
+
+Der Wert für das Trockeneis weicht hingegen um $5,8\sigma$ ab und ist damit nicht statistisch signifikant.
+
+\subsection*{PT100-Thermometer}
+Auch in dieser Aufgabe wurde ein Thermometer geeicht, diesmal ein Widerstandsthermometer. Der graphisch bestimmte Wert wurde mit dem rechnerisch angenäherten Wert verglichen. Die Abweichung betrug $1,79\sigma$. Damit liegt zwar eine Abweichung vor, diese ist aber noch im erwartbaren Bereich.
+Zu beachten ist, dass die Rechnung nur eine Annäherung darstellt und graphische Bestimmungen grundsätzlich ungenau sind. Eine etwas größere Abweichung war daher zu erwarten. 
+Als Fehlerquellen kommen vor allem ungenaue Graphen, begrenzte Messgeräte, wenige Messreihen und Ableseungenauigkeiten infrage.
+
+\subsection*{Gasthermometer vs. Pyrometer}
+In diesem Aufgabenteil sollte das Pyrometer im Vergleich zum geeichten Gasthermometer bewertet werden. Das Ergebnis lautete:
+\begin{equation}
+(91,76 \pm 3,77)\%.
+\end{equation}
+
+Das Pyrometer zeigte also im Durchschnitt etwa den 0,92-fachen Wert des Gasthermometers an. Für die meisten Anwendungen wäre dies unzureichend, da Werte im Bereich von 98\% bis 99,9\% wünschenswert wären. Ein Teil der Abweichung dürfte bereits durch die Eichung des Gasthermometers entstehen. Zudem weist das Pyrometer eine eigene Messunsicherheit auf. 
+Insgesamt ist der Vergleich auf einer graphischen Auswertung basiert, die grundsätzlich mit Unsicherheiten behaftet ist. 
+
+\subsection*{Flammenanalyse}
+Im letzten Aufgabenteil wurde die Flammentemperatur an fünf verschiedenen Positionen bei schwacher und starker Luftzufuhr bestimmt.
+Die Ergebnisse weichen jedoch stark von den Literaturwerten ab, die für die meisten Bunsenbrenner angegeben sind \cite{wikipedia-bunsenbrenner}:
+\begin{equation}
+    T_{Brenner} = \{350;1300\} \, ^\circ C.
+\end{equation}
+
+Die gemessenen Werte lagen lediglich im Bereich von:
+\begin{equation}
+    T_{Gem} = \{18;121\} \, ^\circ C.
+\end{equation}
+
+Dies entspricht Abweichungen von:
+\begin{align}
+    \frac{\left| 350-18 \right|}{3,54} = 93,79\sigma \text{ und }\\
+    \frac{\left| 1300-133,58 \right|}{3,16} = 369,12\sigma.
+\end{align}
+
+Eine detaillierte Auswertung dieser Abweichungen ist nicht sinnvoll, da die Ergebnisse offensichtlich nicht konsistent sind. 
+Vermutlich trat bei der Messung ein Fehler auf. Wenn die gemessenen Spannungen um den Faktor 10 vergrößert werden, ergeben sich folgende Werte:
+
+\begin{table}[h!]
+    \onecolumn
+    \centering
+    \caption{Korrigierte Werte (mit Faktor 10)}
+    \label{tab:letzte_tabelle}
+    \begin{tabular}{c | c | c | c | c | c | c}
+        \toprule
+        Luftzufuhr & Position & $U [mV]$ & $\Delta U [mV]$ & $T_{TE} [^\circ C]$ & $\Delta_{min} T [^\circ C]$ & $\Delta T [^\circ C]$ \\
+        \midrule
+        Schwach & 1 & 1,0 & 0,025 & 146,31 & 143,15 & 3,16 \\
+                & 2 & 3,0 & 0,035 & 372,75 & 369,05 & 3,70 \\
+                & 3 & 4,5 & 0,0425 & 526,82 & 522,51 & 4,31 \\
+                & 4 & 7,0 & 0,055 & 768,01 & 762,98 & 5,03 \\
+                & 5 & 8,0 & 0,06 & 859,69 & 854,27 & 5,42 \\
+        \hline
+        Stark   & 1 & 8,0 & 0,06 & 859,69 & 854,27 & 5,42 \\
+                & 2 & 8,0 & 0,06 & 859,69 & 854,27 & 5,42 \\
+                & 3 & 8,0 & 0,06 & 859,69 & 854,27 & 5,42 \\
+                & 4 & 8,0 & 0,06 & 859,69 & 854,27 & 5,42 \\
+                & 5 & 9,0 & 0,065 & 948,77 & 943,05 & 5,72 \\
+        \bottomrule
+    \end{tabular}
+    \twocolumn
+\end{table}
+
+Die Werte sind zwar noch relativ niedrig, und bei starker Luftzufuhr tritt kaum Variation auf, was eigentlich zu erwarten wäre. 
+
+Die Abweichungen fallen jedoch bereits deutlich geringer aus:
+\begin{align}
+    \frac{\left| 350-146,31 \right|}{3,16} = 65,40\sigma \text{ und }\\
+    \frac{\left| 1300-948,77 \right|}{5,72} = 61,40\sigma.
+\end{align}
+
+Die Ergebnisse sind zwar weiterhin unzureichend, könnten jedoch plausibel sein, wenn der verwendete Bunsenbrenner tatsächlich im Bereich von 
+150 bis 1000 Grad Celsius arbeitet.
