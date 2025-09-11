@@ -1,1 +1,142 @@
-\chapter{Auswertung}
+\onecolumn
+\chapter{Evaluation}
+% List of formulas used for error analysis
+\section*{Error Analysis}
+For the statistical evaluation of $n$ measured values $x_i$, the following quantities are defined \cite{errorSkript25}:
+\begin{align}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetic mean}} \label{eq:arithmetisches_mittel} \\
+    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variance}} \label{eq:variation} \\
+    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standard deviation}} \label{eq:standardabweichung} \\
+    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Error of the mean}} \label{eq:fehler_mittelwert} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gaussian error propagation for $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Error for $f = x + y$}} \label{eq:fehler_summe} \\
+    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Error for $f = ax$}} \label{eq:fehler_proportional} \\
+    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Relative error for $f = xy$ or $f = x/y$}} \label{eq:relativer_fehler} \\
+    \sigma &= \frac{|a_\text{lit} - a_\text{meas}|}{\sqrt{\Delta a_\text{lit}^2 + \Delta a_\text{meas}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Calculation of significant deviation}} \label{eq:signifikante_abweichung}
+\end{align}
+
+\twocolumn
+
+\section{Pendulum Oscillation Period}
+First, the period of an undamped harmonic oscillator is determined. The measured data are shown in \hyperref[tab:oscillation_data]{Table 1}:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c|c|c}
+        \hline
+        \textbf{Index} & \textbf{$t$ [s]} & \textbf{$\Delta t$ [s]} & \textbf{$T$ [s]} & \textbf{$\Delta T$ [s]} \\
+        \hline
+        1 & 35.37 & 0.20 & 1.7685 & 0.01 \\
+        2 & 35.53 & 0.20 & 1.7765 & 0.01 \\
+        3 & 35.29 & 0.20 & 1.7645  & 0.01 \\
+        \hline
+    \end{tabular}
+    \caption{Measured oscillation times for 20 oscillations and calculated periods. Uncertainties in time and period are indicated by $\Delta t$ and $\Delta T$, respectively.}
+    \label{tab:oscillation_data}
+\end{table}
+
+The time uncertainty $\Delta t$ is based on an estimated human reaction time of 200 ms. The stopwatch error is negligible. 
+
+From \hyperref[tab:oscillation_data]{Table 1}, the average period is calculated as
+\begin{equation}
+    \boxed{\bar{T_0} = (1.77 \pm 0.01)\,\mathrm{s}}
+\end{equation}
+
+\section{Calculation of the Damping Constant}
+With the period $T_0$ known, the next step is to determine the damping constant $\delta$ using graphical analysis. Data from the protocol (\hyperref[tab:settling_times]{Tables 2 and 3}) are used to construct a decay curve.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c|c}
+        \hline
+        \textbf{$I$ [mA]} & \textbf{Periods} & \textbf{$t$ [s]} \\
+        \hline
+        $340 \pm 10$ & 15 & $26.81 \pm 0.20$ \\
+        $440 \pm 10$ & 10 & $17.42 \pm 0.20$ \\
+        \hline
+    \end{tabular}
+    \caption{Measured settling times and number of periods for two different current values. Uncertainties are indicated for current and time.}
+    \label{tab:settling_times}
+\end{table}
+
+The corresponding periods for the two damping currents are calculated as:
+\begin{equation}
+    \boxed{
+        \begin{aligned}
+        T_{340\,\mathrm{mA}} &= (1.587 \pm 0.013)\,\mathrm{s} \\
+        T_{440\,\mathrm{mA}} &= (1.742 \pm 0.020)\,\mathrm{s}
+    \end{aligned}
+    }
+\end{equation}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|ccc|ccc}
+        \hline
+        \textbf{Period} & \multicolumn{3}{c|}{\textbf{340 mA} [Units]} & \multicolumn{3}{c}{\textbf{440 mA} [Units]} \\
+        \cline{2-7}
+        & \textbf{1st} & \textbf{2nd} & \textbf{Avg} & \textbf{1st} & \textbf{2nd} & \textbf{Avg} \\
+        \hline
+        1  & 15.0 & 14.6 & 14.8 & 14.2 & 13.2 & 13.7 \\
+        2  & 13.0 & 12.2 & 12.6 & 10.4 & 10.0 & 10.2 \\
+        3  & 11.0 & 10.2 & 10.6 & 8.0  & 7.4  & 7.7  \\
+        4  & 8.8  & 8.6  & 8.7  & 5.8  & 5.2  & 5.5  \\
+        5  & 7.6  & 6.8  & 7.2  & 4.2  & 3.8  & 4.0  \\
+        6  & 6.4  & 5.8  & 6.1  & 3.6  & 2.6  & 3.1  \\
+        7  & 5.2  & 4.6  & 4.9  & 2.6  & 1.8  & 2.2  \\
+        8  & 4.6  & 3.8  & 4.2  & 2.0  & 1.4  & 1.7  \\
+        9  & 3.8  & 3.0  & 3.4  & 1.0  & 0.8  & 0.9  \\
+        10 & 3.2  & 2.4  & 2.8  & 1.0  & 0.4  & 0.7  \\
+        11 & 2.6  & 1.8  & 2.2  &      &      &      \\
+        12 & 2.2  & 1.4  & 1.8  &      &      &      \\
+        13 & 1.8  & 1.0  & 1.4  &      &      &      \\
+        14 & 1.6  & 0.8  & 1.2  &      &      &      \\
+        15 & 1.2  & 0.4  & 0.8  &      &      &      \\
+        \hline
+    \end{tabular}
+    \caption{Measured amplitudes and their averages over 15 periods for two damping currents (340 mA and 440 mA). Each condition includes two measurements per period. The deflection scale is arbitrary and labeled as >>Units<<.}
+    \label{tab:comparison_340_440_avg}
+\end{table}
+
+
+
+
+
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{l|l}
+        \hline
+        \textbf{Frequency [Hz]} & \textbf{Amplitude [Units]} \\
+        \hline
+        $301 \pm 0.1$ & 0.6 \\
+        501           & 0.6 \\
+        701           & 0.6 \\
+        901           & 0.7 \\
+        1100          & 0.7 \\
+        1300          & 0.8 \\
+        1500          & 0.9 \\
+        1700          & 1.0 \\
+        1898          & 1.3 \\
+        \rowcolor{blue!20} \textcolor{gray}{Switch >>1K<<} & to \textcolor{gray}{>>10K<<}\\
+        $2112 \pm 4$  & 2.3 \\
+        2304          & 4.8 \\
+        2524          & 1.6 \\
+        2700          & 1.1 \\
+        2908          & 0.8 \\
+        3100          & 0.7 \\
+        3307          & 0.6 \\
+        3517          & 0.5 \\
+        3797          & 0.5 \\
+        3912          & 0.4 \\
+        \hline
+        \hline
+        \rowcolor{red!20} \textcolor{gray}{Find actual} & \textcolor{gray}{max amplitude}\\
+        \textcolor{red}{ADD MISSING VALUES}
+    \end{tabular}
+    \caption{Amplitude measurements at 340 mA across increasing frequencies. The uncertainty at 301 Hz is $\pm 0.1$ Vpp, and at 2112 Hz is $\pm 4$ Hz. A mode switch in the device occurred at 2112 Hz, indicated by the blue line in the original data.}
+    \label{tab:340mA_mode_switch}
+\end{table}
+
+
+\label{tab:yes_i_nee_to_add_english_labels_now_well_actually_i_could_still_make_them_german_but_this_feels_illigal_HELP_ME_if_you_will_ever_find_this_HELP_ME_I_am_going_crazy_hahahahahahahaha_just_kidding}

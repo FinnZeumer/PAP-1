@@ -1,7 +1,7 @@
 \documentclass[11pt, twocolumn]{scrreprt}
 
 % Gib die Versuschsnummer an, um den entsprechenden Versuchsprotokoll zu laden
-\newcommand{\versuchsnummer}{41}
+\newcommand{\versuchsnummer}{13}
 
 % \usepackage{Protokolle/\versuchsnummer/Chapter/Messergebnisse}
 
@@ -13,7 +13,10 @@
 
 
 \begin{document}
-\include{title.tex} 
+% \include{title.tex} 
+
+% if tut is english:
+\include{title_eng.tex} 
 
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \tableofcontents
@@ -33,7 +36,7 @@
 \cleardoublepage
 
 % Beispielhafte Zitierung, damit keine Fehlermeldeung entsteht lol
-% \cite{demtroeder17}
+\cite{demtroeder17}
 
 \bibliographystyle{alpha}
 \bibliography{Literaturverzeichnis}

@@ -1,0 +1,30 @@
+\begin{titlepage}
+\vspace*{2cm} 
+  
+  \centering
+    
+  % Versuchs-Titel
+  {\LARGE\bfseries Report for the Experiment \\[0.2cm]
+  \textit{\versuchsname{\versuchsnummer} (eng. >>Reconance<<)} \\[0.5cm] % Vielleicht wieder Anführungszeichen hinzufügen, leider Problem, da ein Leerzeichen falsch hinzugefügt wird.
+  {\large (Experiment {\versuchsnummer})} 
+  \vspace{1cm}}
+
+  % Tabelle mit Metadaten
+  {\large
+  \begin{tabular}{@{}rl@{}}
+    Author:                  & Finn Zeumer (hz334)\\
+    Lab Partner:        & Annika Künstle\\[0.5em]
+    Supervisor:      & {\begleiter{\versuchsnummer}}\\[0.5em]
+    Date of Execution:   & {\durchfuehrungsdatum{\versuchsnummer}}\\
+    \small{Submission Date:}    & \small{\abgabedatum{\versuchsnummer}}\\
+  \end{tabular}
+  }
+  \vfill
+
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[opacity=1,inner sep=0] at (current page.center)
+      {\includegraphics[width=\paperwidth,height=\paperheight]{hd-img/Titel_blau_FEZ.pdf}};
+  \end{tikzpicture}
+  
+\end{titlepage}

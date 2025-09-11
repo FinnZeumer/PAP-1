@@ -1,7 +1,24 @@
-\chapter{Durchführung}
+\chapter{Execution}
 
-\section{Versuchsaufbau}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Experimental Setup}
+The experiment consists of a rotary pendulum whose oscillations can be damped by an eddy current brake. The brake is controlled by adjustable currents through the inductors. A stepper motor driven by a function generator is used to excite forced oscillations. The stepper motor rotates by $0.72^\circ$ per control pulse, with 500 steps required for a full rotation. Due to microstepping, one full step requires eight impulses, so a control signal of 4000 Hz corresponds to one rotation per second of the motor shaft. The function generator must be set to TTL-level square wave output in the frequency range “1 k.”
 
-\section{Messverfahren}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Measuring Procedure}
+
+\subsection*{Task 1: Sketch of the Experimental Setup}
+Draw a schematic diagram of the experimental arrangement, including the pendulum, eddy current brake, stepper motor, and function generator.
+
+\subsection*{Task 2: Determination of the Natural Period $T_0$}
+Deflect the undamped pendulum and measure its oscillation period. Perform three measurements, each over 20 oscillations, and calculate $T_0$.
+
+\subsection*{Task 3: Determination of the Settling Time for Different Damping}
+Switch on the eddy current brake. Observe qualitatively how the oscillation amplitude depends on the current through the inductors. Set the two current values indicated on the aperture. For these values, the oscillation amplitude decreases to $5\%$ of its initial value after 10 and 15 oscillations, respectively. Record the time required for the amplitude to reach $5\%$ in each case. These times are the settling times and will be needed in Task 5.  
+\textit{Note: It is recommended to complete Tasks 4 and 5 for one current setting before switching to the other value.}
+
+\subsection*{Task 4: Free Oscillations with Damping}
+For the two current values from Task 3, measure the oscillation period $T_f$ and the decrease of the amplitude. At $t=0$, release the pendulum at its turning point. After each oscillation, record the amplitude at the reversal point. Repeat this measurement twice for each damping value. If necessary, work with a partner to ensure accurate recording.
+
+\subsection*{Task 5: Forced Oscillations}
+Excite the pendulum using the stepper motor and function generator. Measure the stationary amplitude as a function of the excitation frequency between 300 Hz and 4 kHz for both damping values. Use frequency steps of 200 Hz, but reduce to 50 Hz near the resonance frequency.  
+At each frequency, wait until transient oscillations decay (settling times from Task 3) before recording the stationary amplitude. Measure the amplitude exactly at the resonance frequency and at the half-width frequencies where $b = 0.7 b_\text{max}$. Additionally, observe the phase difference between the excitation and the pendulum at low, high, and resonance frequencies.
+It is woth mentoning that we switched between >>1K<< and >>10K<< mode, therefore the values were less accurate. The switch is marked in the protocol.
