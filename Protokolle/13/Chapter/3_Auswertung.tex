@@ -69,37 +69,56 @@ The corresponding periods for the two damping currents are calculated as:
     }
 \end{equation}
 
+
+We get the results of \hyperref[protocol]{Tabel 3 from the protocol} and seperate it into two seperate: 
 \begin{table}[h!]
     \centering
-    \begin{tabular}{c|ccc|ccc}
+    \begin{tabular}{c|ccc|c}
         \hline
-        \textbf{Period} & \multicolumn{3}{c|}{\textbf{340 mA} [Units]} & \multicolumn{3}{c}{\textbf{440 mA} [Units]} \\
-        \cline{2-7}
-        & \textbf{1st} & \textbf{2nd} & \textbf{Avg} & \textbf{1st} & \textbf{2nd} & \textbf{Avg} \\
+        \textbf{Index} & \textbf{$A_1$ [Un]} & \textbf{$A_2$ [Un]} & \textbf{$A_{Avg}$ [Un]} & \boldmath$\Delta$ \textbf{$A_{Avg}$} \\
         \hline
-        1  & 15.0 & 14.6 & 14.8 & 14.2 & 13.2 & 13.7 \\
-        2  & 13.0 & 12.2 & 12.6 & 10.4 & 10.0 & 10.2 \\
-        3  & 11.0 & 10.2 & 10.6 & 8.0  & 7.4  & 7.7  \\
-        4  & 8.8  & 8.6  & 8.7  & 5.8  & 5.2  & 5.5  \\
-        5  & 7.6  & 6.8  & 7.2  & 4.2  & 3.8  & 4.0  \\
-        6  & 6.4  & 5.8  & 6.1  & 3.6  & 2.6  & 3.1  \\
-        7  & 5.2  & 4.6  & 4.9  & 2.6  & 1.8  & 2.2  \\
-        8  & 4.6  & 3.8  & 4.2  & 2.0  & 1.4  & 1.7  \\
-        9  & 3.8  & 3.0  & 3.4  & 1.0  & 0.8  & 0.9  \\
-        10 & 3.2  & 2.4  & 2.8  & 1.0  & 0.4  & 0.7  \\
-        11 & 2.6  & 1.8  & 2.2  &      &      &      \\
-        12 & 2.2  & 1.4  & 1.8  &      &      &      \\
-        13 & 1.8  & 1.0  & 1.4  &      &      &      \\
-        14 & 1.6  & 0.8  & 1.2  &      &      &      \\
-        15 & 1.2  & 0.4  & 0.8  &      &      &      \\
+        1  & 15.0 & 14.6 & 14.8 & 0.4 \\
+        2  & 13.0 & 12.2 & 12.6 & 0.8 \\
+        3  & 11.0 & 10.2 & 10.6 & 0.8 \\
+        4  & 8.8  & 8.6  & 8.7  & 0.2 \\
+        5  & 7.6  & 6.8  & 7.2  & 0.8 \\
+        6  & 6.4  & 5.8  & 6.1  & 0.6 \\
+        7  & 5.2  & 4.6  & 4.9  & 0.6 \\
+        8  & 4.6  & 3.8  & 4.2  & 0.8 \\
+        9  & 3.8  & 3.0  & 3.4  & 0.8 \\
+        10 & 3.2  & 2.4  & 2.8  & 0.8 \\
+        11 & 2.6  & 1.8  & 2.2  & 0.8 \\
+        12 & 2.2  & 1.4  & 1.8  & 0.8 \\
+        13 & 1.8  & 1.0  & 1.4  & 0.8 \\
+        14 & 1.6  & 0.8  & 1.2  & 0.8 \\
+        15 & 1.2  & 0.4  & 0.8  & 0.8 \\
         \hline
     \end{tabular}
-    \caption{Measured amplitudes and their averages over 15 periods for two damping currents (340 mA and 440 mA). Each condition includes two measurements per period. The deflection scale is arbitrary and labeled as >>Units<<.}
-    \label{tab:comparison_340_440_avg}
+    \caption{Measured amplitudes for 340mA with Units and the uncertainty.}
+    \label{tab:340mA}
 \end{table}
 
-
-
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|ccc|c}
+        \hline
+        \textbf{Index} & \textbf{$A_1$ [Un]} & \textbf{$A_2$ [Un]} & \textbf{$A_{Avg}$ [Un]} & \boldmath$\Delta$ \textbf{$A_{Avg}$} \\
+        \hline
+        1  & 14.2 & 13.2 & 13.7 & 1.0 \\
+        2  & 10.4 & 10.0 & 10.2 & 0.4 \\
+        3  & 8.0  & 7.4  & 7.7  & 0.6 \\
+        4  & 5.8  & 5.2  & 5.5  & 0.6 \\
+        5  & 4.2  & 3.8  & 4.0  & 0.4 \\
+        6  & 3.6  & 2.6  & 3.1  & 1.0 \\
+        7  & 2.6  & 1.8  & 2.2  & 0.8 \\
+        8  & 2.0  & 1.4  & 1.7  & 0.6 \\
+        9  & 1.0  & 0.8  & 0.9  & 0.2 \\
+        10 & 1.0  & 0.4  & 0.7  & 0.6 \\
+        \hline
+    \end{tabular}
+    \caption{Measured amplitudes for 440mA with Units and the uncertainty.}
+    \label{tab:440mA}
+\end{table}
 
 
 
