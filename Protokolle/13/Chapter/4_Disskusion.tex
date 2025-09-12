@@ -1,7 +1,36 @@
 \chapter{Discussion}
 
-\section{Summary}
+\section*{Summary of Results}
+In this experiment, the oscillation period and damping properties of a pendulum with an eddy current brake were measured and analyzed. The period of the undamped pendulum was found to be 
+\[
+    \bar{T_0} = (1.77 \pm 0.01)\,\mathrm{s},
+\] 
+which corresponds to a natural angular frequency of 
+\[
+    \omega_0 = (3.55 \pm 0.02)\,\mathrm{s}^{-1} \quad (\text{Table \ref{tab:oscillation_data}}).
+\] 
 
-\section{Discussion}
+Damping constants were determined using three different methods: logarithmic decrement, the half-width of the resonance curve, and resonance amplification. The results for weak damping (340 mA) are
+\begin{align*}
+    \delta_{g,w} &= 0.123 \pm 0.009 \,\text{s}^{-1}, \\
+    \delta_{h,w} &= 0.095 \pm 0.03 \,\text{s}^{-1}, \\
+    \delta_{a,w} &= 0.130 \pm 0.03 \,\text{s}^{-1},
+\end{align*}
+and for strong damping (440 mA) they are
+\begin{align*}
+    \delta_{g,s} &= 0.206 \pm 0.010 \,\text{s}^{-1}, \\ 
+    \delta_{h,s} &= 0.210 \pm 0.03 \,\text{s}^{-1}, \\
+    \delta_{a,s} &= 0.208 \pm 0.05 \,\text{s}^{-1}.
+\end{align*}
+These values show good agreement across all methods, with deviations generally below $1\sigma$, particularly for the strong damping case.
 
-\section{Critic}
+\section*{Discussion of Results}
+The data confirm that increasing the eddy current leads to higher damping constants, consistent with theoretical expectations. The logarithmic decrement method and the resonance-based methods provide consistent results, though uncertainties are slightly larger for weak damping. This can be attributed to the smaller amplitudes and fewer oscillations available for analysis, which naturally increase measurement variability. In the case of strong damping, all three methods are in excellent agreement, suggesting that the experimental procedure is reliable when damping is significant. 
+
+The measured resonance frequencies $\omega'$ were found to be very close to the natural frequency $\omega_0$, and the deviations observed are well within the expected uncertainties (Table \ref{tab:res_frequency}). The analysis of the resonance curves, shown in Figures \ref{fig:curve_strong} and \ref{fig:curve_weak}, demonstrates the expected behavior: as damping increases, the resonance peak broadens and its amplitude decreases. This trend aligns with theoretical predictions and further validates the experiment.
+
+\section*{Possible Criticisms and Sources of Error}
+Despite the overall consistency of the results, some limitations should be noted. The measurement of the pendulum period relied on manual timing, with an estimated reaction time of 200 ms. Although this uncertainty was included in the analysis, it could still introduce a small systematic bias, especially for shorter measurement intervals. Another limitation arises from the finite frequency resolution of the resonance curves. Frequency steps of 50 Hz may not fully capture the peak, particularly in the weak damping case, which reduces the precision of $\delta_h$ and $\delta_a$. The experiment also assumed ideal harmonic motion, neglecting minor effects such as friction, air resistance, and non-uniform magnetic fields, which may slightly affect the damping constants. Additionally, some amplitude measurements for strong damping were either missing or unreliable at small amplitudes, which could influence the logarithmic decrement calculation to a minor degree.
+
+\section*{Conclusion}
+In conclusion, the experiment successfully measured both the natural frequency and the damping properties of the pendulum under varying eddy currents. The results are in agreement with theoretical expectations and show the anticipated trends for weak and strong damping. While minor uncertainties due to timing limitations and data resolution exist, these do not significantly impact the overall conclusions. The experiment thus provides a clear and reliable characterization of the damping behavior of the pendulum system.

@@ -1,84 +1,135 @@
 \chapter{Introduction}
 
 \section{Objective and Motivation}
-The aim of this experiment is to investigate free and forced oscillations of a torsional pendulum and to determine the damping constant $\delta$ using different methods. First, the period of undamped oscillations is measured, then the decrease of the amplitude in damped oscillations is analyzed, and finally the resonance curves of forced oscillations are studied. Comparing the values obtained from different approaches allows an evaluation of the measurement methods and provides deeper insight into the behavior of damped and driven oscillations.
+The aim of this experiment is to investigate free, damped, and forced oscillations of a torsional pendulum. The focus is on determining the damping constant $\delta$ and the natural frequency $\omega_0$ using different methods. First, the period of undamped oscillations is measured, then the decay of the amplitude in damped oscillations is analyzed, and finally the resonance curves of forced oscillations are studied. Comparing the results from these different approaches allows an evaluation of the measurement methods and provides deeper insight into the dynamics of damped and driven oscillations.
 
 \section{Theoretical Background}
-\cite{skript25}
-A torsional pendulum can be regarded as a system of harmonic oscillations, which in practice are always damped due to friction or other resistive forces. In this experiment, damping is introduced by an eddy current brake: electromagnets generate a magnetic field in which the moving pendulum induces eddy currents. According to Lenz’s law, these currents oppose the motion and decelerate the rotation of the pendulum.
+A torsional pendulum can be modeled as a harmonic oscillator, which in practice is always subject to damping due to friction or other resistive forces. In this experiment, damping is introduced by an eddy current brake: electromagnets generate a magnetic field in which the moving pendulum induces eddy currents. According to Lenz’s law, these currents oppose the motion and decelerate the rotation of the pendulum.
 
-For a free, damped oscillation of the pendulum, the temporal evolution of the amplitude is given by
+\subsection{Free Harmonic Oscillator}
+A free harmonic oscillator has no damping or external driving force. It is described by
 \begin{equation}
-a(t) = a_0 \, e^{-\delta t} \, \sin(\omega_f t),
+\ddot{x} + \omega_0^2 x = 0,
 \end{equation}
-where $\delta$ is the damping constant and $\omega_f$ the angular frequency of the damped oscillation. At the turning points this simplifies to
+with the general solution
 \begin{equation}
-a(t) = a_0 \, e^{-\delta t}.
+x(t) = a \cos(\omega_0 t + \varphi),
 \end{equation}
+where $a$ and $\varphi$ are constants determined by the initial conditions. The motion is purely sinusoidal with angular frequency $\omega_0$ and period
+\begin{equation}
+    T = \frac{2\pi}{\omega_0}.
+    \label{eq:period_time}
+\end{equation}
+In this case, the energy of the system is conserved and oscillates between kinetic and potential energy without losses.
 
-The damping constant $\delta$ can be determined from the exponential decay of the amplitude, for example using the half-life $t_{1/2}$:
+\subsection{Damped Oscillator}
+Real oscillators are always damped due to resistive forces. Adding damping to the equation of motion yields
 \begin{equation}
-\delta = \frac{\ln 2}{t_{1/2}}.
+\ddot{x} + 2 \delta \dot{x} + \omega_0^2 x = 0.
 \end{equation}
+Here $\delta$ is the damping constant, which quantifies energy loss per cycle.  
 
-The angular frequencies of the undamped oscillation $\omega_0$ and the damped oscillation $\omega_f$ are related by
+Three regimes can be distinguished:
+\begin{itemize}
+    \item \textbf{Underdamped} ($\delta < \omega_0$): Oscillations occur with exponentially decaying amplitude. This is the relevant case for our experiment.
+    \item \textbf{Critically damped} ($\delta = \omega_0$): The system returns to equilibrium without oscillating, and in the shortest possible time.
+    \item \textbf{Overdamped} ($\delta > \omega_0$): The system also returns without oscillating, but more slowly than in the critical case.
+\end{itemize}
+
+For the underdamped case, the solution is
+\begin{equation}
+x(t) = e^{-\delta t} a \cos(\omega_f t + \varphi),
+\end{equation}
+where the damped angular frequency is
 \begin{equation}
 \omega_f = \sqrt{\omega_0^2 - \delta^2}.
 \end{equation}
-
-If the pendulum is driven by a periodic torque, a stationary oscillation with the frequency of the driver is established after transient effects decay. The amplitude of this forced oscillation depends on the driving frequency $\omega$ and can be described by the resonance curve:
+The amplitude decays exponentially according to
 \begin{equation}
-b(\omega) = \frac{A \, \omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2 \delta \, \omega)^2}}.
+a(t) = a_0 e^{-\delta t}.
+\end{equation}
+The damping constant can be extracted from the half-life $t_{1/2}$ of the amplitude:
+\begin{equation}
+    \delta = \frac{\ln 2}{t_{1/2}}.
+    \label{eq:damping_halftime}
 \end{equation}
 
-The maximum amplitude occurs at the resonance frequency $\omega'$:
+\subsection{Forced Oscillator}
+When an external periodic driving torque acts on the system, the equation of motion becomes
+\begin{equation}
+\ddot{x} + 2\delta \dot{x} + \omega_0^2 x = A \omega_0^2 \cos(\omega t),
+\end{equation}
+with $A$ the driving amplitude and $\omega$ the driving angular frequency.  
+
+The general solution consists of:
+\begin{itemize}
+    \item A \textbf{transient part}, proportional to $e^{-\delta t}$, which decays after a short time.
+    \item A \textbf{steady-state part}, which oscillates with the driving frequency $\omega$ and dominates after the transient vanishes.
+\end{itemize}
+
+The steady-state solution is
+\begin{equation}
+x(t) = b(\omega) \cos(\omega t - \epsilon(\omega)),
+\end{equation}
+with amplitude
+\begin{equation}
+b(\omega) = \frac{A \omega_0^2}{\sqrt{(\omega_0^2 - \omega^2)^2 + (2 \delta \omega)^2}}.
+\end{equation}
+
+The maximum amplitude occurs at the resonance frequency
 \begin{equation}
 \omega' = \sqrt{\omega_0^2 - 2 \delta^2}.
 \end{equation}
+This value shifts below $\omega_0$ as damping increases.
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{img/13/Resonanzkurve_allgemein.png}
-    \caption{ Schematic resonance curve $b(\omega)$ of a damped, forced oscillator.}
-    \label{fig:resonancecurve}
+\subsection{Resonance Curve}
+The resonance curve $b(\omega)$ describes how the oscillation amplitude depends on the driving frequency. Key parameters:
+\begin{itemize}
+    \item \textbf{Resonance frequency:} $\omega'$, which decreases with stronger damping.
+    \item \textbf{Resonance amplitude:} $b(\omega')$, which is smaller for stronger damping.
+    \item \textbf{Half-width:} 
+    \begin{equation}
+        H = \omega_2 - \omega_1 \approx 2\delta,
+        \label{eq:h_delta}
+    \end{equation}
+    a measure of frequency selectivity.
+\end{itemize}
+
+\begin{figure}[h!] 
+    \centering 
+    \includegraphics[width=0.5\textwidth]{img/13/Resonanzkurve_allgemein.png} 
+    \caption{ Schematic resonance curve $b(\omega)$ of a damped, forced oscillator.} 
+    \label{fig:resonancecurve} 
 \end{figure}
 
-\textcolor{red}{ADD LABELS FOR THE POINTS IN THE FIGURE HERE!}
-
-Important quantities to characterize the resonance curve are the half-width $H$ and the resonance enhancement:
+The resonance amplification is
 \begin{equation}
-H = \omega_2 - \omega_1 = 2 \delta, \quad \frac{b(\omega')}{b(\omega \to 0)} = \frac{\omega_0}{2 \delta}.
+    \frac{b(\omega')}{b(\omega \to 0)} \approx \frac{\omega_0}{2 \delta}.
+    \label{eq:reso_amp}
 \end{equation}
 
-By measuring free and forced oscillations, the damping constant $\delta$ and the natural frequency of the torsional pendulum can be determined in several ways and compared.
-
-\subsection*{Forces Acting on the System}
-The dynamics of the rotary pendulum are determined by the following torques and forces:
-
-\begin{itemize}
-    \item \textbf{Restoring torque:} Generated by the torsional stiffness of the pendulum axis, it acts to return the pendulum to its equilibrium position. It is proportional to the angular displacement.
-    \item \textbf{Damping torque:} Produced by the eddy current brake. Eddy currents induced in the conductor oppose the motion (Lenz’s law), leading to an angular velocity–dependent resistive torque.
-    \item \textbf{Driving torque:} In forced oscillation experiments, the stepper motor provides a periodic torque that excites the pendulum at the frequency set by the function generator.
-    \item \textbf{Inertial torque:} Due to the moment of inertia of the pendulum, resisting angular acceleration according to Newton’s second law for rotation.
-\end{itemize}
-
-The interplay of these torques determines whether the system undergoes free oscillation, damped oscillation, or driven oscillation.
-
-\subsection*{Influence of Damping on the Resonance Curve}
-The resonance curve is characterized by the resonance frequency $\omega'$, the amplitude at resonance $b(\omega')$, and the half-width $H$.
-
-\begin{itemize}
-    \item \textbf{Resonance frequency:} With increasing damping, the resonance frequency $\omega'$ shifts to lower values compared to the natural frequency $\omega_0$.
-    \item \textbf{Resonance amplitude:} The maximum amplitude $b(\omega')$ decreases as damping increases, since more energy is dissipated per cycle.
-    \item \textbf{Half-width:} The half-width $H = 2 \delta$ becomes larger with increasing damping. Thus, the resonance curve broadens as the system becomes less selective in frequency response.
-\end{itemize}
-
-In summary, higher damping reduces the resonance peak, shifts it to lower frequency, and widens the curve.
-
-\subsection*{Quality Factor of a Resonator}
-The quality factor $Q$ is a dimensionless parameter that characterizes the sharpness of resonance. It is defined as the ratio of the resonance frequency to the half-width of the resonance curve:
+\subsection{Quality Factor}
+The sharpness of resonance is described by the quality factor
 \begin{equation}
 Q = \frac{\omega_0}{H} = \frac{\omega_0}{2 \delta}.
 \end{equation}
+Large $Q$ means weak damping, narrow resonance, and strong amplification. Small $Q$ means strong damping, broad resonance, and weak amplification.
 
-A high $Q$ indicates weak damping, a narrow resonance curve, and high resonance amplification. A low $Q$ corresponds to strong damping, a broad resonance curve, and low amplification.
+\subsection{Forces Acting on the System}
+The pendulum dynamics are governed by four torques:
+\begin{itemize}
+    \item \textbf{Restoring torque:} from torsional stiffness, proportional to angular displacement.
+    \item \textbf{Damping torque:} from the eddy current brake, proportional to angular velocity.
+    \item \textbf{Driving torque:} periodic torque applied by the motor in forced oscillation experiments.
+    \item \textbf{Inertial torque:} due to the moment of inertia, opposing angular acceleration.
+\end{itemize}
+
+Their interplay determines whether the pendulum undergoes free, damped, or forced oscillation.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{img/13/aufbau.jpg}
+    \onecolumn
+    \caption{Schematic setup of the experiment}
+    \twocolumn
+\end{figure}
