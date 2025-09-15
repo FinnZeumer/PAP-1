@@ -1,0 +1,39 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameter
+k_logs = [0.45, 0.55, 0.65, 0.75]  # verschiedene logarithmische Geschwindigkeitskonstanten
+C_log = 0.6  # Gewicht des Oxids zu Beginn [μg cm^-2]
+
+# Zeit in Sekunden (t > 0)
+t = np.linspace(1, 1000, 500)
+
+# Erster Plot: normal
+plt.figure(figsize=(10, 8))
+
+plt.subplot(2, 1, 1)  # 2 Zeilen, 1 Spalte, erster Plot
+for i, k in enumerate(k_logs, start=1):
+    delta_m = k * np.log10(t) + C_log
+    plt.plot(t, delta_m, label=f'$k_{{log{i}}} = {k}$')
+
+plt.xlabel('Zeit t [s]')
+plt.ylabel('Gewichtszunahme Δm [μg cm$^{-2}$]')
+plt.title('Logarithmisches Oxidationswachstum (normal)')
+plt.legend()
+plt.grid(True)
+
+# Zweiter Plot: logarithmische y-Achse
+plt.subplot(2, 1, 2)  # 2 Zeilen, 1 Spalte, zweiter Plot
+for i, k in enumerate(k_logs, start=1):
+    delta_m = k * np.log10(t) + C_log
+    plt.plot(t, delta_m, label=f'$k_{{log{i}}} = {k}$')
+
+plt.xlabel('Zeit t [s]')
+plt.ylabel('Gewichtszunahme Δm [μg cm$^{-2}$]')
+plt.title('Logarithmisches Oxidationswachstum (logarithmische x-Achse)')
+plt.xscale('log')
+plt.legend()
+plt.grid(True, which='both', ls='--')
+
+plt.tight_layout()
+plt.show()
