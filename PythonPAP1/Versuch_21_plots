@@ -2,10 +2,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Parameter
-k_logs = [0.45, 0.55, 0.65, 0.75]  # verschiedene logarithmische Geschwindigkeitskonstanten
-C_log = 0.6  # Gewicht des Oxids zu Beginn [μg cm^-2]
+k_logs = [0.45, 0.75]  # verschiedene logarithmische Geschwindigkeitskonstanten
+C_log = 0.0  # Gewicht des Oxids zu Beginn [μg cm^-2]
+t_fest = np.array([200, 300, 400])  # feste Zeitpunkte
 
-# Zeit in Sekunden (t > 0)
+dm1 = k_logs[0] * np.log10(t_fest) + C_log
+dm2 = k_logs[1] * np.log10(t_fest) + C_log
+
+dm_gerundet1 = np.round(dm1, 2)
+dm_gerundet2 = np.round(dm2, 2)
+
+print(dm_gerundet1)
+print(dm_gerundet2)
+
 t = np.linspace(1, 1000, 500)
 
 # Erster Plot: normal
