@@ -1,6 +1,85 @@
 \chapter{Einleitung}
 
-\section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Motivation}
+Der Versuch 22 basiert auf dem von Robert A. Millikan entwickelten Prinzip zur Bestimmung der Elementarladung $e$. Millikan veröffentlichte 1913 in der Fachzeitschrift \textit{Physical Review} eine Arbeit mit dem Titel \textit{On the Elementary Electrical Charge and the Avogadro Constant} \cite{millikan1913}, für die er 1923 den Nobelpreis für Physik erhielt. 
+
+Das Grundprinzip besteht in der Betrachtung der Kräfte, die auf ein elektrisch geladenes Teilchen (hier: Öltröpfchen) im homogenen Feld eines Plattenkondensators wirken. Die Elementarladung ist nach aktuellem Wissensstand die kleinste mögliche elektrische Ladung und von fundamentaler Bedeutung. Der Versuch ermöglicht es, aus der Fallgeschwindigkeit $v_f$ im feldfreien Raum und der Steiggeschwindigkeit $v_s$ im elektrischen Feld die Ladung $q$ eines einzelnen Öltröpfchens zu bestimmen. Die Quantelung elektrischer Ladung wird so experimentell nachgewiesen.
+
+\section{Physikalische Grundlagen}
+\cite{skript25}
+Wir betrachten ein Öltröpfchen mit Radius $r$, Dichte $\rho_\text{Öl}$ und Geschwindigkeit $v$, das sich in Luft mit der Dichte $\rho_\text{Luft}$ bewegt. Es wirken folgende Kräfte:
+
+\begin{align}
+    F_G &= \frac{4}{3}\pi r^3 \rho_\text{Öl} g \label{eq:gewicht} \\
+    F_A &= \frac{4}{3}\pi r^3 \rho_\text{Luft} g \label{eq:auftrieb} \\
+    F_R &= 6 \pi r \eta v \label{eq:stokes} \\
+    F_E &= q \frac{U}{d} \label{eq:elektrisch}
+\end{align}
+
+Hierbei bezeichnet $g$ die Schwerebeschleunigung, $\eta$ die Viskosität der Luft, $U$ die Spannung am Kondensator und $d$ den Plattenabstand. $q$ ist die Ladung des Öltröpfchens.
+
+\subsection*{Feldfreier Raum}
+Liegt keine Spannung am Kondensator an, wirkt keine elektrische Kraft. Das Kräftegleichgewicht für die konstante Fallgeschwindigkeit $v_f$ lautet nach \hyperref[eq:gewicht]{Gleichung \ref*{eq:gewicht}}, \hyperref[eq:auftrieb]{Gleichung \ref*{eq:auftrieb}} und \hyperref[eq:stokes]{Gleichung \ref*{eq:stokes}}:
+
+\begin{equation}
+    F_G - (F_A + F_R) = 0 \label{eq:fres_f}
+\end{equation}
+
+oder äquivalent:
+
+\begin{equation}
+    6 \pi r \eta v_f + \frac{4}{3}\pi r^3 \rho_\text{Luft} g = \frac{4}{3}\pi r^3 \rho_\text{Öl} g
+\end{equation}
+
+Daraus ergibt sich der Radius $r$ zu:
+
+\begin{equation}
+    r = \sqrt{\frac{9 \eta}{2 \rho g} v_f} \quad \text{mit } \rho = \rho_\text{Öl} - \rho_\text{Luft} \label{eq:radius}
+\end{equation}
+
+\subsection*{Mit elektrischem Feld}
+Liegt Spannung an, wirkt zusätzlich die elektrische Kraft \hyperref[eq:elektrisch]{Gleichung \ref*{eq:elektrisch}}. Für die konstante Steiggeschwindigkeit $v_s$ ergibt sich:
+
+\begin{equation}
+    (F_E + F_A) - (F_G + F_R) = 0 \label{eq:fres_s}
+\end{equation}
+
+Aus der Differenzbildung von \hyperref[eq:fres_f]{Gleichung \ref*{eq:fres_f}} und \hyperref[eq:fres_s]{Gleichung \ref*{eq:fres_s}} folgt die Ladung $q$ des Tröpfchens:
+
+\begin{equation}
+    q = (v_f + v_s) \cdot \frac{6 \pi \eta d}{U} \cdot \sqrt{\frac{9 \eta}{2 \rho g} v_f} \label{eq:ladung}
+\end{equation}
+
+\subsection*{Korrektur der Viskosität}
+Die Radien der Öltröpfchen liegen im Bereich $10^{-7}\,\text{m}$ bis $10^{-6}\,\text{m}$, was derselben Größenordnung wie die mittlere freie Weglänge von Luftmolekülen entspricht. Deshalb wird die Viskosität $\eta$ mit der sogenannten Cunningham-Korrektur versehen:
+
+\begin{equation}
+    \eta(r) = \eta_0 \left(1 + \frac{b}{rp}\right) \label{eq:cunningham}
+\end{equation}
+
+Hier ist $\eta_0$ der Grenzwert der Viskosität für große Tröpfchen, $p$ der Luftdruck und $b$ eine empirische Konstante. Da $r$ selbst von $\eta$ abhängt, müsste man \hyperref[eq:cunningham]{Gleichung \ref*{eq:cunningham}} in \hyperref[eq:radius]{Gleichung \ref*{eq:radius}} einsetzen, was zu einer quadratischen Gleichung führt. In der Praxis genügt es, mit $\eta_0$ zu rechnen. Der Fehler beträgt für $r$ etwa 5\,\%, für $f(r)$ nur 0,5\,\%.
+
+\subsection*{Wichtige Konstanten}
+Die im Versuch relevanten Konstanten sind in \hyperref[tab:konstanten]{Tabelle \ref*{tab:konstanten}} angegeben.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ll}
+\hline
+Bezeichnung & Wert \\
+\hline
+Viskosität der Luft & $\eta_0 = 1.81 \times 10^{-5}\,\text{Ns/m}^2$ \\
+Schwerebeschleunigung & $g = 9.81\,\text{m/s}^2$ \\
+Temperatur im Raum & $(25 \pm 0.5)^{\circ}\text{C}$ \\
+Luftdruck im Raum & $(100460 \pm 10)\,\text{Pa}$ \\
+Anliegende Spannung & $U_0 = 500\,\text{V}$ \\
+Dichte des Öls bei 25$^{\circ}$C & $\rho_\text{Öl} = 877\,\text{kg/m}^3$ \\
+Dichte der Luft & $\rho_\text{Luft} = 1.29\,\text{kg/m}^3$ \\
+Konstante im Korrekturfaktor & $b = 7.78 \times 10^{-3}\,\text{Pam}$ \\
+Abstand der Kondensatorplatten & $d = (6.00 \pm 0.05)\,\text{mm}$ \\
+Skala auf dem Bildschirm & $1\,\text{Skt} = (5.00 \pm 0.13)\times 10^{-5}\,\text{m}$ \\
+\hline
+\end{tabular}
+\caption{Wichtige Konstanten für den Versuch}
+\label{tab:konstanten}
+\end{table}

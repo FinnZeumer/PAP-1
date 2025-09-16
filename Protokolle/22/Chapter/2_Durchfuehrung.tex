@@ -1,7 +1,22 @@
 \chapter{Durchführung}
 
 \section{Versuchsaufbau}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Der Versuchsaufbau besteht aus einem Plattenkondensator, in den mit einem Ölzerstäuber feinste Tröpfchen eingebracht werden. Die Tröpfchen werden von einer starken Lichtquelle beleuchtet, sodass sie mit einer Mikroskopkamera sichtbar werden. Diese Kamera ist mit einem Monitor verbunden, auf dem zusätzlich eine Skaleneinteilung eingeblendet ist. Dadurch lassen sich die Wegstrecken der Tröpfchen während Fall- und Steigbewegung bestimmen. 
+
+Zur Zeitmessung sind zwei Stoppuhren über ein Steuergerät mit dem Kondensator gekoppelt. Mit dem rechten Schalter des Steuergeräts startet die obere Uhr, welche die Fallzeit eines Tröpfchens ohne angelegte Spannung misst. Durch Umschalten auf den linken Schalter wird die erste Uhr angehalten, gleichzeitig die Spannung am Kondensator (typischerweise $U \approx 500\,\text{V}$, vgl. Tabelle \hyperref[tab:konstanten]{Tabelle \ref*{tab:konstanten}}) angelegt und die zweite Uhr gestartet, die die Steigzeit des Tröpfchens im elektrischen Feld misst. Am oberen Umkehrpunkt wird der linke Schalter wieder zurückgestellt, sodass die zweite Uhr gestoppt und die erste erneut gestartet wird. Dieser Prozess kann mehrfach wiederholt werden, bis schließlich mit dem rechten Schalter die Messreihe beendet wird.
+
+Damit ermöglicht der Aufbau die Bestimmung von Fall- und Steiggeschwindigkeit $v_f$ und $v_s$, welche für die Berechnung von Tropfenradius $r$ \hyperref[eq:radius]{(siehe Gleichung \ref*{eq:radius})} und Ladung $q$ \hyperref[eq:ladung]{(siehe Gleichung \ref*{eq:ladung})} benötigt werden.
 
 \section{Messverfahren}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Vor Beginn der Messungen werden Temperatur und Luftdruck des Raumes bestimmt und notiert, da diese in die Berechnungen eingehen (vgl. \hyperref[tab:konstanten]{Tabelle \ref*{tab:konstanten}}). Die Spannung am Kondensator wird einmalig auf etwa $500\,\text{V}$ eingestellt und im weiteren Verlauf nur noch über den Schalter ein- oder ausgeschaltet. 
+
+\subsection*{Messung an einem einzelnen Tröpfchen}
+Zunächst wird ein geeignetes Öltröpfchen ausgewählt, vorzugsweise eines mit langsamer Steigbewegung (z. B. etwa 8 s pro 10 Skalenteile). Für dieses Tröpfchen werden fünf Messungen der Fallzeit im feldfreien Raum und fünf Messungen der Steigzeit im elektrischen Feld durchgeführt. Dabei werden die zurückgelegten Wege anhand der Skaleneinteilung am Monitor notiert. Aus diesen insgesamt zehn Messungen lässt sich die Präzision der Geschwindigkeitsbestimmung abschätzen. 
+
+\subsection*{Erweiterte Messreihe}
+Es sollen insgesamt 60 Messwerte für Fall- und Steigzeiten verschiedener Öltröpfchen aufgenommen werden. Dazu werden von etwa fünf Tröpfchen jeweils fünf Werte für Fall- und Steigzeit bestimmt. Jede Messung umfasst also vier Größen: Fallweg, Fallzeit, Steigweg und Steigzeit. Diese Werte werden in vorbereitete Tabellen eingetragen, beispielsweise in ein Excel-Auswertungsblatt, das automatisch die relevanten Größen wie den Radius $r$ \hyperref[eq:radius]{(Gleichung \ref*{eq:radius})} und die Ladung $q$ \hyperref[eq:ladung]{(Gleichung \ref*{eq:ladung})} berechnet. Dabei ist zu beachten, dass auch die eingestellte Spannung $U$, Temperatur $T$ und Luftdruck $p$ in die Berechnung einfließen.
+
+\subsection*{Hinweis zur Messstrategie}
+Für die Auswertung ist entscheidend, dass möglichst einfach geladene Tröpfchen untersucht werden. Dies kann anhand der Konsistenz der Messwerte überprüft werden: Ein mehrfach geladenes Tröpfchen liefert im Vergleich deutlich abweichende Ergebnisse. Daher ist es wichtig, die Messwerte direkt während der Durchführung in das Auswertungsblatt einzutragen, um die Plausibilität sofort zu prüfen. 
+
+Die Messung basiert somit vollständig auf der Erfassung von $v_f$ und $v_s$, welche die Grundlage für die Bestimmung der Elementarladung darstellen (vgl. \hyperref[eq:ladung]{Gleichung \ref*{eq:ladung}}).
