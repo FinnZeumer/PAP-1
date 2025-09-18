@@ -27,16 +27,17 @@ Jedoch wollen wir auch wissen, ob Excel wirklich richtig rechnet, daher haben wi
 Ich habe mich dabei für das 9. Tröpchen entschieden. Hier sind seine Fall und Steigzeiten nochmal \hyperref[tab:testing]{tabellarisch (\ref*{tab:testing})} aufgelistet.
 \begin{table}[b]
     \onecolumn
+    \hspace*{-1.1cm}
     \centering
     \begin{tabular}{ c | c | c | c | c | c | c}
         \toprule
-        $t_s \,  [s]$ & $t_f \,  [s]$ & $v_s \,  [m/s \cdot 10^{-5}]$ & $v_f \,  [m/s \cdot 10^{-5}]$ & $r_0 [m\cdot 10^{-7}]$ & $f_0 \cdot 10^-{1}$ & $q \, [C]$ \\
+        $t_s \,  [s]$ & $t_f \,  [s]$ & $v_s \,  [m/s \cdot 10^{-5}]$ & $v_f \,  [m/s \cdot 10^{-5}]$ & $r_0 [m\cdot 10^{-7}]$ & $f_0 \cdot 10^-{1}$ & $q \, [C \cdot 10^{-19}]$ \\
         \midrule
-        $13.9 \pm 0.3$ & $12.5 \pm 0.3$ & $4,01 \pm 0,14$ & $3,5935 \pm ,1214$ & $5,86 \pm 0,10$ & $8,835 \pm 0,018$ & 1.514 \\
-        $13.3 \pm 0.3$ & $12.1 \pm 0.3$ & $4,12 \pm 0,15$ & $3,761 \pm 0,130$ & $5,992 \pm 0,104$ & $8,858 \pm 0,018$ & 1.611 \\
-        $13.4 \pm 0.3$ & $12.8 \pm 0.3$ & $3,89 \pm 0,14$ & $3,720 \pm 0,128$ & $5,959 \pm 0,103$ & $8,852 \pm 0,018$ & 1.547 \\
-        $14.3 \pm 0.3$ & $14.4 \pm 0.3$ & $3,469 \pm 0,116$ & $3,502 \pm 0,117$ & $5,78 \pm 0,10$ & $8,821 \pm 0,018$ & 1.367 \\
-        $13.7 \pm 0.3$ & $13.0 \pm 0.3$ & $3,844 \pm 0,134$ & $3,663 \pm 0,125$ & $5,9133 \pm 0,1017$ & $8,845 \pm 0,018$ & 1.512 \\
+        $13,9 \pm 0,3$ & $12,5 \pm 0,3$ & $4,01 \pm 0,14$ & $3,5935 \pm 0,1214$ & $5,86 \pm 0,10$ & $8,835 \pm 0,018$ & 1,514 \\
+        $13,3 \pm 0,3$ & $12,1 \pm 0,3$ & $4,12 \pm 0,15$ & $3,761 \pm 0,130$ & $5,992 \pm 0,104$ & $8,858 \pm 0,018$ & 1,611 \\
+        $13,4 \pm 0,3$ & $12,8 \pm 0,3$ & $3,89 \pm 0,14$ & $3,720 \pm 0,128$ & $5,959 \pm 0,103$ & $8,852 \pm 0,018$ & 1,547 \\
+        $14,3 \pm 0,3$ & $14,4 \pm 0,3$ & $3,469 \pm 0,116$ & $3,502 \pm 0,117$ & $5,78 \pm 0,10$ & $8,821 \pm 0,018$ & 1,367 \\
+        $13,7 \pm 0,3$ & $13,0 \pm 0,3$ & $3,844 \pm 0,134$ & $3,663 \pm 0,125$ & $5,9133 \pm 0,1017$ & $8,845 \pm 0,018$ & 1,512 \\
         \bottomrule
     \end{tabular}
     \label{tab:testing}
@@ -160,13 +161,87 @@ Beim Druck ist es ähnlich, dieser geht via $q \propto \sqrt{p}$ in die Gleichun
 Das $\eta$ steht sowieso schon in der dritten Potenz unter der Wurzel, also $q \propto \sqrt{\eta 3}$ was zu einem Faktor $\frac{3}{2}$ führt.
 Negative Vorzeichen können ignoriert werden, da alles quadriert wird. $d$ und $U$ gehen dabei linear in die Gleichung ein und haben daher eine Koeffizienten. 
 
-Nun berechnen wir hier die Ungenauigkeit nach Gauß, so kommen wir insegsamt auf eine Ladung von:
+Nun berechnen wir hier die systemische Ungenauigkeit nach Gauß, so kommen wir insegsamt auf eine Ladung von:
 \begin{equation}
-    \boxed{e^- = (1,58 \pm 0,08) \cdot 10^{-19}C}.
+    \underline{e^- = (1,58 \pm 0,08) \cdot 10^{-19}C}.
 \end{equation}
 
 Für die Berechnung wurden folgende Werte benutzt:
+\begin{table}
+    \centering
+    \begin{tabular}{c | c | c}
+        \toprule
+        Größe & Wert & Abweichung \\
+        \hline
+        s [m] & 0,000500 & 0,000013 \\
+        p [Pa] & 100710,00 &  0,10 \\ 
+        d [m] & 0,006 & 0,00005 \\
+        U [V] & 500,0 & 2,5 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eingesetzte Größen zur Bestimmung der systemischen Ungenauigkeit nach Gleichung \ref*{eq:fehler_q}.}
+\end{table}
 
+und zu letzt:
+\begin{equation}
+    \frac{\Delta \eta}{\eta} = 0,02.
+\end{equation}
+
+\section{Aufgabe 5: Statistischer Fehler}
+Wir wollen uns nun auf die entstandenen statistischen Fehler konzentrieren und insbesondere auch diese mit den Excel-Werten vergleichen.
+Wir nehmen dieselben 5 Messungen eines Tröpchens wie in \hyperref[tab:testing]{Tabelle \ref*{tab:testing}}. Dieses Mal wollen wir uns - wie angekündigt - um die Ungenauigkeit der Ladungsbestimmung kümmern.
+Zunächst gehen wir dabei nur davon aus, dss statistische Fehler in der Geschwindigkeitsmessung entstanden sind, dies bedeutet insbesondere, dass wir die statistischen Fehler des Zeitstoppens berücksichtigen müssen.
+Wir rufen uns in Erinnerung, dass die Werte via \hyperref[eq:ladung]{Gleichung \ref*{eq:ladung}} berechnet wurden. Wir rufen uns unsere Werte erneut in Erinnerung und berechnen Ihren durchschnitt:
+\begin{align}
+    q_1 = 1,514 \, [C \cdot 10^{-19}] \notag \\
+    q_2 = 1,611 \, [C \cdot 10^{-19}] \notag \\
+    q_3 = 1,547 \, [C \cdot 10^{-19}] \notag \\
+    q_4 = 1,367 \, [C \cdot 10^{-19}] \notag \\
+    q_5 = 1,512 \, [C \cdot 10^{-19}] \notag \\
+    \overline{q} = 1,510 \, [C \cdot 10^{-19}]
+\end{align}
+
+Wir kommen dabei auf eine Standardabweichung der Einzelmessung von
+\begin{equation}
+    \sigma = 0,089 
+\end{equation}
+und auf eine Standardabweichung des Mittelwertes von
+\begin{equation}
+    \Delta \overline{q} = 0,040.
+\end{equation}
+
+Diese sind nicht mit den von Excel berechneten Werten konsistent. Die Abweichung der Standardabweichung der Einzelwerte, die von Excel berechnet wurde, ist 9\% größer.
+Die Standardabweichung des Mittelwertes ist hingegen nur 30\% des Wertes, von den hier berechneten Werten. Die Abweichungen kommen sehr wahrscheinlich daher, dass hier lediglich 5 Tropfen zur ebrechnung dienten, 
+in der Excel Tabelle jedoch 60 Werte. Die statistische Genauigkeit der Werte geht $\propto \frac{1}{\sqrt{n}}$. Somit werden die Werte genauer, wenn es mehr werden.
+Zudem haben wir den Wert $q_4$, welcher eine besonderes hohe Abweichung hat und das Ergebnis nennenswert verändert. 
+Ein weiterer Grund dürfte sein, dass hier in der Rechnung das Tröpchen immer dieselbe Ladung trug, während es in der Excel Tabelle $1-5$ Ladungen sein können. 
+Wir rechnen denncoh mit dem hier berechneten Wert weiter,
+und brechnen nun den \hyperref[eq:fehler_mittelwert]{Fehler des Mittelwertes (\ref*{eq:fehler_mittelwert})} und kommen dabei auf einen Wert:
+\begin{equation}
+    \underline{\Delta_{stat} q = 0,04 \, [C \cdot 10^{-19}]}.
+\end{equation}
+
+
+\subsection*{Gesamterfehler von q}
+Wir haben somit den statistischen und den systematischen Fehler bestimmt. Wir wollen aber die Gesamtzungenauigkeit haben, daher werden die Fehler gemäß \hyperref[eq:fehler_summe]{Gelcihung \ref*{eq:fehler_summe}} verrechnet zu:
+\begin{equation}
+    \Delta_{ges} q = \Delta e^- = \sqrt{(\Delta_{sys} q)^2 + (\Delta_{stat} q)^2}.
+\end{equation}
+Ausgerechnet ist es dann:
+\begin{equation}
+    \underline{\Delta e^- = 0,09 \, C \cdot 10^{-19}.}
+\end{equation}
+
+Wir kommen final auf ein Ergebnis von 
+\begin{equation}
+    \boxed{q = e^- = (1,58 \pm 0,09) \, C \cdot 10^{-19}}.
+\end{equation}
+
+\section{Aufgabe 6: Signifikanz bestimmen}
+in der letzten Aufgabe wollen wir nochmal schauen, wie weit unser Wert vom Literaturwert $e^-_{lit} = 1,602 \, C \cdot 10^{-19}$ abweicht. Wir berechnen die \hyperref[eq:signifikante_abweichung]{Signifikanz (\ref*{eq:signifikante_abweichung})} und kommen auf ein Ergebnis von:
+\begin{equation}
+    \boxed{\frac{\left| 1,602 - 1,580 \right|}{0,09} = 0,24\sigma}
+\end{equation}
 
 \onecolumn
 \begin{figure}

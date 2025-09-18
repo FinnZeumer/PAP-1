@@ -2,6 +2,86 @@
 
 \section{Zusammenfassung}
 
-\section{Disskusion}
 
-\section{Kritik}
+In der Auswertung wurde das Vorgehen systematisch überprüft und die wichtigsten Ergebnisse festgehalten:  
+
+Zunächst konnte in \textbf{Aufgabe 1} gezeigt werden, dass die vorgegebenen Excel-Berechnungen korrekt arbeiten. Die Nachrechnungen einzelner Tropfen per Hand bestätigten die Werte.  
+
+In \textbf{Aufgabe 2} wurde ein Histogramm der gemessenen Ladungen erstellt. Es zeigte deutliche Cluster, die auf mehrfach geladene Tröpfchen hinweisen. Besonders klar traten die Bereiche für einfach- und zweifach geladene Tropfen hervor.  
+
+In \textbf{Aufgabe 3} wurde die Obergrenze für die Einordnung als einfach geladen diskutiert. Der Excel-Grenzwert von $q_{1,max} = 2,4 \cdot 10^{-19} C$ wurde als ungenau bewertet. Stattdessen zeigte die Analyse, dass eine Grenze von etwa $1,8 \cdot 10^{-19} C$ sinnvoller ist.  
+Durch Auswertung der Cluster ergaben sich die Mittelwerte  
+\begin{align*}
+    \overline{Q_1} &= (1,58 \pm 0,04) \cdot 10^{-19} C \quad \text{und} \\
+    \overline{Q_2} &= (3,19 \pm 0,06) \cdot 10^{-19} C,
+\end{align*}
+ 
+woraus obere und untere Grenzen von  
+\[
+1,70 \cdot 10^{-19} C \quad \text{und} \quad 2,98 \cdot 10^{-19} C
+\]  
+bestimmt wurden. Damit ist ausgeschlossen, dass ein einfach geladenes Teilchen oberhalb von $1,8 \cdot 10^{-19} C$ liegt.  
+
+In \textbf{Aufgabe 4} wurde der systematische Fehler mit der Gauß’schen Fehlerfortpflanzung berechnet. Es ergab sich  
+\[
+\underline{\Delta_{sys} = 0,08 \cdot 10^{-19} C}.
+\]  
+
+In \textbf{Aufgabe 5} wurde der statistische Fehler anhand einer Beispielmessreihe bestimmt. Der Mittelwert der fünf Messungen lag bei  
+\[
+\overline{q} = 1,510 \cdot 10^{-19} C,
+\]  
+mit einer Standardabweichung des Mittelwertes von  
+\[
+\underline{\Delta_{stat} q = 0,04 \cdot 10^{-19} C}.
+\]  
+Die Kombination von statistischem und systematischem Fehler ergab die Gesamtungenauigkeit  
+\[
+\underline{\Delta e^- = 0,09 \cdot 10^{-19} C}.
+\]  
+Damit lautet das Endergebnis:  
+\[
+\boxed{q = e^- = (1,58 \pm 0,09) \cdot 10^{-19} C}.
+\]  
+
+In \textbf{Aufgabe 6} wurde abschließend die Abweichung vom Literaturwert überprüft. Mit dem Vergleich zu $e^-_{lit} = 1,602 \cdot 10^{-19} C$ ergab sich eine Signifikanz von nur  
+\[
+\boxed{0,24\sigma},
+\]  
+womit kein signifikanter Unterschied festzustellen ist. 
+
+\section{Diskussion}
+
+\subsection{Kernaussage}  
+Das Experiment reproduziert die Elementarladung innerhalb der gemessenen Unsicherheit. Das Ergebnis lautet
+\[
+\boxed{q = e^- = (1{,}58 \pm 0{,}09)\cdot 10^{-19}\,\mathrm{C}},
+\]
+wobei die systematische Bestimmung
+\[
+\underline{e^- = (1{,}58 \pm 0{,}08)\cdot 10^{-19}\,\mathrm{C}}
+\]
+und der statistische Fehler
+\[
+\underline{\Delta_{\mathrm{stat}} q = 0{,}04\cdot 10^{-19}\,\mathrm{C}}
+\]
+betragen. Die Abweichung zum Literaturwert $e^-_{\mathrm{lit}}=1{,}602\cdot 10^{-19}\,\mathrm{C}$ ist
+\[
+\boxed{0{,}24\,\sigma},
+\]
+also nicht signifikant.
+
+\subsection{Interpretation}  
+Die numerische Übereinstimmung mit $e^-_{\mathrm{lit}}$ zeigt, dass die verwendete Methode prinzipiell funktioniert und die gemessenen Werte das erwartete Verhalten mit Clustern für vielfache Ladungen widerspiegeln. Dennoch bleibt das Vertrauen in die Genauigkeit eingeschränkt, da der systematische Anteil der Unsicherheit den dominanten Beitrag zur Gesamtungenauigkeit liefert. Die beobachtete Konsistenz bestätigt daher die Methode, garantiert aber keine hohe Präzision.
+
+\subsection{Wesentliche Fehlerquellen und Widersprüche}  
+Die Berechnung der relativen Unsicherheit aus der Fehlerformel (Gleichung \ref{eq:fehler_q}) ergibt, dass vor allem zwei Terme eine Rolle spielen: die Längenmessung $s$ mit etwa 3,9 \%, der Plattenabstand $d$ mit 0,83 % sowie die Spannung $U$ mit 0,5 %. Hinzu kommt der Beitrag der Viskosität mit 3 %, die aufgrund ihrer Temperaturabhängigkeit und möglicher Ungenauigkeit in Tabellenwerten besonders kritisch ist.  
+
+\subsection{Weitere systematische Effekte}  
+Neben der Viskosität sind auch die Cunningham-Korrektur und die Gültigkeit des Stokes-Gesetzes relevante Punkte, da fehlerhafte Korrekturen die Tröpfchenradien und damit die berechneten Ladungen systematisch verzerren können. Druck und Temperatur beeinflussen zwar ebenfalls die Dichte- und Reibungsbedingungen, blieben in den Messungen jedoch weitgehend konstant, sodass ihr Beitrag zur Unsicherheit vergleichsweise gering ist.
+
+\subsection{Statistische Einschränkungen}  
+Ein Problem ergibt sich aus der geringen Anzahl an Messungen pro Tropfen. Kleine Stichprobenumfänge erhöhen die zufällige Unsicherheit und machen die Ergebnisse empfindlich gegenüber Ausreißern, wie beispielsweise dem Wert $1{,}367\cdot10^{-19}\,\mathrm{C}$. Hinzu kommt die manuelle Zeitmessung mit einer Reaktionszeit von etwa 0,3 s, die einen Einfluss auf die Ergebnisse hat.
+
+\subsection{Schlussfolgerung}  
+Das Experiment bestätigt die Elementarladung im Rahmen der Messunsicherheit. Die Aussagekraft bleibt jedoch durch systematische Einflüsse eingeschränkt, wobei die Viskosität den größten Unsicherheitsfaktor darstellt. Bevor eine hohe Genauigkeit beansprucht werden kann, muss die Behandlung von $\Delta\eta/\eta$ konsistent erfolgen. Mit verbesserter Temperaturmessung, optischer Erfassung und erweiterten statistischen Verfahren lässt sich die Unsicherheit erheblich reduzieren und die Zuverlässigkeit des Resultats deutlich erhöhen.

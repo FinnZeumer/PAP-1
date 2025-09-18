@@ -138,19 +138,92 @@ und
 \end{equation}
 Die Werte decken sich also mit dem Literaturwert.
 
+
+
 \section{Aufgabe 2: Bestimmung der Faraday-Konstante aus der Elektrolise von Wasser}
 Die chemischen Gleichungen sind bereits in der \hyperref[sc:faraday_vol]{Einleitung (\ref*{sc:faraday_vol})} beschrieben. Daher gehen wir gleich zur Berechnung über.
 
 
 Wir führen die Ergebnisse der \hyperref[Protokoll]{zweiten Tabelle des Protokoll} auf:
+\begin{table}
+    \centering
+    \begin{tabular}{c | c | c}
+        \toprule
+        Säule & Startvolumen [ml] & Endvolumen [ml] \\
+        \hline
+        Sauerstoff & $0,50 \pm 0,10$ & $21,60 \pm 0,1$ \\
+        Wasserstoff & $5,20 \pm 0,10$ & $43,20 \pm 0,10$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Start- und Endvolumina der zwei Säulen.}
+\end{table}
 
+Wichtig zu verstehen ist, dass der angegebene Volumenswert nicht das Volumen der Flüssigkeit ist, sondern das Volumen über der Flüssigkeit. 
+Das Startvolumen wurde nach 30 Sekunden Elektrolyse bestimmt. Das Endvolumen, als es möglichst weit unten war, damit die Differenz möglichst groß wird, da so der Ablesefehler prozentual kleiner wird.
+Die verdampften Volumina sind dabei:
+\begin{align}
+    V_{O_2} = (21,10 \pm 0,10) ml, \\
+    V_{H_2} = (38,00 \pm 0,10) ml.
+\end{align}
 
+Als nächstes brauchen wir die jeweiligen molaren Volumina $V_{Mol}$, um aus deren Verhältnissen nach \hyperref[eq:stoffmenge]{Gleichung \ref*{eq:stoffmenge}} die Stoffmenge zu bestimmen. 
+Dafür nutzen wir \hyperref[eq:molvolumen]{Gleichung \ref*{eq:molvolumen}} und \hyperref[eq:druck]{Gleichung \ref*{eq:druck}}.
 
+Wir benutzen für den Druck $p_0 = 1013,25 hPa$, und für die Temperatur $273,15K$, da hier das ideale Gas Gesetz das Volumen $V_0^{Mol} = 22,414 \frac{L}{mol}$ ergibt.
+Nun brauchen wir noch das Verhältnis der Raumtemperatur $T = (24,0 \pm 1,0)^\circ C$ über den druck $p$. 
 
+Den Druck $P_{H_2O}^D$ kann man via \hyperref[tab:wasser_druck]{Tabelle \ref*{tab:wasser_druck}} bestimmen, wo bei wir eine Wassertemperatur von $T_W = (26,0 \pm 1,0)^\circ C$ haben. Somit ist unser Druck:
+\begin{equation}
+    p_{H_2O}^D = 25,76 Torr \, \hat= \, 34,3 hPa.
+\end{equation}
 
+Mit einem Gemessenen Luftdruck von $(p = 1000,0 \pm 0,5) \, hPa$ kommt man somit afu ein molares Volumen von
+\begin{equation}
+    V_{Mol} = 25,580  \, \frac{L}{mol}.
+\end{equation}
 
+Dabei haben wir den Druck zu $p = 969,13 hPa$ berechnet.
 
+Als nächstes müssen wir die Ungenauigkeit über die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmen. 
 
+Die Ungenauigkeit des berechneten Druckes ergibt sich zu
+\begin{equation}
+    \Delta p = \sqrt{(\Delta p_L)^2 + (0,9 \cdot \Delta p_{H_2O}^D)^2}.
+\end{equation}
+
+Wir haben dabei die Ungenauigkeit des Luftdruckes $\Delta p_L = 0,5 hPa$. Die des Wasserdruckes ergibt sich über die Temperaturungenauigkeit von $\Delta T_{H_2O} =1^\circ C$.
+Die Ungenauigkeit liegt daher bei $\Delta p_{H_2O}^D = 1,75 Torr$, dies wiederrum erntspricht $2,3 hPa$. Dies wurde bestimmt, in dem das Maximum der Differenzen mit den zwei umliegenden Werten gezogen wurde.
+
+Setzen wir unsere Ungenauigkeiten ein, kommen wir auf einen Wert von
+\begin{equation}
+    \Delta p = 2,130 hPa.
+\end{equation}
+
+Damit lässt sich die Ungenauigkeit des molaren Volumens zu 
+\begin{equation}
+    \Delta V_{Mol} = \frac{p_0 \cdot V_{0,Mol}}{T_0} \sqrt{\left(\frac{\Delta T}{p}\right)^2 + \left(\frac{T \cdot \Delta p}{p^2}\right)^2}
+\end{equation}  
+berechen.
+
+Über diese können wir nun unser finales molares Volumen bestimmen:
+\begin{equation}
+\boxed{
+    V_{Mol} = (25,580 \pm 0,090)\, \frac{L}{mol}.
+}
+\end{equation}
+
+Somit kommen wir auf eine Stoffmenge des Wasserstoffes von
+\begin{equation}
+    n_{H_2} = 1,5 mol, 
+\end{equation}
+und einer Stoffmenge des Sauerstoffes von 
+\begin{equation}
+    n_{O_2} = 0,8 mol.
+\end{equation}
+
+Den Reaktionsgleichungen (\ref*{eq:h2_kathode}, \ref*{eq:o2_anode}) sind die Wertigkeiten $z_{H_2} = 2$ und $z_{O_2} = 4$ zu entnehmen.
+
+Der letzte zu bestimmende Wert ist die Ladung $Q$.
 
 
 
