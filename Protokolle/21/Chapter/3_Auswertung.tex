@@ -58,6 +58,7 @@ Wobei wir für $I = 1,01A$ eingesetzt haben und für $t = 2488s$.
 Die Ungenauigkeit der Ladung wird via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt:
 \begin{equation}
     \Delta Q = \sqrt{\left( \frac{\Delta I}{I} \right)^2 + \left( \frac{\Delta t}{t} \right)^2} \cdot Q.
+    \label{eq:f_q}
 \end{equation}
 
 Damit kommen wir auf eine Ladung von 
@@ -145,13 +146,13 @@ Die chemischen Gleichungen sind bereits in der \hyperref[sc:faraday_vol]{Einleit
 
 
 Wir führen die Ergebnisse der \hyperref[Protokoll]{zweiten Tabelle des Protokoll} auf:
-\begin{table}
+\begin{table}[h!]
     \centering
     \begin{tabular}{c | c | c}
         \toprule
-        Säule & Startvolumen [ml] & Endvolumen [ml] \\
+        Säule & $V_{Start}$ [ml] & $V_{End}$ [ml] \\
         \hline
-        Sauerstoff & $0,50 \pm 0,10$ & $21,60 \pm 0,1$ \\
+        Sauerstoff & $0,50 \pm 0,10$ & $21,60 \pm 0,10$ \\
         Wasserstoff & $5,20 \pm 0,10$ & $43,20 \pm 0,10$ \\
         \bottomrule
     \end{tabular}
@@ -162,22 +163,22 @@ Wichtig zu verstehen ist, dass der angegebene Volumenswert nicht das Volumen der
 Das Startvolumen wurde nach 30 Sekunden Elektrolyse bestimmt. Das Endvolumen, als es möglichst weit unten war, damit die Differenz möglichst groß wird, da so der Ablesefehler prozentual kleiner wird.
 Die verdampften Volumina sind dabei:
 \begin{align}
-    V_{O_2} = (21,10 \pm 0,10) ml, \\
-    V_{H_2} = (38,00 \pm 0,10) ml.
+    V_{O_2} = (0,02110 \pm 0,00010) L, \\
+    V_{H_2} = (0,03800 \pm 0,00010) L.
 \end{align}
 
-Als nächstes brauchen wir die jeweiligen molaren Volumina $V_{Mol}$, um aus deren Verhältnissen nach \hyperref[eq:stoffmenge]{Gleichung \ref*{eq:stoffmenge}} die Stoffmenge zu bestimmen. 
+Als nächstes brauchen wir die das molaren Volumen $V_{Mol}$, um aus dem Verhältnis nach \hyperref[eq:stoffmenge]{Gleichung \ref*{eq:stoffmenge}} die Stoffmenge zu bestimmen. 
 Dafür nutzen wir \hyperref[eq:molvolumen]{Gleichung \ref*{eq:molvolumen}} und \hyperref[eq:druck]{Gleichung \ref*{eq:druck}}.
 
-Wir benutzen für den Druck $p_0 = 1013,25 hPa$, und für die Temperatur $273,15K$, da hier das ideale Gas Gesetz das Volumen $V_0^{Mol} = 22,414 \frac{L}{mol}$ ergibt.
+Wir benutzen für den Druck $p_0 = 1013,25 hPa$, und für die Temperatur $T_0 = 273,15K$, da hier das ideale Gas Gesetz das Volumen $V_0^{Mol} = 22,414 \frac{L}{mol}$ ergibt.
 Nun brauchen wir noch das Verhältnis der Raumtemperatur $T = (24,0 \pm 1,0)^\circ C$ über den druck $p$. 
-
-Den Druck $P_{H_2O}^D$ kann man via \hyperref[tab:wasser_druck]{Tabelle \ref*{tab:wasser_druck}} bestimmen, wo bei wir eine Wassertemperatur von $T_W = (26,0 \pm 1,0)^\circ C$ haben. Somit ist unser Druck:
++
+Den Druck $P_{H_2O}^D$ kann man via \hyperref[tab:wasser_druck]{Tabelle \ref*{tab:wasser_druck}} bestimmen, wobei wir eine Wassertemperatur von $T_W = (26,0 \pm 1,0)^\circ C$ haben. Somit ist unser Druck:
 \begin{equation}
     p_{H_2O}^D = 25,76 Torr \, \hat= \, 34,3 hPa.
 \end{equation}
 
-Mit einem Gemessenen Luftdruck von $(p = 1000,0 \pm 0,5) \, hPa$ kommt man somit afu ein molares Volumen von
+Mit einem Gemessenen Luftdruck von $(p = 1000,0 \pm 0,5) \, hPa$ kommt man somit auf ein molares Volumen von
 \begin{equation}
     V_{Mol} = 25,580  \, \frac{L}{mol}.
 \end{equation}
@@ -192,7 +193,7 @@ Die Ungenauigkeit des berechneten Druckes ergibt sich zu
 \end{equation}
 
 Wir haben dabei die Ungenauigkeit des Luftdruckes $\Delta p_L = 0,5 hPa$. Die des Wasserdruckes ergibt sich über die Temperaturungenauigkeit von $\Delta T_{H_2O} =1^\circ C$.
-Die Ungenauigkeit liegt daher bei $\Delta p_{H_2O}^D = 1,75 Torr$, dies wiederrum erntspricht $2,3 hPa$. Dies wurde bestimmt, in dem das Maximum der Differenzen mit den zwei umliegenden Werten gezogen wurde.
+Die Ungenauigkeit liegt daher bei $\Delta p_{H_2O}^D = 1,75 Torr$, dies wiederrum erntspricht $2,3 hPa$. Dies wurde bestimmt, in dem das Maximum (als Absolutbetrag) der Differenzen mit den zwei umliegenden Werten gezogen wurde.
 
 Setzen wir unsere Ungenauigkeiten ein, kommen wir auf einen Wert von
 \begin{equation}
@@ -214,18 +215,98 @@ berechen.
 
 Somit kommen wir auf eine Stoffmenge des Wasserstoffes von
 \begin{equation}
-    n_{H_2} = 1,5 mol, 
+    n_{H_2} = 1,486 \cdot 10^{-3} mol, 
 \end{equation}
 und einer Stoffmenge des Sauerstoffes von 
 \begin{equation}
-    n_{O_2} = 0,8 mol.
+    n_{O_2} = 8,249 \cdot 10^{-3} mol.
 \end{equation}
 
-Den Reaktionsgleichungen (\ref*{eq:h2_kathode}, \ref*{eq:o2_anode}) sind die Wertigkeiten $z_{H_2} = 2$ und $z_{O_2} = 4$ zu entnehmen.
+Dabei reagiert der Sauerstoff teilweise mit der Schwefelsäure. Die Ungenauigkeit der Stoffmenge, die mit der Schwefelsäure reagiert ist unbekannt und wird hier als vernachlässigbar angenommen. Jedoch wird der Wert der Faraday-Konstante weniger akkurat sein.
+Der Fehler der Stoffmenge nach \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} ergbibt sich zu:
+\begin{equation}
+    \Delta n = \sqrt{\left(\frac{\Delta V}{V_{Mol}}\right)^2 + \left(\frac{V \cdot \Delta V_{Mol}}{{V_{Mol}}^2}\right)^2}.
+\end{equation}
 
-Der letzte zu bestimmende Wert ist die Ladung $Q$.
+Unsere finalen stoffmengen sind somit für dem Wasserstoff
+Somit kommen wir auf eine Stoffmenge des Wasserstoffes von
+\begin{equation}
+    \boxed{
+        n_{H_2} = (1,486 \pm 0,005) \, \cdot 10^{-3} mol, 
+    }
+\end{equation}
+und für den Sauerstoffes 
+\begin{equation}
+    \boxed{
+        n_{O_2} = (8,249 \pm 0,006) \, \cdot 10^{-4} mol.
+    }
+\end{equation}
 
+Den Reaktionsgleichungen (\ref{eq:h2_kathode}, \ref{eq:o2_anode}) sind die Wertigkeiten $z_{H_2} = 2$ und $z_{O_2} = 4$ zu entnehmen.
 
+Der letzte zu bestimmende Wert ist die Ladung $Q$. Hier laufen wir leider in ein Problem, denn leider haben wir den gemessenen Zeitwert nicht ins Messprotokoll aufgebschrieben. 
+Aus dem Gedächnis weiß ich noch grob, dass es bei ungefähr über $330$ (5 Minuten und 30 Sekunden). Diesen Wert wollen wir annehmen, müssen jedoch seine Ungenauigkeit weitaus größer schätzen, als die reale Ungenauigkeit, 
+ohne den Fehler maßlos zu überschätzen, da die Rechnung anderweits sinnlos wird. Daher nehmen wir einen Zeitwert von 
+\begin{equation}
+    t = (335 \pm 30)s
+\end{equation}
+an. Wir haben recht sicher über die besagte Zeit gebraucht, weshalb hier schonmal 5 Sekunden hinzugefügt wurden und eine Unsicherheit von 30 Sekunden scheint mir sinnig, da die Grobe Zeit noch bekannt ist.
+Nun berechnen wir unsere Ladung via \hyperref[eq:ladung]{Glecihung \ref*{eq:ladung}} und kommen auf eine Ladung von:
+\begin{equation}
+    Q = 288,1 C. 
+\end{equation}
+
+Sein Fehler berechnet sich Analog zu \ref{eq:f_q}. Fassen wir unser Ergebnis zusammen und runden auf signifikante Stellen, so hatten wir eine Ladung von:
+\begin{equation}
+    \boxed{Q = (288 \pm 29) \, C}.
+\end{equation}
+
+Damit haben wir alle Werte zusammen, um die Faraday-Konstante zu Bestimmen. Wir nutzen \hyperref[eq:stoffmenge]{Gleichung \ref*{eq:stoffmenge}} und Formen sie um zu:
+\begin{equation}
+    F = \frac{Q}{z \cdot F}.
+\end{equation}
+
+Seinen Fehler berechnen wir über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} zu:
+\begin{equation}
+    \Delta F = \sqrt{\left(\frac{\Delta Q}{z \cdot n}\right)^2 + \left(\frac{\Delta n \cdot  Q}{n^2 \cdot z}\right)^2}.
+\end{equation}
+
+Wir führen die Rechnung einmal mit dem Wasserstoff und einmal mit dem Sauerstoff durch.
+
+Unsere Faraday-Konstante für den Wasserstoff ist:
+\begin{equation}
+    \boxed{
+        F_{H_2} = (97.000 \pm 10.000) \, \frac{C}{mol}.
+    }
+\end{equation}
+
+Unsere Faraday-Konstante für den Sauerstoff ist
+\begin{equation}
+    \boxed{
+        F_{H_2} = (87.000 \pm 18.000) \, \frac{C}{mol}.
+    }
+\end{equation}
+
+\subsection*{Signifikanz}
+Wir wollen nun erneut einmal die Werte miteinander vergleichen und beide neuen Ergebnisse mit dem angegebenen Literaturwert.
+
+Fangen wir mit den Werten selbst an.
+\begin{equation}
+    \frac{\left| F_{H_2} - F_{O_2} \right|}{\sqrt{(\Delta F_{H_2})^2 + (\Delta F_{O_2})^2}} = 0,49\sigma.
+\end{equation}
+
+Als nächstes vergleichen wir beide Konsatnten mit dem Literaturwert und kommen zu
+\begin{equation}
+    \frac{\left| F_{H_2} - F_{lit} \right|}{\sqrt{(\Delta F_{H_2})^2 + (\Delta F_{lit})^2}} = 0,05\sigma.
+\end{equation}
+für Wasserstoff
+und zu
+\begin{equation}
+    \frac{\left| F_{H_2} - F_{O_2} \right|}{\sqrt{(\Delta F_{H_2})^2 + (\Delta F_{O_2})^2}} = 0,53\sigma.
+\end{equation}
+für Sauerstoff.
+
+Wir werden erneut in der \hyperref[sc:dis]{Diskussion \ref*{sc:dis}} auf die Ergebnisse zurückkommen.
 
 \section{Aufgabe 3: Elektrolyse in einer Brennstoffzelle}
 
@@ -313,7 +394,8 @@ Dennoch sind die Werte unglaublich nah an den Schwankungen, die zu beobachten wa
 Trozdessen wäre es nicht zielführend, diese Werte noch als Ungenauigkeit in die Rechnung mit aufzunehmen, da diese sowieso unter der Messgenauigkeit der Waage liegen, dessen Fehler um einen Faktor 100 größer ist.
 
 \onecolumn
-\begin{figure}
+\begin{figure}[h!]
+    \vspace{1.75cm}
     \includegraphics[width=\textwidth, page=2]{img/21/Plots_oxi-eingezeichnet.pdf}
     \caption{Entstandene Graphen aus der Gleichung, die in der Studie gegeben ist, mit verschiedenen $k_log$ konstanten. Blau soll dabei die Minimalabschätzung und rot die Maximalabschätzung werden.}
     \label{fig:log_gezeichnet}
