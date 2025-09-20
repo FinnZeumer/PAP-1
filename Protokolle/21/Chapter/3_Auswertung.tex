@@ -19,15 +19,15 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 \twocolumn
 
 \section{Aufgabe 1: Bestimmung der Faraday-Konstante über Kupferelektroden}
-Der Versuchsdurchführung ist zu entnehmen, dass wir zei Kupferelektroden haben. Wir haben die Massen beider vor und nach der Elektrolyse gewogen, um deren Massendiffrenz für die Anode $\delta M{An}$ und die Kathode $\delta M{Ka}$ zu bestimmen.
+Der Versuchsdurchführung ist zu entnehmen, dass wir zwei Kupferelektroden haben. Wir haben die Massen beider vor und nach der Elektrolyse gewogen, um deren Massendifferenz für die Anode $\delta M{An}$ und die Kathode $\delta M{Ka}$ zu bestimmen.
 Wir führen die Ergebnisse der \hyperref[Protokoll]{ersten Tabelle des Protokoll} auf:
 \begin{table}
     \begin{tabular}{c | c | c}
         \toprule
-        Masse & Anode$^+$ & Katode$^-$\\
+        Masse & Anode$^+$ & Kathode$^-$\\
         \hline
         Zuvor  [g] & 87,3815 & 90,6317 \\
-        Dannach [g] & 86,5189 & 91,4648 \\
+        Danach [g] & 86,5189 & 91,4648 \\
         \midrule
         $\delta m \, [g]$ & -0,8626 & 0,8331\\
         \bottomrule
@@ -37,9 +37,8 @@ Wir führen die Ergebnisse der \hyperref[Protokoll]{ersten Tabelle des Protokoll
 \end{table}
 
 Dabei gehen wir für die folgenden Fehlerrechnungen mit einer Ungenauigkeit der Waage von $0,001g$ aus, und vom Netzteil von $(2\% \pm 0,02)A$.
-Eine Ungenaugkeit der Zeit ist etwas merkwürdig, da die Stoppzeit selbst nicht die Zeit zwischen Herausnehmen der Kupferplatten, deren Trocknung und das Wiegen berücksichtigt.
-Dennoch wurde zu diesem Zeitpunkt der Strom ausgestellt und es wird eine Ungenauigkeit der Menschlichen Reaktionszeit von $0,300s$ angenommen. Dies hat zwar keine große Auswirkung,
-wird jedoch berücksichtigt.
+Die Unsicherheit der Zeitmessung ist schwer exakt zu bestimmen, da die Stoppzeit selbst nicht die Zeit zwischen Herausnehmen der Kupferplatten, deren Trocknung und das Wiegen berücksichtigt.
+Dennoch wurde zu diesem Zeitpunkt der Strom ausgestellt und es wird eine Ungenauigkeit der menschlichen Reaktionszeit von $0,300s$ angenommen. Dieser Beitrag ist klein im Vergleich zu den anderen Fehlerquellen, wird aber der Vollständigkeit halber berücksichtigt.
 
 Die chemischen Gleichungen sind bereits in der \hyperref[sc:Massenmessung]{Einleitung (\ref*{sc:Massenmessung})} beschrieben. Daher gehen wir gleich zur Berechnung über.
 
@@ -78,9 +77,9 @@ Die Werte für die Massen entnehmen wir der \hyperref[tab:p_1]{Tabelle \ref*{tab
         \delta m_{Ka} = (0,8331 \pm 0,001) g
     }
 \end{equation}
-Dabei heiß eine negative Massendifferenz, Massenverlust, während der positive Wert eine Massenaufnahme bedeutet. Die Kathode wurde also schwerer. Wir nehmen zur berechnen der Faraday-Konstante die Betäge, der Massendifferenzen.
+Dabei heißt eine negative Massendifferenz, Massenverlust, während der positive Wert eine Massenaufnahme bedeutet. Die Kathode wurde also schwerer. Wir nehmen zur Berechnung der Faraday-Konstante die Beträge, der Massendifferenzen.
 
-Die Molare Masse ist einem Periodensystem \cite{CuMol} zu entnehmen, und beträgt $M_{cu} = 63,546 \frac{g}{mol}$. Die Wertigkeit ist der Reaktionsgleichungen zu entnehmen und entspricht $2$, da unsere Kupferionen zwei-Fach positiv geladen sind.
+Die Molare Masse ist einem Periodensystem \cite{CuMol} zu entnehmen, und beträgt $M_{cu} = 63,546 \frac{g}{mol}$. Die Wertigkeit ist der Reaktionsgleichungen zu entnehmen und entspricht $2$, da unsere Kupferionen zweifach positiv geladen sind.
 
 Damit kommen wir auf zwei Faraday-Konstanten, für jede Elektrode:
 \begin{equation}
@@ -97,7 +96,7 @@ Nun fehlt nur noch die Bestimmung der Ungenauigkeit. Dafür nutzen wir \hyperref
 \end{equation}
 
 Dabei ist die Wertigkeit $z$ ohne Frage fehlerfrei, jedoch gäbe es theoretisch eine Ungenauigkeit der Molarenmasse, einen sicheren Wert konnte ich jedoch nicht finden,
-alle Werte die man findne konnte, haben das Ergebniss aber ohne hin nicht verändert.
+alle Werte die man finden konnte, haben das Ergebnis aber ohne hin nicht verändert.
 
 Die Fehler berufen sich auf:
 \begin{equation}
@@ -127,7 +126,7 @@ Jetzt ist natürlich die Frage, ob die Werte untereinander statistisch signifika
     \frac{\left| F_{Ka} - F_{An} \right|}{\sqrt{(\Delta F_{Ka})^2 + (\Delta F_{An})^2} } = 0,53\sigma
 \end{equation}
 
-Die Werte decken sich also Statistisch gegenseitig. 
+Die Werte decken sich also statistisch gegenseitig. 
 Als letztes in diesem Aufgabenteil wollen wir den Vergleich zu den Literaturwerten ziehen und kommen dabei auf:
 
 \begin{equation}
@@ -206,7 +205,7 @@ Damit lässt sich die Ungenauigkeit des molaren Volumens zu
 \end{equation}  
 berechen.
 
-Über diese können wir nun unser finales molares Volumen bestimmen:
+Über diese können wir nun unser finales molares Volumen berechnen:
 \begin{equation}
 \boxed{
     V_{Mol} = (25,580 \pm 0,090)\, \frac{L}{mol}.
@@ -244,14 +243,13 @@ und für den Sauerstoffes
 
 Den Reaktionsgleichungen (\ref{eq:h2_kathode}, \ref{eq:o2_anode}) sind die Wertigkeiten $z_{H_2} = 2$ und $z_{O_2} = 4$ zu entnehmen.
 
-Der letzte zu bestimmende Wert ist die Ladung $Q$. Hier laufen wir leider in ein Problem, denn leider haben wir den gemessenen Zeitwert nicht ins Messprotokoll aufgebschrieben. 
-Aus dem Gedächnis weiß ich noch grob, dass es bei ungefähr über $330$ (5 Minuten und 30 Sekunden). Diesen Wert wollen wir annehmen, müssen jedoch seine Ungenauigkeit weitaus größer schätzen, als die reale Ungenauigkeit, 
-ohne den Fehler maßlos zu überschätzen, da die Rechnung anderweits sinnlos wird. Daher nehmen wir einen Zeitwert von 
+Der letzte zu bestimmende Wert ist die Ladung $Q$. Die Messzeit wurde nicht im Protokoll festgehalten, sondern nachträglich aus der Erinnerung auf etwa $t \approx 330,\text{s}$ (5 min 30 s) geschätzt. Um eine realistische, aber nicht überhöhte Unsicherheit abzubilden, wird der Zeitwert auf 
 \begin{equation}
-    t = (335 \pm 30)s
+    \underline{t = (335 \pm 30)s}
 \end{equation}
-an. Wir haben recht sicher über die besagte Zeit gebraucht, weshalb hier schonmal 5 Sekunden hinzugefügt wurden und eine Unsicherheit von 30 Sekunden scheint mir sinnig, da die Grobe Zeit noch bekannt ist.
-Nun berechnen wir unsere Ladung via \hyperref[eq:ladung]{Glecihung \ref*{eq:ladung}} und kommen auf eine Ladung von:
+festgelegt.
+Wir haben mit hoher Wahrscheinlichkeit über die besagte Zeit gebraucht, weshalb hier schonmal 5 Sekunden hinzugefügt wurden und eine Unsicherheit von 30 Sekunden erscheint plausibel, da die Grobe Zeit noch bekannt ist.
+Nun berechnen wir unsere Ladung via \hyperref[eq:ladung]{Gleichung \ref*{eq:ladung}} und kommen auf eine Ladung von:
 \begin{equation}
     Q = 288,1 C. 
 \end{equation}
@@ -276,14 +274,14 @@ Wir führen die Rechnung einmal mit dem Wasserstoff und einmal mit dem Sauerstof
 Unsere Faraday-Konstante für den Wasserstoff ist:
 \begin{equation}
     \boxed{
-        F_{H_2} = (97.000 \pm 10.000) \, \frac{C}{mol}.
+        F_{H_2} = (97\,000 \pm 10\,000) \, \frac{C}{mol}.
     }
 \end{equation}
 
 Unsere Faraday-Konstante für den Sauerstoff ist
 \begin{equation}
     \boxed{
-        F_{H_2} = (87.000 \pm 18.000) \, \frac{C}{mol}.
+        F_{H_2} = (87\,000 \pm 18\,000) \, \frac{C}{mol}.
     }
 \end{equation}
 
@@ -295,7 +293,7 @@ Fangen wir mit den Werten selbst an.
     \frac{\left| F_{H_2} - F_{O_2} \right|}{\sqrt{(\Delta F_{H_2})^2 + (\Delta F_{O_2})^2}} = 0,49\sigma.
 \end{equation}
 
-Als nächstes vergleichen wir beide Konsatnten mit dem Literaturwert und kommen zu
+Als nächstes vergleichen wir beide Konstanten mit dem Literaturwert und kommen zu
 \begin{equation}
     \frac{\left| F_{H_2} - F_{lit} \right|}{\sqrt{(\Delta F_{H_2})^2 + (\Delta F_{lit})^2}} = 0,05\sigma.
 \end{equation}
@@ -338,23 +336,23 @@ In dieser Aufgabe wird das Funktionsprinzip einer PEM-Brennstoffzelle untersucht
 \end{enumerate}
 
 \section{Zusatz: Kupferoxidation an der Luft/unterm Föhn}
-Wir wollen hier nun die Fehlerrechnung noch mal ein wenig vertiefen und eine weitere Fehlerquelle betracheten und ihren Einfluss untersuchen. Wir wollen schauen, wie viel Kupfer in der Zeit nach der Elektrolise und bis zum Wiegen Oxidieren.
-Der Grund dafür ist, dass die zu wiegende Kathode nach der Elektrolyse kein konstantes Gewicht eingenommen hat, sondern das Gewicht über wenige Minuten um knapp $1mg$ anwuchst, ohne aufzuhören.
-Die gestellte These hier ist, dass dies insbesondere durch den Einfluss des Föhns passiert, denn dieser hat die Kupferplatte erhitzt. Und bei Oxidationsvorgängen ist eine thermische Energiezufur equivalent zu einer Beschleunigung der Reaktion.
-Die Platte hat sich dabei natürlcih nicht auf enorme Temperaturen erhitzt, aber es dürfte schon ausreichen, wenn die Oberfläche sich erhitzt, da sowieso nur an der Oberfläche die Oxidation stattfindet. In der Studie \cite{KupferStudie}
+Wir wollen hier nun die Fehlerrechnung noch mal ein wenig vertiefen und eine weitere Fehlerquelle betrachten und ihren Einfluss untersuchen. Wir wollen schauen, wie viel Kupfer in der Zeit nach der Elektrolise und bis zum Wiegen oxidieren.
+Der Grund dafür ist, dass die zu wiegende Kathode nach der Elektrolyse kein konstantes Gewicht eingenommen hat, sondern das Gewicht über wenige Minuten um knapp $1mg$ anwuchs, ohne aufzuhören.
+Die gestellte These hier ist, dass dies insbesondere durch den Einfluss des Föhns passiert, denn dieser hat die Kupferplatte erhitzt. Und bei Oxidationsvorgängen ist eine thermische Energiezufur äquivalent zu einer Beschleunigung der Reaktion.
+Die Platte hat sich dabei natürlich nicht auf enorme Temperaturen erhitzt, aber es dürfte schon ausreichen, wenn die Oberfläche sich erhitzt, da sowieso nur an der Oberfläche die Oxidation stattfindet. In der Studie \cite{KupferStudie}
 wurde mit Temperaturen im $60^\circ C$ gearbeitet. Für diese Untersuchung nehme ich die Werte als möglich an und als Basis der folgenden Untersuchung.
 
-Wichtig ist hie rnatürlich zu erwähnen, dass die Rechnung kaum ernstzunehmen ist, die Werte und Überlegungen sind für sinnvolle Angaben kaum nutzbar und sollen erstmal die grundsetzliche Frage klären, ob die Oxidation an der Luft und das Fühnen einen signifikaten Einfluss haben könnten.
+Wichtig ist hier natürlich zu erwähnen, dass die Rechnung kaum ernstzunehmen ist, die Werte und Überlegungen sind für sinnvolle Angaben kaum nutzbar und sollen erstmal die grundsätzliche Frage klären, ob die Oxidation an der Luft und das Föhnen einen signifikanten Einfluss haben könnten.
 
-Dafür müssen wir einige Werte schätzen, dessen Messung leider nicht stattfund.
+Dafür müssen wir einige Werte schätzen, dessen Messung leider nicht stattfand.
 \begin{align}
     A_{Cu} &\approx (25 \pm 5)cm^2 \\
     t &\approx (300\pm100)s
 \end{align}
-Dabei ist $A_{Cu}$ die Kupferfläche, die Reagiert und $t$ die Zeit, in der die Reaktion stattfindet.
+Dabei ist $A_{Cu}$ die Kupferfläche, die reagiert und $t$ die Zeit, in der die Reaktion stattfindet.
 
-Wir leiten dabei graphisch die Massengewichstzunahme $\delta m$ her. Dafür haben wir \hyperref[eq:stud_log]{Gleichung (\ref*{eq:stud_log})} in Python geplottet. Der Code fafür ist auf meinen GitHub \cite{githubPAP1}. 
-Dabei sind vier \hyperref[fig:log_3]{Graphen \ref*{fig:log_3}} geplottet. Wir konzentrieren uns dabei auf die logarithmischskalierten Graphen und fabei auf den blauen (unterster) und den roten (obester) und suchen graphisch nach unserer Massenzunahme. 
+Wir leiten dabei graphisch die Massengewichtszunahme $\delta m$ her. Dafür haben wir \hyperref[eq:stud_log]{Gleichung (\ref*{eq:stud_log})} in Python geplottet. Der Code dafür ist auf meinen GitHub \cite{githubPAP1}. 
+Dabei sind vier \hyperref[fig:log_3]{Graphen \ref*{fig:log_3}} geplottet. Wir konzentrieren uns dabei auf die logarithmisch skalierten Graphen und dabei auf den blauen (unterster) und den roten (oberster) und suchen graphisch nach unserer Massenzunahme. 
 
 Dabei kommen wir auf Werte von:
 \begin{align}
@@ -362,42 +360,42 @@ Dabei kommen wir auf Werte von:
     \delta m_{max} &= (1,86 \pm 0,09)\frac{\mu g}{cm^2}
 \end{align}
 
-Dabei haben wir daruf geachtet, nur im Bereich zu bleiben, der in der \hyperref[fig:stud_2]{Abbildung \ref*{fig:stud_2}} auch rot eingezeichnet ist zu bleiben.
+Dabei haben wir darauf geachtet, nur im Bereich zu bleiben, der in der \hyperref[fig:stud_2]{Abbildung \ref*{fig:stud_2}} auch rot eingezeichnet ist zu bleiben.
 
 Die entstandene Masse sollte nun ziemlich leicht zu berechnen sein. Somit ergibt sich für die minimal Abschätzung
 \begin{equation}
     m_{min} = 1,11 \frac{\mu g}{cm^2} \cdot 25cm^2 = 27,75 \mu g 
 \end{equation}
-udn für die Maximalabschätzung
+und für die Maximalabschätzung
 \begin{equation}
     m_{max} = 1,86 \frac{\mu g}{cm^2} \cdot 25cm^2 = 46,5 \mu g.
 \end{equation}
 
 Wir wollen natürlich noch die Ungenauigkeit bestimmen. Daher \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche Fehlerfortpflanzung}:
 \begin{equation}
-    \Delta m = \sqrt{\left(\frac{\Delta \delta m}{\delta m} \right)^2 + \left(\frac{\Delta A_{Cu}}{A_{Cu}} \right)^2}
+    \Delta m = \sqrt{\left(\frac{\Delta \delta m}{\delta m} \right)^2 + \left(\frac{\Delta A_{Cu}}{A_{Cu}} \right)^2} \cdot m
 \end{equation}
 
 Damit kommen wir auf Massen von 
 \begin{equation}
-    \boxed{\delta m_{min} = (27,750 \pm 0,207) \mu g}
+    \boxed{\delta m_{min} = (28 \pm 6) \mu g}
 \end{equation}
 und
 \begin{equation}
-    \boxed{\delta m_{max} = (46,500 \pm 0,206 ) \mu g}.
+    \boxed{\delta m_{max} = (46,5 \pm 10,0 ) \mu g}.
 \end{equation}
 
 Das heißt, nach 5 Minuten sollen wir einen Massenanstieg der Kupferplatte von zwischen (gerundet) $0,00003g$ und $0,00005g$ erwarten.
-Die ist nicht koheränt mit der Beobachtung an der Waage, hier hätten wir eher den Wert um einen Faktor 10 größer vermutet.
-Also auch die Oxidationsfläche auf vorder und Rückseite zu berufen hilft nicht, was sowieso sinnvoll gewesen wäre, aber ignoriert wurde, da eine höhre wahrscheinlichkeit vermutet wurde, dass das noch nicht fest angesetzte Kupfer ggf. reagiert.
-Dennoch sind die Werte unglaublich nah an den Schwankungen, die zu beobachten waren, also gut möglich, dass diese doch einen Einfluss hatten.Vielleicht wurde auch die verstrichene Zeit unterschätzt, wobei dies wieder kaum einen unterschied gemacht hätte. Am plausielsten wäre, wenn der Föhn die Kupferplatte auf sogar über $60^\circ C$ erhitzt hätte, dies könnte einen signifikanten unterschied machen.
-Trozdessen wäre es nicht zielführend, diese Werte noch als Ungenauigkeit in die Rechnung mit aufzunehmen, da diese sowieso unter der Messgenauigkeit der Waage liegen, dessen Fehler um einen Faktor 100 größer ist.
+Die ist nicht kohärent mit der Beobachtung an der Waage, hier hätten wir eher den Wert um einen Faktor 10 größer vermutet.
+Also auch die Oxidationsfläche auf vorder und Rückseite zu berufen hilft nicht, was sowieso sinnvoll gewesen wäre, aber ignoriert wurde, da eine höhere Wahrscheinlichkeit vermutet wurde, dass das noch nicht fest angesetzte Kupfer gegebenenfalls reagiert und Auch wenn beide Seiten oxidieren, vergrößert sich der Effekt nur um Faktor 2 und bleibt trotzdem viel zu klein.
+Dennoch sind die Werte unglaublich nah an den Schwankungen, die zu beobachten waren, also gut möglich, dass diese doch einen Einfluss hatten. Vielleicht wurde auch die verstrichene Zeit unterschätzt, wobei dies wieder kaum einen Unterschied gemacht hätte. Am plausibelsten wäre, wenn der Föhn die Kupferplatte auf sogar über $60^\circ C$ erhitzt hätte, dies könnte einen signifikanten unterschied machen.
+trotzdem wäre es nicht zielführend, diese Werte noch als Ungenauigkeit in die Rechnung mit aufzunehmen, da diese sowieso unter der Messgenauigkeit der Waage liegen, dessen Fehler um einen Faktor 100 größer ist.
 
 \onecolumn
 \begin{figure}[h!]
     \vspace{1.75cm}
     \includegraphics[width=\textwidth, page=2]{img/21/Plots_oxi-eingezeichnet.pdf}
-    \caption{Entstandene Graphen aus der Gleichung, die in der Studie gegeben ist, mit verschiedenen $k_log$ konstanten. Blau soll dabei die Minimalabschätzung und rot die Maximalabschätzung werden.}
+    \caption{Entstandene Graphen aus der Gleichung, die in der Studie gegeben ist, mit verschiedenen $k_{log}$ konstanten. Blau soll dabei die Minimalabschätzung und rot die Maximalabschätzung werden.}
     \label{fig:log_gezeichnet}
 \end{figure}
 \twocolumn
