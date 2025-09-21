@@ -41,11 +41,11 @@ Signal 9 zeigt eine \textbf{Schwebung}, d.h. die Überlagerung zweier Sinussigna
 In diesem Teil soll aufgeschlüsselt werden, wie hoch die Ablese Ungenauigkeit der Cursor-Funktion des Oszilloskops ist. 
 Dazu betrachten wir zunächste den Aufbau des Displays. 
 
-% \begin{figure} [h!]
-%     \centering
-%     \includegraphics[width=0.45\textwidth]{img/25/Clean_vis.png}
-%     \caption{Beispiel aus dem Versuch. 8 mal 10 DIVs.}
-% \end{figure}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/SinusVis.pdf}
+    \caption{Beispiel aus dem Versuch. 8 mal 10 DIVs.}
+\end{figure}
 
 Es werden dabei immer $8 \times 10$ DIVs angezeigt. Die $8$ sind die Amplituden in $[V]$ und die $10$ die Zeitachse $[s]$. Beide Achsen können dabei seperat in ihrer Größe verändert werden.
 Insgesamt besteht jeder DIV aus $25 \times 25$ >>steps<<\footnote{Steps ist nicht der formale Begriff, sondern der von mir genutzte}. Jeder Setep ist dabei die Position, an der ein Cursor stehen kann. 
@@ -64,7 +64,7 @@ Zeitungenauigkeit:
     \Delta t_{Cursor} = 0,5 \cdot \frac{1}{250} \text{ der Skaler}
 \end{equation}
 
-Wir schauen in die Anleitung \cite{CapJ} und bekommen zwei wichtige Informationen. Auf Seite 112 bekommen wir die Informationen, dass die Spannungsreihe in >>1-2-5 Sequenzen<< eingeteilt sind. Die Zeit wird ebenfalls so seqenziert.
+Wir schauen in die Anleitung \cite{CapJ} und bekommen zwei wichtige Informationen. Auf Seite 112 bekommen wir die Informationen, dass die Spannungsreihe in >>1-2-5 Sequenzen<< eingeteilt sind. Die Zeit wird anders seqenziert, sie hat lediglich mehr Teile. Für die Tabelle wird dennoch die 1-2-5 Sequenzen verwednet, da sich alle anderen Werte ohnehin mit den gegebenen Werten berechen lassen. Es ist vermutlich eine >>1-2-2,5-5 Sequenzierung<<. Aber sicher bestätigen konnte ich dies aus der Anleitung nicht.
 Außerdem finden wir heraus, dass auf den Seiten 115 und 116 die Ranges der beiden Achsen stehen. 
 Für die Spannung $2\frac{mV}{Div} \to 5\frac{V}{Div}$ und für die Zeit $5 \frac{ns}{Div} \to 50 \frac{s}{Div}$ (da wir $70MHz$ haben).
 
@@ -88,11 +88,10 @@ Es gibt jedoch neben der Ablesegenauigkeit noch weitere Fehlerquellen, die auf d
 
 \subsubsection*{Time Base Accuracy}
 
-Die Time Base Accuracy gibt an, wie genau das Oszilloskop die horizontale Achse (Zeit) skaliert. Sie wird in ppm (parts per million) angegeben. 
+Die Time Base Accuracy gibt an, wie genau das Oszilloskop die horizontale Achse (Zeit) skaliert. Sie wird in ppm (parts per million) angegeben. Unser Oszilloskop hat dabei \(50~\text{ppm}\).
 
-\paragraph{Angabe des Herstellers:} \(50~\text{ppm}\)
 
-\paragraph{Interpretation:} 
+\paragraph{Bedeutung:} 
 
 Wir wollen den systematischen Zeitfehler $\Delta t_{sys}$ des Oszilloskops bestimmen. Dabei definieren wir $t_{div}$ also die Auflösung.
 
@@ -133,7 +132,7 @@ Ganz zum Schluss werden die Fehler zu einem GEsamtfehler bestimmt, der dann als 
     \centering
     \begin{tabular}{l|l|l|l||l}
     \toprule
-    \textbf{Spannung [V/Div]} & \textbf{$\Delta V_{\text{Cursor}}$ [V]} & \textbf{$\Delta_{2\times \text{Cursor}}$ [V]} & \textbf{$\Delta V_{\text{sys}}$ [V]} & \textbf{$\Delta V_{\text{gesamt}}$ [V]} \\
+    \textbf{Spannung [V/Div]} & \textbf{$\Delta V_{\text{Cursor}}$ [V]} & \textbf{$\Delta V_{2\times \text{Cursor}}$ [V]} & \textbf{$\Delta V_{\text{sys}}$ [V]} & \textbf{$\Delta V_{\text{gesamt}}$ [V]} \\
     \midrule
     \(2,00\times 10^{-3}\) & \(5,00\times 10^{-6}\) & \(1,41\times 10^{-4}\) & -- & -- \\
     \(5,00\times 10^{-3}\) & \(1,25\times 10^{-5}\) & \(3,54\times 10^{-4}\) & -- & -- \\
@@ -183,7 +182,7 @@ Ganz zum Schluss werden die Fehler zu einem GEsamtfehler bestimmt, der dann als 
     \(50~\text{s}\) & \(1,00\times 10^{-1}\) & \(3,16\times 10^{0}\) & \(2,50\times 10^{-3}\) & \(3,16\times 10^{0}\) \\
     \bottomrule
     \end{tabular}
-    \caption{Spannungs- und Zeitauflösung, systematische Fehler und Gesamtfehler des Oszilloskops. Berücksichtigung von Ablese- und Systematischenfehlern. Berechnung des gesamt Fehlers der jeweiligen Einstellung.}
+    \caption{Spannungs- und Zeitauflösung, systematische Fehler und Gesamtfehler des Oszilloskops. Berücksichtigung von Ablese- und Systematischenfehlern.}
     \label{tab:all_fehler}
 \end{table}
 \twocolumn

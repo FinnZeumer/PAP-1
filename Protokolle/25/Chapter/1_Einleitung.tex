@@ -8,12 +8,13 @@ Ziel des Versuchs war es, den grundlegenden Umgang mit dem Oszilloskop zu erlern
 Zunächst werden einige grundlegende Größen und Konzepte eingeführt, die für die weitere Analyse wichtig sind. Die Periodendauer $T$ eines Signals gibt die Zeit an, die eine vollständige Periode durchläuft, während die Frequenz $f$ durch
 \begin{equation}
 f = \frac{1}{T}
+\label{eq:freq}
 \end{equation}
 definiert ist.  
 
 Für Wechselspannungen werden mehrere Spannungsarten unterschieden. Die Spitze-Spitze-Spannung $U_\text{SS}$ gibt die Differenz zwischen dem maximalen und minimalen Spannungswert an. Der Effektivwert $U_\text{eff}$ ist die konstante Gleichspannung, die an einem Widerstand die gleiche Energie liefert wie die Wechselspannung. Für eine sinusförmige Spannung gilt:
 \begin{equation}
-U_\text{eff} = \frac{U_\text{SS}}{2\sqrt{2}}.
+U_\text{eff} = \frac{U_\text{SS}}{\sqrt{2}}.
 \end{equation}
 
 Wechselstrom (AC, alternating current) ändert periodisch Richtung und Betrag, während Gleichstrom (DC, direct current) zeitlich konstant bleibt.  
@@ -22,12 +23,29 @@ Wechselstrom (AC, alternating current) ändert periodisch Richtung und Betrag, w
 Ein Oszilloskop dient der zeitlichen Darstellung elektrischer Signale. Analoge Oszilloskope nutzen einen Elektronenstrahl, der durch elektrische Felder auf einem Leuchtschirm abgelenkt wird. Das Eingangssignal steuert die vertikale Ablenkung, eine Sägezahnspannung die horizontale Ablenkung. Dies basiert auf den Bewegungsgesetzen geladener Teilchen im elektrischen Feld und Prinzipien der Elektronenoptik. Vorteil: kontinuierliche Darstellung, hohe Amplitudenauflösung.
 
 Digitale Oszilloskope nehmen das Signal über einen Analog-Digital-Wandler (ADC) in festen Intervallen auf, speichern die Werte und stellen sie auf einem Bildschirm dar. Das Nyquist-Theorem bestimmt die minimale Abtastrate, um Signale korrekt zu rekonstruieren. Vorteile: Speicherung, mathematische Verarbeitung, Triggerung, digitale Analyse. Nachteil: begrenzte Auflösung durch diskrete Abtastwerte.
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/2Kanal.pdf}
+    \caption{Zwei verschiedene Signale gleichzeitig.}
+\end{figure}
+
 
 \subsection{yt-Betrieb}
 Im yt-Betrieb wird Spannung gegen Zeit dargestellt. Das Signal wird am Eingang gedämpft, verstärkt, gefiltert und dann abgetastet. Die Abtastrate muss höher als die Signal-Frequenz sein, um Verzerrungen zu vermeiden. Die Bandbreite definiert die Frequenz, bei der ein sinusförmiges Signal auf 71\% seiner Amplitude abgeschwächt wird.
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/yt-Achsen.pdf}
+    \caption{Achsen klar visualisiert}
+\end{figure}
 
 \subsection{Triggerung}
 Triggerung stabilisiert periodische Signale, verhindert Flackern und sorgt dafür, dass immer der gleiche Signalabschnitt dargestellt wird. Meistens wird eine Flankentriggerung verwendet, bei der ein Triggerlevel festgelegt wird, an dem das Signal abgebildet wird. Steigende oder fallende Flanken können gewählt werden.
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Triggering.pdf}
+    \caption{Visualisierung Triggering}
+\end{figure}
+
 
 \subsection{Bedienung}
 Wichtige Funktionen sind die Eingangskopplung (AC, DC, Erde) sowie die vertikale und horizontale Skalenanpassung. AC-Kopplung filtert Gleichanteile, DC-Kopplung zeigt sie an. Die Erde-Position dient zur Nulljustierung.
@@ -45,7 +63,9 @@ PWM regelt Effektivspannung ohne Änderung der Betriebsspannung. Bei einer Impul
 U_M = U_0 \frac{t}{T}, \quad
 U_\text{eff} = U_0 \sqrt{\frac{t}{T}}.
 \end{equation}
-Dieses Prinzip wird z.B. zum Dimmen von LEDs verwendet.
-
-\section{Warum Oszilloskop und nicht Oszillator? ;)}
-Ein Oszillator erzeugt Signale, ein Oszilloskop beobachtet sie. Mit dem einen macht man Lärm, mit dem anderen liest man die Partitur. Deshalb heißt das Gerät Oszilloskop.
+So kann man bspw. LEDs dimmen.
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/PulsDef.pdf}
+    \caption{Eingezeichet sind die Periode T und die Pulsbreite t.}
+\end{figure}

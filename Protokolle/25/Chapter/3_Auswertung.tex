@@ -1,1 +1,326 @@
+\onecolumn
 \chapter{Auswertung}
+\label{ch:auswertung}
+
+\section*{Fehlerrechnung}
+Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größen definiert \cite{errorSkript25}:
+\begin{align}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetisches Mittel}} \label{eq:arithmetisches_mittel} \\
+    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}} \label{eq:variation} \\
+    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}} \label{eq:standardabweichung} \\
+    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}} \label{eq:fehler_mittelwert} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}} \label{eq:fehler_summe} \\
+    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}} \label{eq:fehler_proportional} \\
+    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}} \label{eq:relativer_fehler} \\
+    \sigma &= \frac{|a_{lit} - a_{gem}|}{\sqrt{\Delta a_{lit}^2 + \Delta a_{gem}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Berechnung der signifikanten Abweichung}} \label{eq:signifikante_abweichung}
+\end{align}
+
+\twocolumn
+
+% ////////////  Aufgaben Wechsel ////////////
+\section{Aufgabe 1: Function Generator}
+
+% ////////////  Aufgaben Wechsel ////////////
+\section{Aufgabe 2: Analyse der 9 Signale}
+
+Wir wollen die Signale 1 und 2 genauer analisieren. Signale 3 und 4 werden nur kurz beschrieben. Bei Signal 5 wird die Halbwertszeit berechnet. Signale 7 bis 9 werden dann wieder qualitativ beschrieben.
+\subsection*{Signal 1}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal1-Messwerte.pdf}
+    \caption{Signal 1 mit automatischen Messwerten und gesetzem Trigger im AC Modus.}
+\end{figure}
+Wir mussten zur Vermessung des Signales 1 sowohl manuell mit den Cursorn vermessen und automatisch mit den eingebauten Messfunktionen des Oszilloskopes.
+Wir haben dabei eine DIV größe von $200mv \times 2,5ms$ im AC-Modus geahbt und $200mv \times 2,5ms$ im DC-Modus. Aus \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} lassen sich somit die Fehler ablesen beziehungsweise aus den Angaben berechenn lassen zu:
+\begin{align}
+    &\textcolor{teal}{\Delta V_{AC}} &&= 0,15\, &&[mV] \\
+    &\textcolor{purple}{\Delta V_{DC}} &&= 0,4\, &&[mV] \\
+    &\Delta t &&= 0,16 \, &&[ms].
+\end{align}
+(Es wurde auf signifikante Stellen gerundet).
+
+In den Tabellen werden die Spalten \textcolor{teal}{Grün} angezeigt, wenn sie in AC gemessen wurden und \textcolor{purple}{Lila}, wenn sie im DC-Modus gemessen wurden. Dies ist nur für die Cursor wichtig.
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal1-DC.pdf}
+    \caption{Signal 1 mit automatischen Messwerten und gesetzem Trigger im DC Modus.}
+\end{figure}
+
+Diese Unsicherheiten verwenden wir nun, wenn immer wir Cursor-Messungen zur Berechnung benutzen. Die automatischen Werte sollen als >>perfekt<< angenommen werden.
+In den Tabellen beschreibt $T$ die Periodendauer in ms, $U_{SS}$ die Spitzen-Spitze-Spannung (also die Differenz von $U_{max}$ und $U_{min}$). $U_{max}$ und $U_{min}$ sind die lokalen\footnote{Also die auf dem Display angezeigten Extrempunkte.} Extrempunkte. $U_{G}$ ist die $DC_{offset}$-Spannung. Berechnet wird dieser über den Mittelwert im DC-Modus.
+
+Wir schreiben daher einmal alle Informationen aus dem  \hyperref[Protokoll]{Protokoll} in zwei Tabellen, in eine für die automatisch berechneten Werte und eine für die Cursor-Messungen.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c | c | c | c }
+        \toprule
+        T [ms] & $U_{SS}$ [V] & $U_{G}$ [V] & $U_{max}$ [V] & $U_{min}$ [V] \\
+        \hline
+        4,983 & 1,06 & 0,93 & 1,50 & 0,40 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabelle der vom Osziloskop berechneten Werte.}
+    \label{tab:sig1_auto}
+\end{table}
+
+In \hyperref[tab:sig1_auto]{Tabelle \ref*{tab:sig1_auto}} sind alle automatisch gemessenen Werte eingetragen. 
+
+Aus der Periodendauer können wir nun die \hyperref[eq:freq]{Frequenz (\ref*{eq:freq})} berechnen:
+\begin{equation}
+    \boxed{
+        f_{auto} = 0,202 ms^{-1} \, \hat = \, 4,95 kHz
+    }.
+\end{equation}
+
+Aus den Extrema können wir $U_G$ auch noch rechnerisch über das \hyperref[eq:arithmetisches_mittel]{arithmetische Mittel \ref*{eq:arithmetisches_mittel}} bestimmen:
+\begin{equation}
+    U_{G,auto,r} = 0,95 V.
+\end{equation}
+
+Merkwürdig ist, dass die Werte $U_G$ und $U_{G,auto,r}$ einwenig abweichen. Dies liegt daran, dass das Signal nicht konstant war. Aus nicht bekannten Gründen sind die Werte über die Zeit angestiegen. Da wir die Werte aber nacheinander abgeschrieben haben, waren zu dem Moment die Werte schon nicht mehr stringent. Die Abweichung ist jedoch nicht besonders groß.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c | c | c }
+        \toprule
+        T [ms] & \textcolor{teal}{$U_{SS}$ [V]} & \textcolor{purple}{$U_{max}$ [V]} & \textcolor{purple}{$U_{min}$ [V]} \\
+        \hline
+        $5,00 \pm 0,16 $ & $1,064$ & $1,500$ & $0,460$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabelle der mit Cursor bestimmten Werte. }
+    \label{tab:sig1_cursor}
+\end{table}
+
+Wir wollen nun $U_{G}$ bestimmen. Dies ist der \hyperref[eq:arithmetisches_mittel]{Mittelwert \ref*{eq:arithmetisches_mittel}} von $U_{max}$ und $U_{min}$. 
+\begin{equation}
+    U_{G} = 0,980 V.
+\end{equation}
+
+Dabei entspricht $U_{G}$ gerade dem Gleichspannungsanteil.
+
+Seinen Fehler bestimmen wir via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
+\begin{equation}
+    \Delta U_{G} = \sqrt{\left(\Delta U_{min}\right)^2 + \left(\Delta U_{max}\right)^2}.
+\end{equation}
+
+Somit kommen wir auf ein Ergebnis von 
+\begin{equation}
+    \boxed{
+        U_{G} = (980,0 \pm 0,6) \, mV
+    }.
+\end{equation}
+
+Als nächstes berechnen wir die Frequenz der Cursor-Messung:
+\begin{equation}
+    \underline{
+        f_{cursor} = 0,2 ms^{-1} \, \hat= \, 5kHz
+    }.
+\end{equation}
+
+Den Fehler der Frequenz müssen wir noch bestimmen, wieder über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
+\begin{equation}
+    \Delta f = \frac{\Delta T}{T^2}.
+\end{equation}
+
+Berechenn wir diesen Fehler und tragen das Ergebnis zusammen, kommen wir zu: 
+\begin{equation}
+    \boxed{
+        f_{cursor} = (0,200 \pm 0,006) ms^{-1}
+    }.
+\end{equation}
+(Es wurde auf signifikante Stellen gekürzt.)
+
+
+Nocheinmal die Gefragten Werte zusammengetragen:
+\begin{align*}
+    U_{G,auto} &= 930 mV \\
+    U_{G,auto,r} &= 0,95 V \\
+    U_{SS} &= 1,06 V \\
+    f_{auto} &= 0,202 ms^{-1} \\
+    \\
+    U_{G,cursor}& = (980,0 \pm<< 0,6)\, mV \\
+    U_{SS,cursor} &= (1,064 \pm 0,15)\, V \\
+    f_{cursor} &= (0,200 \pm 0,006)\, ms^{-1}
+\end{align*}
+
+Wir berechnen nun noch, wie signifikant die Werte des Cursors sind, indem wir die autoamtisch berechneten als Referent nehmen. Wir nuzen \hyperref[eq:signifikante_abweichung]{Gleichung \ref*{eq:signifikante_abweichung}} der Fehlerrechnung:
+Wir beginnen mit der Offset-Spannung $U_G$:
+\begin{equation}
+    \frac{\left| U_{G,auto} - U_{G,cursor} \right|}{\Delta U_{G,cursor}} = 83\sigma.
+\end{equation}
+
+Für die Spitzen-Spitzen-Spannung:
+\begin{equation}
+    \frac{\left| U_{SS,auto} - U_{SS,cursor} \right|}{\Delta U_{SS,cursor}} = 0,027\sigma.
+\end{equation}
+
+Und zuletzt für die Frequenz:
+\begin{equation}
+    \frac{\left| f_{auto} - f_{cursor} \right|}{\Delta f_{cursor}} = 0,33\sigma.
+\end{equation}
+
+
+% \begin{figure} [h!]
+%     \centering
+%         \includegraphics[width=0.35\textwidth]{img/25/memes/kommunismus.pdf}
+%     \caption{Meme nach Signal 1}
+% \end{figure}
+
+
+% ------------------- Signal 2 -------------------
+
+\subsection*{Signal 2}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal2-Clean.pdf}
+    \caption{Signal 2 mit gesetzem Trigger.}
+\end{figure}
+
+Wir schauen uns nun das zweite Signal an, dessen Punkte wir gemessen haben. Die Tabellen sind hier wie bei Signal 1 Aufgebaut.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c | c | c | c }
+        \toprule
+        T [ms] & $U_{SS}$ [V] & $U_{G}$ [V] & $U_{max}$ [V] & $U_{min}$ [V] \\
+        \hline
+        ----- & 0,104 & 1,61 & -1,56 & -1,67 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabelle der vom Osziloskop berechneten Werte des zweiten Signals.}
+    \label{tab:sig2_auto}
+\end{table}
+
+Die Periodendauer konnte automatisch nicht gemessen werden. Dies lag an dem stark rauschendem (beziehungsweise nicht konstanen) Signal. Auch wenn man es pausiert, kann keine automatische Periodenmessung stattfinden. Als logische Konsequenz kann hier keine Frequenz bestimmt werden.
+
+Neben den automatisch berechneten Werten für $U_{SS}$ und $U_G$ wollen wir die Rechnung über die $U_{max}$ und die $U_{min}$ nochmal überprüfen:
+\begin{equation}
+    U_{SS,r} = 0,11 V,
+\end{equation}
+\begin{equation}
+    U_{G,r} = 1,615 V.
+\end{equation}
+
+Es sind leichte Abweichungen zu erkennen, aber grundsätzlich sind die Werte stringent. Die Abweichungen kommen wie bei Signal 1 daher, dass die Signale nicht kontinuirlich sind, sonder Schwankungen unterliegen. 
+
+Für die Cursor-Messung müssen wir zunächst wieder die Fehler bestimmen. Wir haben dieses mal für die AC-Spannung ein Step-Grid von $20mv \times 1,00ms$. Für die DC-Spannung \textcolor{red}{HIER WERTE NOCH EINFÜGEN}. Wir greifen wieder auf die \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} zurück und kommen somit auf Ungenauigkeiten von:
+\begin{align}
+    \Delta t &= 0,006 ms \\
+    \textcolor{teal}{\Delta U_{AC}} &=0,015 mV \\
+    \textcolor{red}{\Delta U_{DC}}
+\end{align}
+
+Wir tragen nun die Werte der Messungen in die Tabelle ein:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c | c | c | c }
+        \toprule
+        T [ms] & \textcolor{teal}{$U_{SS}$ [mV]} & \textcolor{purple}{$U_{max}$ [mV]} & \textcolor{purple}{$U_{min}$ [mV]} \\
+        \hline
+        $1,560 \pm 0,006 $ & $125,6$ & $68,8$ & $56,8$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tabelle der mit Cursor bestimmten Werte. }
+    \label{tab:sig1_cursor}
+\end{table}
+
+\newpage
+\onecolumn
+\twocolumn
+
+% ------------------- Signal 3 -------------------
+\subsection*{Signal 3}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal3.pdf}
+    \caption{Signal 3}
+\end{figure}
+
+% ------------------- Signal 4 -------------------
+\subsection*{Signal 4}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal4.pdf}
+    \caption{Signal 4}
+\end{figure}
+
+% ------------------- Signal 5 -------------------
+\subsection*{Signal 5}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-Clean.pdf}
+    \caption{Signal 5 nah rangezoomed um den Abfall klar zu erkennen.}
+\end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-AC.pdf}
+    \caption{Signal 5-AC modus}
+\end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-DC.pdf}
+    \caption{Signal 5-DC Modus}
+\end{figure}
+
+% ------------------- Signal 6 -------------------
+\subsection*{Signal 6}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal6.pdf}
+    \caption{Signal 6}
+\end{figure}
+
+% ------------------- Signal 7 -------------------
+\subsection*{Signal 7}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal7.pdf}
+    \caption{Signal 7}
+\end{figure}
+
+% ------------------- Signal 8 -------------------
+\subsection*{Signal 8}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signale8-deutlich-getrennt.pdf}
+    \caption{Signal 8 mit verschobenen Nullpunkten und verschiedenen Amplituden.}
+\end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signale8-Überlagerung.pdf}
+    \caption{Signal 8 mit gleichem Nullpunkt, aber verschiedenen Amplituden.}
+\end{figure}
+
+
+% ------------------- Signal 9 -------------------
+\subsection*{Signal 9}
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal9-Gesamt.pdf}
+    \caption{Signal 9. Man sieht die Pahsen und die Gruppen sehr gut}
+\end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal9-einzeln.pdf}
+    \caption{Signal 9, einzelne Gruppe.}
+\end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal9-Sin-eingezeichnet.pdf}
+    \caption{Signal 9, eingezeichnete Phase.}
+\end{figure}
+
+% ////////////  Aufgaben Wechsel ////////////
+\section{Aufgabe 3: Pulsweitenmodulation}
+
+% ////////////  Aufgaben Wechsel ////////////
+\section{Aufgabe 4: Koaxialkabel}
