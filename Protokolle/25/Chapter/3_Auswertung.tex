@@ -32,10 +32,10 @@ Wir wollen die Signale 1 und 2 genauer analisieren. Signale 3 und 4 werden nur k
     \caption{Signal 1 mit automatischen Messwerten und gesetzem Trigger im AC Modus.}
 \end{figure}
 Wir mussten zur Vermessung des Signales 1 sowohl manuell mit den Cursorn vermessen und automatisch mit den eingebauten Messfunktionen des Oszilloskopes.
-Wir haben dabei eine DIV größe von $200mv \times 2,5ms$ im AC-Modus geahbt und $200mv \times 2,5ms$ im DC-Modus. Aus \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} lassen sich somit die Fehler ablesen beziehungsweise aus den Angaben berechenn lassen zu:
+Wir haben dabei eine DIV größe von $200mv \times 2,5ms$ im AC-Modus geahbt und $500mv \times 2,5ms$ im DC-Modus. Aus \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} lassen sich somit die Fehler ablesen beziehungsweise aus den Angaben berechenn lassen zu:
 \begin{align}
-    &\textcolor{teal}{\Delta V_{AC}} &&= 0,15\, &&[mV] \\
-    &\textcolor{purple}{\Delta V_{DC}} &&= 0,4\, &&[mV] \\
+    &\textcolor{teal}{\Delta V_{AC}} &&= 15\, &&[mV] \\
+    &\textcolor{purple}{\Delta V_{DC}} &&= 40\, &&[mV] \\
     &\Delta t &&= 0,16 \, &&[ms].
 \end{align}
 (Es wurde auf signifikante Stellen gerundet).
@@ -110,7 +110,7 @@ Seinen Fehler bestimmen wir via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'sche
 Somit kommen wir auf ein Ergebnis von 
 \begin{equation}
     \boxed{
-        U_{G} = (980,0 \pm 0,6) \, mV
+        U_{G} = (980 \pm 60) \, mV
     }.
 \end{equation}
 
@@ -124,6 +124,7 @@ Als nächstes berechnen wir die Frequenz der Cursor-Messung:
 Den Fehler der Frequenz müssen wir noch bestimmen, wieder über \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
 \begin{equation}
     \Delta f = \frac{\Delta T}{T^2}.
+    \label{eq:f_freq}
 \end{equation}
 
 Berechenn wir diesen Fehler und tragen das Ergebnis zusammen, kommen wir zu: 
@@ -142,20 +143,23 @@ Nocheinmal die Gefragten Werte zusammengetragen:
     U_{SS} &= 1,06 V \\
     f_{auto} &= 0,202 ms^{-1} \\
     \\
-    U_{G,cursor}& = (980,0 \pm<< 0,6)\, mV \\
-    U_{SS,cursor} &= (1,064 \pm 0,15)\, V \\
+    U_{G,cursor}& = (980 \pm 60)\, mV \\
+    U_{SS,cursor} &= (1\,064 \pm 15)\, mV \\
+    U_{SS,cursor,r} &= (1\,040 \pm 60)\, mV \\
     f_{cursor} &= (0,200 \pm 0,006)\, ms^{-1}
 \end{align*}
+
+Der Wert $U_{SS,cursor,r}$ ist dabei der nochmal neu gerechtete Wert, aus dem Maximum und dem Minimum. 
 
 Wir berechnen nun noch, wie signifikant die Werte des Cursors sind, indem wir die autoamtisch berechneten als Referent nehmen. Wir nuzen \hyperref[eq:signifikante_abweichung]{Gleichung \ref*{eq:signifikante_abweichung}} der Fehlerrechnung:
 Wir beginnen mit der Offset-Spannung $U_G$:
 \begin{equation}
-    \frac{\left| U_{G,auto} - U_{G,cursor} \right|}{\Delta U_{G,cursor}} = 83\sigma.
+    \frac{\left| U_{G,auto} - U_{G,cursor} \right|}{\Delta U_{G,cursor}} = 0,83\sigma.
 \end{equation}
 
 Für die Spitzen-Spitzen-Spannung:
 \begin{equation}
-    \frac{\left| U_{SS,auto} - U_{SS,cursor} \right|}{\Delta U_{SS,cursor}} = 0,027\sigma.
+    \frac{\left| U_{SS,auto} - U_{SS,cursor} \right|}{\Delta U_{SS,cursor}} = 17\sigma.
 \end{equation}
 
 Und zuletzt für die Frequenz:
@@ -186,9 +190,9 @@ Wir schauen uns nun das zweite Signal an, dessen Punkte wir gemessen haben. Die 
     \centering
     \begin{tabular}{c | c | c | c | c }
         \toprule
-        T [ms] & $U_{SS}$ [V] & $U_{G}$ [V] & $U_{max}$ [V] & $U_{min}$ [V] \\
+        T & $U_{SS}$ [V] & $U_{G}$ [V] & $U_{max}$ [V] & $U_{min}$ [V] \\
         \hline
-        ----- & 0,104 & 1,61 & -1,56 & -1,67 \\
+        --- & 0,104 & 1,61 & -1,56 & -1,67 \\
         \bottomrule
     \end{tabular}
     \caption{Tabelle der vom Osziloskop berechneten Werte des zweiten Signals.}
@@ -207,11 +211,11 @@ Neben den automatisch berechneten Werten für $U_{SS}$ und $U_G$ wollen wir die 
 
 Es sind leichte Abweichungen zu erkennen, aber grundsätzlich sind die Werte stringent. Die Abweichungen kommen wie bei Signal 1 daher, dass die Signale nicht kontinuirlich sind, sonder Schwankungen unterliegen. 
 
-Für die Cursor-Messung müssen wir zunächst wieder die Fehler bestimmen. Wir haben dieses mal für die AC-Spannung ein Step-Grid von $20mv \times 1,00ms$. Für die DC-Spannung \textcolor{red}{HIER WERTE NOCH EINFÜGEN}. Wir greifen wieder auf die \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} zurück und kommen somit auf Ungenauigkeiten von:
+Für die Cursor-Messung müssen wir zunächst wieder die Fehler bestimmen. Wir haben dieses mal für die AC-Spannung ein Step-Grid von $20mv \times 1,00ms$. Für die DC-Spannung $50mv \times 1,00ms$. Wir greifen wieder auf die \hyperref[tab:all_fehler]{Tabelle \ref*{tab:all_fehler}} zurück und kommen somit auf Ungenauigkeiten von:
 \begin{align}
     \Delta t &= 0,006 ms \\
-    \textcolor{teal}{\Delta U_{AC}} &=0,015 mV \\
-    \textcolor{red}{\Delta U_{DC}}
+    \textcolor{teal}{\Delta U_{AC}} &=1,5 mV \\
+    \textcolor{purple}{\Delta U_{DC}} &= 4,0 mV
 \end{align}
 
 Wir tragen nun die Werte der Messungen in die Tabelle ein:
@@ -221,12 +225,56 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
         \toprule
         T [ms] & \textcolor{teal}{$U_{SS}$ [mV]} & \textcolor{purple}{$U_{max}$ [mV]} & \textcolor{purple}{$U_{min}$ [mV]} \\
         \hline
-        $1,560 \pm 0,006 $ & $125,6$ & $68,8$ & $56,8$ \\
+        $1,560$ & $125,6$ & $68,8$ & $56,8$ \\
         \bottomrule
     \end{tabular}
     \caption{Tabelle der mit Cursor bestimmten Werte. }
-    \label{tab:sig1_cursor}
+    \label{tab:sig2_cursor}
 \end{table}
+
+Wir berechen die \hyperref[eq:freq]{Frequenzen (\ref*{eq:freq})} Cursor- Messung:
+\begin{equation}
+    f_{cursor} = 0,641 ms^{-1}.
+\end{equation}
+
+Sein Fehler wird Analog zu \hyperref[eq:f_freq]{Gleichung \ref*{eq:f_freq}} berechnet. Wir kommen also auf ein Ergebnis von
+\begin{equation}
+\boxed{
+    f = (0,6410 \pm 0,0025) \, ms^{-1}
+}.
+\end{equation}
+
+Als nächstes wollen wir $U_G$ aus der Cursor-Messung bestimmen. Diese ist wieder Analog zum ersten Signal. 
+Unser $U_{G,cursor}$ ist somit:
+\begin{equation}
+    U_{G,cursor} = 62,8 mV,
+\end{equation}
+mit einer Ungenauigkeit von
+\begin{equation}
+    \Delta U_{G,cursor} = 5,657 mV.
+\end{equation}
+
+Als Ergebnis also:
+\begin{equation}
+\boxed{
+    U_{G,cursor} = (63 \pm 6) \, mV
+}
+\end{equation}
+
+Recht offensichtlich ist der gemessene Wert der $U_{SS}$-Spannung nicht richtig. Wir würden eigentlich erwarten:
+\begin{equation}
+    U_{SS,r} = 12 mV
+\end{equation}
+
+Der oben angegebene Wert ist scheinbar einfach die Summe der Extrema. Diese Berechnung ist flasch. Wir haben diesen Wert hier also offensichtlich nicht gemessen, sondern falsch berechnet. Von nun an ist $U_{SS,r}$ der richtige Wert.
+Wir müssen seine Ungenauigkeit noch bstimmen. Diese ist jedoch einfach identisch zur $U_G$-ungenauigkeit. Unser Ergebnis ist somit:
+\begin{equation}
+    \boxed{
+        U_{SS,cursor} = (12 \pm 6) mV.
+    }
+\end{equation}
+
+
 
 \newpage
 \onecolumn
@@ -240,6 +288,8 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
     \caption{Signal 3}
 \end{figure}
 
+Signal 3 ist ein Zick-Zack-Signal.
+
 % ------------------- Signal 4 -------------------
 \subsection*{Signal 4}
 \begin{figure} [h!]
@@ -248,25 +298,60 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
     \caption{Signal 4}
 \end{figure}
 
+Signal 4 ist wieder eine Sinus-Funktion.
+
+\newpage
+
 % ------------------- Signal 5 -------------------
 \subsection*{Signal 5}
+
+Für Signal 5 ist die Halbwertszeit zu bestimmen, also jene Zeit, bei der die Spannung um die Hälfte abgefallen ist.
+Gemessen haben wir mit einer Divgröße von $500mV \times 2,5ms$ berechnet. Das Spannungsplatau lag bei $1V$. Wir haben also geschaut, wie groß die x-Achsen-Differenz vom Punkt, wo die Spannung abfällt, bis zu dem Punkt, an dem sie $500mV$ beträgt.
+
 \begin{figure} [h!]
     \centering
         \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-Clean.pdf}
     \caption{Signal 5 nah rangezoomed um den Abfall klar zu erkennen.}
 \end{figure}
 
+Die Halbwertszeit liegt dabei bei 
+\begin{equation}
+    2,40 ms
+\end{equation}.
+
+Wir haben eine Auflösung von 2,5ms, wir haben also einen Zeitfehler von:
+\begin{equation}
+    0,16 ms
+\end{equation}
+
+Wir tragen das gesamte zu einem Ergebnis zusammen:
+\begin{equation}
+\boxed{
+    t_H = (2,40 \pm 0,16)\, ms
+}
+\end{equation}
+
+
+Außerdem sind hier nochmal die beiden Grafiken, die zum Vergleich der AC und der DC-Spannung dienen. Abbildung \ref{fig:sig5-ac} zeigt die AC-Spannung, Abbildung \ref{fig:sig5-dc} die DC-Spannung.
+\onecolumn
 \begin{figure} [h!]
     \centering
-        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-AC.pdf}
+        \includegraphics[width=0.8\textwidth]{img/25/Signale2/Signal5-AC.pdf}
     \caption{Signal 5-AC modus}
+    \label{fig:sig5-ac}
 \end{figure}
 
 \begin{figure} [h!]
     \centering
-        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal5-DC.pdf}
+        \includegraphics[width=0.8\textwidth]{img/25/Signale2/Signal5-DC.pdf}
     \caption{Signal 5-DC Modus}
+    \label{fig:sig5-dc}
 \end{figure}
+\twocolumn
+
+\newpage
+\onecolumn
+\twocolumn
 
 % ------------------- Signal 6 -------------------
 \subsection*{Signal 6}
@@ -284,6 +369,8 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
     \caption{Signal 7}
 \end{figure}
 
+\newpage
+
 % ------------------- Signal 8 -------------------
 \subsection*{Signal 8}
 \begin{figure} [h!]
@@ -298,9 +385,12 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
     \caption{Signal 8 mit gleichem Nullpunkt, aber verschiedenen Amplituden.}
 \end{figure}
 
+\newpage 
 
 % ------------------- Signal 9 -------------------
 \subsection*{Signal 9}
+
+Für Signal 9 sind wieder Messungen betrieben wurden. D
 \begin{figure} [h!]
     \centering
         \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal9-Gesamt.pdf}
@@ -318,6 +408,19 @@ Wir tragen nun die Werte der Messungen in die Tabelle ein:
         \includegraphics[width=0.45\textwidth]{img/25/Signale2/Signal9-Sin-eingezeichnet.pdf}
     \caption{Signal 9, eingezeichnete Phase.}
 \end{figure}
+
+\begin{figure} [h!]
+    \centering
+        \includegraphics[width=0.45\textwidth]{img/25/Signale2/Sig9-FFT.pdf}
+    \caption{Signal 9, eingezeichnete Phase.}
+\end{figure}
+
+
+
+\newpage
+\onecolumn
+\twocolumn
+
 
 % ////////////  Aufgaben Wechsel ////////////
 \section{Aufgabe 3: Pulsweitenmodulation}
