@@ -1,1 +1,96 @@
+\onecolumn
 \chapter{Auswertung}
+\label{ch:auswertung}
+
+\section*{Fehlerrechnung}
+Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größen definiert \cite{errorSkript25}:
+\begin{align}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^{n} x_i \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Arithmetisches Mittel}} \label{eq:arithmetisches_mittel} \\
+    \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}} \label{eq:variation} \\
+    \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}} \label{eq:standardabweichung} \\
+    \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}} \label{eq:fehler_mittelwert} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}} \label{eq:fehler_summe} \\
+    \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}} \label{eq:fehler_proportional} \\
+    \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}} \label{eq:relativer_fehler} \\
+    \sigma &= \frac{|a_{lit} - a_{gem}|}{\sqrt{\Delta a_{lit}^2 + \Delta a_{gem}^2}} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Berechnung der signifikanten Abweichung}} \label{eq:signifikante_abweichung}
+\end{align}
+
+\twocolumn
+
+%  ///////////////// AUFGABE 1 /////////////////
+\section{Aufgabe 1: Pendellänge und Kugelradius}
+Das Pendel wurde im Equilibrium vermessen. Es werden zwei Punkte an der Spiegelskala abgelesen, der obere un der untere Punkt der Kugel. Darüber hinaus wurde die Kugel mit der Schieblehre vermessen. So lässt sich die Fadenlänge und der Kugelradius jeweils auf zwei weisen Messen; jenachdem, welcher Messmethode man mehr vertrauen schencken mag.
+Genutzt für die Messung wurden einmal die Spiegelskala, diese hat eine Skalapräzission von $0,1cm$, und einen geschätzten Ablesefehler von $0,3cm$, dieser Wert wurde großzügiger angenommen, da durch die Pendelbewegung das menschliche Auge Probleme beim Ablesen hat. Der wird aber für statische Rechnungen auf die Hälfte der Präzission angenommen. Ein systematischer Fehler ist hier nicht vermerkt. Die Gesamtungenauigkeit der Spiegelskala $\Delta s_{ss}$ wird via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt:
+\begin{equation}
+    \Delta s_{ss} = \sqrt{0,1^2+0,05^2} = 0,1118 [cm].
+\end{equation}
+
+Die Ungenauigkeit wurde hier auf signifikante Stellen gerundet.
+
+Die Ungenauigkeit der Schieblehre lässt sich Analog bestimmen. Wir haben eine Präzission von $0,1cm$, aus welcher wir den Ableseungenauigkeit bestimmen, indem wir den Wert zu $0,05cm$ halbieren. Zuletzt gibt der Hersteller eine systematische Ungenauigkeit von $0,005cm$ an. Über die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} berechnet sich der Gesamtfehler der Schieblehre:
+\begin{equation}
+    \Delta s_{sl} = \sqrt{0,1^2+0,05^2+0,005^2} = 0,1119 [cm].
+\end{equation}
+Auch dieses Ergebnis ist auf signifikante Stellen gerundet. Im statischen Zustand sind die beidne Methoden also annährend gleichgenau.
+
+Der Durchmesser der Kugel ist gemessen mir der Schieblehre also:
+\begin{equation}
+    D_{k,sl} = (3,0000 \pm 0,1119)cm.
+\end{equation}
+
+Man kann den Durchmesser jedoch auch über den die Diffrenz der beiden Fadenlängen bemessen. Wir haben hier drei Messwerte, daher nehmen wir den Mittelwert als Durchmesser der Kugel. Die Gemessenen Werte sin der Tabelle 1 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Die Länge des Fadens ist dabei das \hyperref[eq:arithmetisches_mittel]{arithmetische Mittel \ref*{eq:arithmetisches_mittel}}. Wir entnehmen der Tabelle wieder die Werte und kommen auf eine Fadenlänge $l'$ von
+\begin{equation}
+    l' = (88,1667 \pm 0,1119) cm.
+\end{equation}
+
+Das Pendel ist hier definiert als die Fadenlänge und dem Radius der Kugel, da dort der Schwerpunkt der Kugel liegt. Die Fadenlänge inklusive des Durchmessers der Kugel $l_D$ ist das arithmetische Mittel der unteren Punkte:
+\begin{equation}
+    l_D = (91,2000 \pm 0,118) cm.
+\end{equation}
+
+Aus diesen Beiden Werten können die den Durchmesser der Kugel erneut bestimmenl, indem wir die Differenzen nehmen und kommen somit auf den Durchmesser
+\begin{equation}
+    D_{k,ss} = (3,17 \pm 0,16)cm.
+\end{equation}
+
+Der Fehler wurde über die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt, denn hier wurde die Differenz zwei fehlerbehafteten Werte gezogen:
+\begin{equation}
+    \Delta D_{k,ss} = \sqrt{2 \cdot 0,1118^2} = 0,16 [cm]
+\end{equation}
+
+Die Radien sind sehr ähnlich, jedoch haben sie eine recht große Abweichung. Berechnen wir die signifikante Abweichung der beiden Radien nach \hyperref[eq:signifikante_abweichung]{Gleichung \ref*{eq:signifikante_abweichung}}:
+\begin{equation}
+    \frac{\left| D_{k,ss} - D_{k,sl} \right|}{\sqrt{(\Delta s_{ss})^2 + (\Delta s_{sl})^2 }} = 0,85\sigma.
+\end{equation}
+
+Wir sehen, dass die Werte sich grundlegend Decken, jedoch spürbare unterschiede haben. Wir wollen das Ergebnis in der \hyperref[ch:diskussion]{Diskussion} diskutieren. Wir werden mit dem Bestimmten Radius der Schieblehre weiter rechnen, da der Wert >>satischer<< ist und sich hier weniger Bewegungsungenauigkeiten vermuten lassen.
+
+Unser Kugelradius ist somit 
+\begin{equation}
+    \boxed{
+        r_K = (1,50 \pm 0,06)cm.
+    }
+\end{equation}
+
+Das Pendel hat somit eine Länge $l$ der Summe der Fadenlänge und des Kugelradiuses. Der der Pendellänge ist dabei:
+\begin{equation}
+    \Delta l = \sqrt{(\Delta r_K)^2 + (\Delta s_{ss})^2} = 0,13 [cm].
+\end{equation} 
+
+Das Pendel hat also eine Länge von
+\begin{equation}
+\boxed{
+    l = (89,67 \pm 0,13)cm
+}
+\end{equation}
+
+
+%  ///////////////// AUFGABE 2 /////////////////
+\section{Aufgabe 2: Grobe Rechnung}
+
+%  ///////////////// AUFGABE 3 /////////////////
+\section{Aufgabe 3: }
+
+%  ///////////////// AUFGABE 4 /////////////////
+\section{Aufgabe 4: }

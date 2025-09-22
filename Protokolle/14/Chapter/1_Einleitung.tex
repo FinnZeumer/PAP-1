@@ -1,6 +1,98 @@
 \chapter{Einleitung}
 
 \section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Ziel des Versuchs ist die Bestimmung der Erdbeschleunigung $g$ mithilfe eines mathematischen Pendels. Dazu wird die Schwingungsdauer des Pendels in Abhängigkeit von seiner Länge gemessen. Ein mathematisches Pendel besteht idealisiert aus einer Masselosen, nicht dehnbaren Schnur, an deren Ende eine Punktmasse befestigt ist. In der Realität müssen jedoch Korrekturen berücksichtigt werden, da das Pendel nicht ideal ist. Insbesondere spielen Effekte wie Luftreibung, Auftrieb, die endliche Ausdehnung und Masse der Kugel sowie die Masse des Fadens eine Rolle. Die genaue Analyse dieser Einflüsse erlaubt eine verbesserte Bestimmung der Erdbeschleunigung am Versuchsort.
+
 \section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\cite{skript25,demtroeder17}
+\subsection{Naive Betrachtung des mathematischen Pendels}
+Für kleine Auslenkungen $\varphi$ kann die Bewegung des ungedämpften mathematischen Pendels durch die Differentialgleichung
+\begin{equation}
+    \ddot{\varphi} + \frac{g}{l} \varphi = 0
+    \label{eq:diff_naiv}
+\end{equation}
+beschrieben werden. Hierbei bezeichnet $l$ die Pendellänge. Die Lösung dieser Gleichung entspricht der eines harmonischen Oszillators. Es ergibt sich für die Schwingungsdauer
+\begin{equation}
+    T_0 = 2\pi \sqrt{\frac{l}{g}}
+    \label{eq:T0}
+\end{equation}
+und daraus
+\begin{equation}
+    g = \frac{4\pi^2 l}{T_0^2}.
+    \label{eq:g_ideal}
+\end{equation}
+
+\subsection{Fehlerbetrachtung}
+Zur Bestimung der Genauigkeit wird das Gaußsche Fehlerfortpflanzungsgesetz angewendet. Der relative Fehler der Erdbeschleunigung ergibt sich zu
+\begin{equation}
+    \frac{\Delta g}{g} = \sqrt{\left(\frac{\Delta l}{l}\right)^2 + \left(\frac{2\Delta T_0}{T_0}\right)^2}.
+    \label{eq:fehler_g}
+\end{equation}
+Für den relativen Fehler der Periodendauer gilt
+\begin{equation}
+    \frac{\Delta T_0}{T_0} = \frac{\Delta t}{n T_0},
+    \label{eq:fehler_T}
+\end{equation}
+wobei $\Delta t$ die Stoppgenauigkeit und $n$ die Anzahl der gemessenen Schwingungen ist. Durch Erhöhung von $n$ kann der Zeitfehler klein gehalten werden, sodass die Genauigkeit im Wesentlichen durch die Längenmessung begrenzt wird. Praktisch ergibt sich die Bedingung
+\begin{equation}
+    \frac{2 \Delta t}{n T_0} \approx 0{,}3 \frac{\Delta l}{l}.
+    \label{eq:bedingung_n}
+\end{equation}
+
+\subsection{Exaktere Betrachtung des Drehpendels}
+Eine exakte Theorie behandelt das Pendel als drehpendel mit dem Aufhängepunkt als Drehahcse. Die allgemeine Schwingugnsdauer ergibt sich zu
+\begin{equation}
+    T = 2\pi \sqrt{\frac{J}{D}},
+    \label{eq:T_drehpendel}
+\end{equation}
+wobei $J$ das Trägheitsmoment bezüglich der Drehachse und $D$ die Winkelrichtgröße ist. Das Gesamtträgheitsmoment setzt sich aus Kugel und Faden zusammen:
+\begin{equation}
+    J = \underbrace{m_K l^2 + \frac{2}{5} m_K r^2}_{J_K} 
+      + \underbrace{\frac{1}{3} m_F l'^2}_{J_F},
+    \label{eq:J}
+\end{equation}
+
+mit Kugelmasse $m_K$, Fadenmasse $m_F$, Kugelradius $r$, Pendellänge $l$ und Fadenlänge $l'$.
+
+Das rücktreibende Drehmoment lautet
+\begin{equation}
+    M = -\left[\left(m_K - \rho_L V_K \right) g l \sin \varphi + \frac{1}{2} m_F g l' \sin \varphi \right],
+    \label{eq:drehmoment}
+\end{equation}
+wobei $\rho_L$ die Luftdichte und $V_K$ das Volumen der Kugel ist. Mit der Kleinwinkelnäherung $\sin\varphi \approx \varphi$ folgt
+\begin{equation}
+    D = m_K g l \left(1 - \frac{\rho_L}{\rho_K} + \frac{m_F}{2 m_K}\right),
+    \label{eq:D}
+\end{equation}
+wobei $\rho_K$ die Dichte der Kugel ist. Setzt man \eqref{eq:J} und \eqref{eq:D} in \eqref{eq:T_drehpendel} ein und verwendet die Näherung $1/(1-\epsilon) \approx 1+\epsilon$, so ergibt sich
+\begin{equation}
+    T^2 = \frac{4 \pi^2 l}{g} \left(1 + \frac{2r^2}{5l^2} + \frac{\rho_L}{\rho_K} - \frac{m_F}{6m_K}\right).
+    \label{eq:T_korr1}
+\end{equation}
+
+\subsection{Weitere Korrekturen}
+Die Schwingungsdauer hängt zusätzlich vom Anfangswinkel $\varphi_0$ ab:
+\begin{equation}
+    T^2 = T^2 \left(1 + \frac{\varphi_0^2}{8}\right).
+    \label{eq:T_winkel}
+\end{equation}
+Weiterhin beeinflusst die Luftreibung die Bewegung. Mit der Dämpfungskonstanen $\delta$ gilt
+\begin{equation}
+    T^2 = T^2 \left(1 + \frac{\delta^2}{\omega_0^2}\right),
+    \label{eq:T_daempfung}
+\end{equation}
+wobei $\omega_0$ die ungedämpfte Kreisfrequenz ist.
+
+Unter Berücksichtigung aller Korrekturen ergibt sich schließlich
+\begin{equation}
+    T^2 = \frac{4\pi^2 l}{g} \left(1 + \frac{2r^2}{5l^2} + \frac{\rho_L}{\rho_K} - \frac{m_F}{6 m_K} + \frac{\delta^2}{\omega_0^2} + \frac{\varphi_0^2}{8}\right).
+    \label{eq:T_gesamt}
+\end{equation}
+Gleichung \eqref{eq:T_gesamt} bildet die Grundlage für die experimentelle Auswertung und die Bestimmung der Erdbeschleunigung am Versuchsort.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.35\textwidth]{img/14/Kräfte.pdf}
+    \caption{Wirkende Kräfte auf das Pendel bei Auslenkung.}
+\end{figure}
