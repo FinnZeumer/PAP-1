@@ -142,5 +142,34 @@ Wir wollen nun jedoch vor allem schauen, ob wir diesen Wert noch weiter präzisi
 %  ///////////////// AUFGABE 3 /////////////////
 \subsection*{Bestimmung der Erdbeschleunigung über 200 Schwinungen}
 
+Nach \hyperref[eq:bedingung_n]{Gleichung \ref*{eq:bedingung_n}} hätten wir 1318 Schwinungen machen müssen. Dies wäre jedoch kaum bewerkstelligbar gewesen, welshalb wir nach Absprache 200 Perioden gemacht haben. Der Tabelle 3 des \hyperref[Protokoll]{Protokolls} ist die Messzeit zu entnehmen. Diese beträgt:
+\begin{equation}
+    t_{200} = (378,73 \pm 0,25)s,
+\end{equation}
+
+woraus wir direkt die Periodendauer bestimmen können:
+\begin{equation}
+    \underline{
+        T_{200} = (1,89365 \pm 0,00125)s.
+    }
+\end{equation}
+
+\textcolor{red}{FALSCH BESTIMMTE UNGENAUIGKEIT VON T, MUSS NACH GLEICHUNG 5 GEMACHT WERDEN!!! WIRD ÜBER ABWEICHUNGEN DER EINZELFEHLER BESSER BESTIMMT}
+
+Wir bestimmen also nochmal die Erdbeschleunigung und kommen somit nach \hyperref[eq:g_ideal]{Geleichung \ref*{eq:g_ideal}} und \hyperref[eq:fehler_g]{Geleichung \ref*{eq:fehler_g}} zu einem Ergebnis von
+\begin{equation}
+    \boxed{
+        g_{200} = (9,812 \pm 0,019)
+    }.
+\end{equation}
+
+Wir schauen, ob dieser Wert genauer am literatur Wert $g_{lit}$ von Heidelberg liegt:
+\begin{equation}
+    \frac{\left| g_{lit} - g_{200} \right|}{\sqrt{(\Delta g_{200})^2 + (\Delta g_{lit})^2}} = 0,11\sigma.
+\end{equation}
+
+Das Ergbenis ist somit weitaus genauer als das, mit fünf Messwerten.
 
 %  ///////////////// AUFGABE 4 /////////////////
+\section{Aufgabe 2: Berechnung der Korrekturstherme}
+Wir wollen jedoch noch genauere Ergebnisse bekommen und werden daher weitere Eigenschaften untersuchen.
