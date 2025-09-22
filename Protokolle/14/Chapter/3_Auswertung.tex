@@ -19,9 +19,10 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 \twocolumn
 
 %  ///////////////// AUFGABE 1 /////////////////
-\section{Aufgabe 1: Pendellänge und Kugelradius}
+\section{Aufgabe 1: Pendellänge, Kugelradius und grobe Erdbeschleunigung}
+\subsubsection*{Pendellänge}
 Das Pendel wurde im Equilibrium vermessen. Es werden zwei Punkte an der Spiegelskala abgelesen, der obere un der untere Punkt der Kugel. Darüber hinaus wurde die Kugel mit der Schieblehre vermessen. So lässt sich die Fadenlänge und der Kugelradius jeweils auf zwei weisen Messen; jenachdem, welcher Messmethode man mehr vertrauen schencken mag.
-Genutzt für die Messung wurden einmal die Spiegelskala, diese hat eine Skalapräzission von $0,1cm$, und einen geschätzten Ablesefehler von $0,3cm$, dieser Wert wurde großzügiger angenommen, da durch die Pendelbewegung das menschliche Auge Probleme beim Ablesen hat. Der wird aber für statische Rechnungen auf die Hälfte der Präzission angenommen. Ein systematischer Fehler ist hier nicht vermerkt. Die Gesamtungenauigkeit der Spiegelskala $\Delta s_{ss}$ wird via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt:
+Genutzt für die Messung wurden einmal die Spiegelskala, diese hat eine Skalapräzission von $0,10cm$, und einen geschätzten Ablesefehler von $0,3cm$, dieser Wert wurde großzügiger angenommen, da durch die Pendelbewegung das menschliche Auge Probleme beim Ablesen hat. Der wird aber für statische Rechnungen auf die Hälfte der Präzission angenommen. Ein systematischer Fehler ist hier nicht vermerkt. Die Gesamtungenauigkeit der Spiegelskala $\Delta s_{ss}$ wird via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt:
 \begin{equation}
     \Delta s_{ss} = \sqrt{0,1^2+0,05^2} = 0,1118 [cm].
 \end{equation}
@@ -87,10 +88,59 @@ Das Pendel hat also eine Länge von
 
 
 %  ///////////////// AUFGABE 2 /////////////////
-\section{Aufgabe 2: Grobe Rechnung}
+\subsection*{Grobe Bestimmung der Erdbeschleunigung}
+Im Aufgabenteil 2 wird eine Zeitgemessen. Wir wollen zunächst die Ungenauigkeit der Stoppuhr $\Delta t_{su}$ besimme. Wir haben eine Präzission von $0,01s$, sein Ablese Fehler wird auf 50\% der Präzission geschätzt und liegt somit bei $0,005s$. Die Ungenauigkeit der Stoppuhr ist somit nahc der \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
+\begin{equation}
+    \Delta t_{su} = \sqrt{(0,010^2 + 0,0005^2)} = 0,01118 [s]
+\end{equation}
+
+Zusätzlich wollen wir eine durchschnittliche menschliche Reaktionszeit von $\Delta t_{reak} 0,250s$ annehmen. Der gesamte Zeitfehler einer Zeitmessung liegt somit bei:
+\begin{equation}
+    \Delta t = \sqrt{(\Delta t_{su})^2+ (\Delta t_{reak})^2} = 0,25 [s]
+\end{equation}
+
+Wir wollen die durchschnittliche Periodendauer aus 5 Messungen bestimmen. Die Messwerte sin der Tabelle 2 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Es wurden für jede Messung die Zeit für 20 Schwingung bestimmt, dadurch wird der Zeitfehler minimiert. Dividiert man die gemessene Zeit mit $20$, so kommen wir auf 5 Perioden dauern. Es wird wieder das \hyperref[eq:arithmetisches_mittel]{arithmetische mittel (\ref*{eq:arithmetisches_mittel})} gebildet. Alle Messwerte haben denselben Fehler $\Delta t$, dieser wird für die Ungenauigkeit der Periodendauer auch mit 20 dividiert. Das Ergebnis ist somit:
+\begin{equation}
+    \boxed{
+        \Bar{T_0} = (1,8917 \pm 0,0125)s
+    }
+\end{equation}
+
+Mit diesem Wert haben wir alles, was wir nach \hyperref[eq:g_ideal]{Gleichung \ref*{eq:g_ideal}} brauchen, um die Erdbeschleunigung $g$ zubestimmen. Die Ungenauigkeit wird via \hyperref[eq:fehler_g]{Gleichung \ref*{eq:fehler_g}} berechnet.
+Für $g$ kommen wir auf ein (nicht signifikant gerundetes) Ergebnis von:
+\begin{equation}
+    \underline{
+        g = 9,8924 \frac{m}{s^2}
+    }.
+\end{equation}
+
+Die Ungenauigkeit berechnet sich zu
+\begin{equation}
+    \underline{
+        \Delta g = 0,13
+    }
+\end{equation}
+
+
+Es wird zusammengefasst und aufsignifikante Stellen gerundet:
+\begin{equation}
+\boxed{
+    g  = ( 9,89 \pm 0,13) \frac{m}{s^2}
+}.
+\end{equation}
+
+Es wird nun die signifikante Abweichung \ref{eq:signifikante_abweichung} zum Literaturwert der Erdbeschleunigung für Heidelberg von $g_{lit} = 9,80984 \pm 2 \cdot 10{-5} m/s^2$:
+\begin{equation}
+    \frac{\left| g_{lit} - g \right|}{\sqrt{(\Delta g)^2 + (\Delta g_{lit})^2}} = 0,62\sigma.
+\end{equation}
+
+Das Ergebnis ist also schon statistisch signifikant und bestätigt die heidelberger Ortskonstante $g_{lit}$. 
+
+Wir wollen nun jedoch vor allem schauen, ob wir diesen Wert noch weiter präzisieren können, indem wir genauere Messungen unternehmen.
+
 
 %  ///////////////// AUFGABE 3 /////////////////
-\section{Aufgabe 3: }
+\subsection*{Bestimmung der Erdbeschleunigung über 200 Schwinungen}
+
 
 %  ///////////////// AUFGABE 4 /////////////////
-\section{Aufgabe 4: }
