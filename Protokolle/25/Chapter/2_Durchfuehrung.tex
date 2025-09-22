@@ -37,7 +37,7 @@ Signal 5 zeigt einen \textbf{periodisch exponentiell abfallenden und ansteigende
 \subsubsection{Signal 9: Frequenzspektrum}
 Signal 9 zeigt eine \textbf{Schwebung}, d.h. die Überlagerung zweier Sinussignale. Nach Aktivierung der \textbf{AC-Kopplung} und Stopp des Signals wird die \textbf{Schwingungsfrequenz $f_1$} und die \textbf{Schwebungsfrequenz $f_2$} mittels Cursor bestimmt. Anschließend wird die \textbf{Fouriertransformation (FFT)} genutzt, um die Grundfrequenzen $f_I$ und $f_{II}$ zu messen.
 
-\subsection*{Ausfürhliche Ablesefehleranalyse}
+\subsection*{Ausführliche Ablesefehleranalyse}
 In diesem Teil soll aufgeschlüsselt werden, wie hoch die Ablese Ungenauigkeit der Cursor-Funktion des Oszilloskops ist. 
 Dazu betrachten wir zunächste den Aufbau des Displays. 
 
@@ -123,6 +123,22 @@ Der systematische Fehler $\Delta V_{sys}$ wird in der Anleitung mit $\pm 3\%$ f�
 
 Ganz zum Schluss werden die Fehler zu einem GEsamtfehler bestimmt, der dann als Gerätefehler der jeweiligen Auflösung genutzt werden kann.
 
+\subsection*{Prozentualer Fehler nach Divition}
+Der gesamte Fehler einer Rechnung ist immer prozentual. Wir kommen auf insgesamt 3 prozentuale Fehler:
+\begin{align}
+\Delta t &= 6,3\%\\
+\Delta U_{<10mV} &= 7,1\% \\
+\Delta U_{>10mV} &= 7,7\%.
+\end{align}
+
+Diese Gesamtfehler sind nur relevant in der Cursor-Messung, nicht etwa in der automatischen.
+Diese ist jedoch nicht die prozentuale Abweichung vom Messwert, sondern von der Div-Größe. Man muss also die Divition kenne, dann kann man über diese Fehler die Abweichung bestimmen.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.35\textwidth]{img/25/memes/latexErrors.pdf}
+    \caption{Wieder ein Meme}
+\end{figure}
 
 \newpage
 
