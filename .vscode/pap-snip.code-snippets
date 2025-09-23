@@ -1,28 +1,84 @@
 {
-	// Place your PAP-1 workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
-	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
-	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
-	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
-	// Placeholders with the same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"scope": "javascript,typescript",
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
 
-
-
+  "Arithmetisches Mittel": {
+    "prefix": "mean",
+    "body": [
+      "\\hyperref[eq:arithmetisches_mittel]{Arithmetisches Mittel (\\ref*{eq:arithmetisches_mittel})}"
+    ],
+    "description": "Hyperlink zur Gleichung des arithmetischen Mittels"
+  },
+  "Varianz": {
+    "prefix": "var",
+    "body": [
+      "\\hyperref[eq:variation]{Varianz (\\ref*{eq:variation})}"
+    ],
+    "description": "Hyperlink zur Gleichung der Varianz"
+  },
+  "Standardabweichung": {
+    "prefix": "std",
+    "body": [
+      "\\hyperref[eq:standardabweichung]{Standardabweichung (\\ref*{eq:standardabweichung})}"
+    ],
+    "description": "Hyperlink zur Gleichung der Standardabweichung"
+  },
+  "Fehler des Mittelwerts": {
+    "prefix": "sem",
+    "body": [
+      "\\hyperref[eq:fehler_mittelwert]{Fehler des Mittelwerts (\\ref*{eq:fehler_mittelwert})}"
+    ],
+    "description": "Hyperlink zur Gleichung des Fehlers des Mittelwerts"
+  },
   "Gauss Fehlerfortpflanzung": {
     "prefix": "gff",
     "body": [
       "\\hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\\ref*{eq:gauss_fehlfortpflanzung})}"
     ],
     "description": "Hyperlink zur Gleichung der Gauß'schen Fehlerfortpflanzung"
+  },
+  "Fehler Summe": {
+    "prefix": "fsum",
+    "body": [
+      "\\hyperref[eq:fehler_summe]{Fehler für $f = x + y$ (\\ref*{eq:fehler_summe})}"
+    ],
+    "description": "Hyperlink zur Gleichung des Fehlers bei Summen"
+  },
+  "Fehler proportional": {
+    "prefix": "fprop",
+    "body": [
+      "\\hyperref[eq:fehler_proportional]{Fehler für $f = ax$ (\\ref*{eq:fehler_proportional})}"
+    ],
+    "description": "Hyperlink zur Gleichung des Fehlers bei Proportionalität"
+  },
+  "Relativer Fehler": {
+    "prefix": "relerr",
+    "body": [
+      "\\hyperref[eq:relativer_fehler]{Relativer Fehler für $f = xy$ oder $f = x/y$ (\\ref*{eq:relativer_fehler})}"
+    ],
+    "description": "Hyperlink zur Gleichung des relativen Fehlers"
+  },
+  "Signifikante Abweichung": {
+    "prefix": "sigdev",
+    "body": [
+      "\\hyperref[eq:signifikante_abweichung]{Berechnung der signifikanten Abweichung (\\ref*{eq:signifikante_abweichung})}"
+    ],
+    "description": "Hyperlink zur Gleichung der signifikanten Abweichung"
+  },
+
+  "Protokoll":{
+	"prefix": "pp",
+	"body": [
+      "\\hyperref[Protokoll]{Protokoll}"
+    ],
+    "description": "Hyperlink zum Protokoll"
+  },
+
+  "fast Hyperref":{
+	"prefix": "href",
+	"body":[
+		"\\hyperref[]{}"
+	],
+	"description": "For faster writing of hyperref"
   }
 }
+
+

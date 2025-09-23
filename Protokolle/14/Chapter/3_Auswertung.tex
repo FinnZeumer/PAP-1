@@ -24,14 +24,14 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 Das Pendel wurde im Equilibrium vermessen. Es werden zwei Punkte an der Spiegelskala abgelesen, der obere un der untere Punkt der Kugel. Darüber hinaus wurde die Kugel mit der Schieblehre vermessen. So lässt sich die Fadenlänge und der Kugelradius jeweils auf zwei weisen Messen; jenachdem, welcher Messmethode man mehr vertrauen schencken mag.
 Genutzt für die Messung wurden einmal die Spiegelskala, diese hat eine Skalapräzission von $0,10cm$, und einen geschätzten Ablesefehler von $0,3cm$, dieser Wert wurde großzügiger angenommen, da durch die Pendelbewegung das menschliche Auge Probleme beim Ablesen hat. Der wird aber für statische Rechnungen auf die Hälfte der Präzission angenommen. Ein systematischer Fehler ist hier nicht vermerkt. Die Gesamtungenauigkeit der Spiegelskala $\Delta s_{ss}$ wird via \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt:
 \begin{equation}
-    \Delta s_{ss} = \sqrt{0,1^2+0,05^2} = 0,1118 [cm].
+    \Delta s_{ss} = \sqrt{0,1^2+0,05^2} = 0,1118 \,[cm].
 \end{equation}
 
 Die Ungenauigkeit wurde hier auf signifikante Stellen gerundet.
 
 Die Ungenauigkeit der Schieblehre lässt sich Analog bestimmen. Wir haben eine Präzission von $0,1cm$, aus welcher wir den Ableseungenauigkeit bestimmen, indem wir den Wert zu $0,05cm$ halbieren. Zuletzt gibt der Hersteller eine systematische Ungenauigkeit von $0,005cm$ an. Über die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} berechnet sich der Gesamtfehler der Schieblehre:
 \begin{equation}
-    \Delta s_{sl} = \sqrt{0,1^2+0,05^2+0,005^2} = 0,1119 [cm].
+    \Delta s_{sl} = \sqrt{0,1^2+0,05^2+0,005^2} = 0,1119 \, [cm].
 \end{equation}
 Auch dieses Ergebnis ist auf signifikante Stellen gerundet. Im statischen Zustand sind die beidne Methoden also annährend gleichgenau.
 
@@ -57,7 +57,7 @@ Aus diesen Beiden Werten können die den Durchmesser der Kugel erneut bestimmenl
 
 Der Fehler wurde über die \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})} bestimmt, denn hier wurde die Differenz zwei fehlerbehafteten Werte gezogen:
 \begin{equation}
-    \Delta D_{k,ss} = \sqrt{2 \cdot 0,1118^2} = 0,16 [cm]
+    \Delta D_{k,ss} = \sqrt{2 \cdot 0,1118^2} = 0,16 \, [cm]
 \end{equation}
 
 Die Radien sind sehr ähnlich, jedoch haben sie eine recht große Abweichung. Berechnen wir die signifikante Abweichung der beiden Radien nach \hyperref[eq:signifikante_abweichung]{Gleichung \ref*{eq:signifikante_abweichung}}:
@@ -76,7 +76,7 @@ Unser Kugelradius ist somit
 
 Das Pendel hat somit eine Länge $l$ der Summe der Fadenlänge und des Kugelradiuses. Der der Pendellänge ist dabei:
 \begin{equation}
-    \Delta l = \sqrt{(\Delta r_K)^2 + (\Delta s_{ss})^2} = 0,13 [cm].
+    \Delta l = \sqrt{(\Delta r_K)^2 + (\Delta s_{ss})^2} = 0,13 \, [cm].
 \end{equation} 
 
 Das Pendel hat also eine Länge von
@@ -89,15 +89,28 @@ Das Pendel hat also eine Länge von
 
 %  ///////////////// AUFGABE 2 /////////////////
 \subsection*{Grobe Bestimmung der Erdbeschleunigung}
-Im Aufgabenteil 2 wird eine Zeitgemessen. Wir wollen zunächst die Ungenauigkeit der Stoppuhr $\Delta t_{su}$ besimme. Wir haben eine Präzission von $0,01s$, sein Ablese Fehler wird auf 50\% der Präzission geschätzt und liegt somit bei $0,005s$. Die Ungenauigkeit der Stoppuhr ist somit nahc der \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
+Im Aufgabenteil 2 wird eine Zeitgemessen. Wir wollen zunächst die Ungenauigkeit der Stoppuhr $\Delta t_{su}$ besimme. Wir haben eine Präzission von $0,01s$, sein Ablese Fehler wird auf 50\% der Präzission geschätzt und liegt somit bei $0,005s$. Die Ungenauigkeit der Stoppuhr ist somit nach der \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}:
 \begin{equation}
-    \Delta t_{su} = \sqrt{(0,010^2 + 0,0005^2)} = 0,01118 [s]
+    \Delta t_{su} = \sqrt{(0,010^2 + 0,0005^2)} = 0,01118 \, [s]
+\end{equation}
+
+Da wir mehrere Einzelmessungen haben, müssen wir den \hyperref[eq:fehler_mittelwert]{Fehler des Mittelwerts (\ref*{eq:fehler_mittelwert})} berechnen. Dies ist dann die statistische Ungenauigkeit:
+\begin{equation}
+    \Delta \overline{t} = 0,0019 \, [s]
 \end{equation}
 
 Zusätzlich wollen wir eine durchschnittliche menschliche Reaktionszeit von $\Delta t_{reak} 0,250s$ annehmen. Der gesamte Zeitfehler einer Zeitmessung liegt somit bei:
 \begin{equation}
-    \Delta t = \sqrt{(\Delta t_{su})^2+ (\Delta t_{reak})^2} = 0,25 [s]
+    \Delta t = \sqrt{(\Delta t_{su})^2+ (\Delta t_{reak})^2 + (\Delta \overline{t})^2}
+    \label{eq:f_zeit}
 \end{equation}
+
+Setzen wir alles ein, so ist unser Fehler somit
+\begin{equation}
+    \Delta t = 0,25 s.
+\end{equation}
+
+Wie zu erwarten dominiert die Reaktionszeit hier.
 
 Wir wollen die durchschnittliche Periodendauer aus 5 Messungen bestimmen. Die Messwerte sin der Tabelle 2 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Es wurden für jede Messung die Zeit für 20 Schwingung bestimmt, dadurch wird der Zeitfehler minimiert. Dividiert man die gemessene Zeit mit $20$, so kommen wir auf 5 Perioden dauern. Es wird wieder das \hyperref[eq:arithmetisches_mittel]{arithmetische mittel (\ref*{eq:arithmetisches_mittel})} gebildet. Alle Messwerte haben denselben Fehler $\Delta t$, dieser wird für die Ungenauigkeit der Periodendauer auch mit 20 dividiert. Das Ergebnis ist somit:
 \begin{equation}
@@ -154,8 +167,6 @@ woraus wir direkt die Periodendauer bestimmen können:
     }
 \end{equation}
 
-\textcolor{red}{FALSCH BESTIMMTE UNGENAUIGKEIT VON T, MUSS NACH GLEICHUNG 5 GEMACHT WERDEN!!! WIRD ÜBER ABWEICHUNGEN DER EINZELFEHLER BESSER BESTIMMT}
-
 Wir bestimmen also nochmal die Erdbeschleunigung und kommen somit nach \hyperref[eq:g_ideal]{Geleichung \ref*{eq:g_ideal}} und \hyperref[eq:fehler_g]{Geleichung \ref*{eq:fehler_g}} zu einem Ergebnis von
 \begin{equation}
     \boxed{
@@ -172,4 +183,31 @@ Das Ergbenis ist somit weitaus genauer als das, mit fünf Messwerten.
 
 %  ///////////////// AUFGABE 4 /////////////////
 \section{Aufgabe 2: Berechnung der Korrekturstherme}
-Wir wollen jedoch noch genauere Ergebnisse bekommen und werden daher weitere Eigenschaften untersuchen.
+Wir wollen jedoch noch genauere Ergebnisse bekommen und werden daher weitere Eigenschaften untersuchen. Zunächst nehmen wir \hyperref[eq:T_gesamt]{Gleichung \ref*{eq:T_gesamt}} und stellen sie nach $g$ (unserer Ortskonstanten) um:
+\begin{equation}
+    g = \frac{4\pi^2 l}{T^2} \left(1 + \frac{2r^2}{5l^2} + \frac{\rho_L}{\rho_K} - \frac{m_F}{6 m_K} + \frac{\delta^2}{\omega_0^2} + \frac{\varphi_0^2}{8}\right).
+    \label{eq:g_final}
+\end{equation}
+
+Damit lässt sich schön einsehen, welche Werte alles gebraucht werden. Dazu wollen wir erstmal die Therme berücksichtigen, die auf Materialeigenschaften basieren und zum anderen die Dämpfung. 
+
+\subsection{Fehler durch Materialeigenschaften}
+In der \hyperref[qe:g_final]{Gleichung \ref*{qe:g_final}} stehen verscheiedene Therme, die aus Materialgegebenheiten folgen. Wir haben dabei die Dichte der Luft $\rho_L$, die Dichte der Kugel $\rho_K$ und die daraus folgende Masse $m_K$. Außerdem brauchen wir die Masse des Fadens $m_l$. Für die dichten werden die Literaturwerte benutzt und als >>ideal<< angenommen. Das Material der Kugel ist mit Eisen angegeben.
+\begin{align}
+    \rho_L = 1,2 \cdot 10^{-3} \frac{g}{cm^3} \\
+    \rho_K = 7,86 \frac{g}{cm^3}.
+\end{align}
+
+Für die Masse der Kugel müssen wir Ihr Volumen bestimmen. Für eine ideale Kugel gilt:
+\begin{equation}
+    V_K = \frac{4}{3} \cdot \pi \cdot {r_K}^3,
+\end{equation}
+mit einer Ungenauigkeit von
+\begin{equation}
+    \Delta V_K = 4 \cdot \pi \cdot {r_K}^2 \cdot \Delta r_K,
+\end{equation}
+
+Somit hat unsere Kugel ein Volumen von
+\begin{equation}
+    V_K = 9/2 \pi = () cm^3
+\end{equation}
