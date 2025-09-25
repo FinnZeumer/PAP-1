@@ -42,7 +42,9 @@ Der Durchmesser der Kugel ist gemessen mir der Schieblehre also:
 
 Man kann den Durchmesser jedoch auch über den die Diffrenz der beiden Fadenlängen bemessen. Wir haben hier drei Messwerte, daher nehmen wir den Mittelwert als Durchmesser der Kugel. Die Gemessenen Werte sin der Tabelle 1 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Die Länge des Fadens ist dabei das \hyperref[eq:arithmetisches_mittel]{arithmetische Mittel \ref*{eq:arithmetisches_mittel}}. Wir entnehmen der Tabelle wieder die Werte und kommen auf eine Fadenlänge $l'$ von
 \begin{equation}
-    l' = (88,1667 \pm 0,1119) cm.
+    \boxed{
+        l' = (88,1667 \pm 0,1119) cm.
+    }
 \end{equation}
 
 Das Pendel ist hier definiert als die Fadenlänge und dem Radius der Kugel, da dort der Schwerpunkt der Kugel liegt. Die Fadenlänge inklusive des Durchmessers der Kugel $l_D$ ist das arithmetische Mittel der unteren Punkte:
@@ -192,10 +194,10 @@ Wir wollen jedoch noch genauere Ergebnisse bekommen und werden daher weitere Eig
 Damit lässt sich schön einsehen, welche Werte alles gebraucht werden. Dazu wollen wir erstmal die Therme berücksichtigen, die auf Materialeigenschaften basieren und zum anderen die Dämpfung. 
 
 \subsection{Fehler durch Materialeigenschaften}
-In der \hyperref[qe:g_final]{Gleichung \ref*{qe:g_final}} stehen verscheiedene Therme, die aus Materialgegebenheiten folgen. Wir haben dabei die Dichte der Luft $\rho_L$, die Dichte der Kugel $\rho_K$ und die daraus folgende Masse $m_K$. Außerdem brauchen wir die Masse des Fadens $m_l$. Für die dichten werden die Literaturwerte benutzt und als >>ideal<< angenommen. Das Material der Kugel ist mit Eisen angegeben.
+In der \hyperref[eq:g_final]{Gleichung \ref*{eq:g_final}} stehen verscheiedene Therme, die aus Materialgegebenheiten folgen. Wir haben dabei die Dichte der Luft $\rho_L$, die Dichte der Kugel $\rho_K$ und die daraus folgende Masse $m_K$. Außerdem brauchen wir die Masse des Fadens $m_l$. Für die dichten werden die Literaturwerte benutzt und als >>ideal<< angenommen. Das Material der Kugel ist mit Eisen angegeben.
 \begin{align}
-    \rho_L = 1,2 \cdot 10^{-3} \frac{g}{cm^3} \\
-    \rho_K = 7,86 \frac{g}{cm^3}.
+    \underline{\rho_L = 1,2 \cdot 10^{-3} \frac{g}{cm^3}} \\
+    \underline{\rho_K = 7,86 \frac{g}{cm^3}}.
 \end{align}
 
 Für die Masse der Kugel müssen wir Ihr Volumen bestimmen. Für eine ideale Kugel gilt:
@@ -209,5 +211,32 @@ mit einer Ungenauigkeit von
 
 Somit hat unsere Kugel ein Volumen von
 \begin{equation}
-    V_K = 9/2 \pi = () cm^3
+    \underline{
+        V_K = (14,1 \pm 1,7) cm^3.
+    }
 \end{equation}
+
+Damit können wir die Masse zu 
+\begin{equation}
+    \boxed{
+        m_k = (111 \pm 13) g.
+    }
+\end{equation}
+
+Wir müssen zudem die Fadenmasse $m_f$ bestimmen. Die Fadenlänge $l'$ wurde bereits bestimmt. Wir nehmen für die Fadendichte dieselebe wie für die Kugel $\rho_f = \rho_K$. Der Radius ist im Skript mir $r_f = 0,01cm$ angegeben \cite{skript25}.
+Die Masse des Fadens berechnet sich via
+\begin{equation}
+    m_f = \pi \cdot {r_f}^2 \cdot l' \cdot \rho_f,
+\end{equation}
+
+mit einer Ungenauigkeit von
+\begin{equation}
+    \Delta m_f = \pi \cdot {r_f}^2 \cdot \rho_f \cdot \Delta l'.
+\end{equation}
+
+Wir setzen besagte Werte ein und kommen auf eine Fadenmasse von
+\begin{equation}
+    m_f = (0,21771 \pm 0,00028) \, g.
+\end{equation}
+
+\subsection{Fehler durch Dämpfung}

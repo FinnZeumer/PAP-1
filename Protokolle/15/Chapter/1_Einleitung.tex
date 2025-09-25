@@ -1,6 +1,83 @@
 \chapter{Einleitung}
 
-\section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Aufgabe und Motivation}
+Ziel des Versuchs ist es, das Bewegungsverhalten von unterschiedlich geformten Rollkörpern
+(Voll- und Hohlzylinder) auf einer schiefen Ebene experimentell zu untersuchen. 
+Dazu werden die Beschleunigungen der Körper bestimmt und mit den theoretischen erwartungen 
+verglichen. Darüber hinaus wird dei Energieumwandlung zwischen potentieller Energie, 
+Translations- und Rotationsenergie betrachtet, um die Energieerhaltung beim Rollvorgang zu überprüfen.  
+Die Auswretung erfolgt unter Anwendung der Fehlerrechnung, so dass Experimentelle Abweichungen
+quantifiziert werden können.
+
+\section{Physikalische Grundlagen}
+\cite{skript25}
+Ein Körper der Masse $m$ befindet sich auf einer schiefen Ebene mit Neigungswinkel $\varphi$. 
+Auf ihn wirkt die Hangabtriebskraft
+\begin{equation}
+    F_\text{H} = m g \sin(\varphi)
+    \label{eq:hangabtrieb}
+\end{equation}
+sowie die Reibungskraft $F_\text{R}$, die für das Abrollen ohne Rutschen notwendig ist.  
+Die Reibungskraft erzeugt am Radius $r$ ein Drehmoment
+\begin{equation}
+    M = F_\text{R} \cdot r = I \, \dot{\omega},
+    \label{eq:drehmoment}
+\end{equation}
+wobei $I$ das Trägheitsmoment und $\omega$ die Winkelgeschwindigkeit ist.  
+Unter Verwendung der Rollbedingung
+\begin{equation}
+    v = \omega r
+    \label{eq:rollbedingung}
+\end{equation}
+mit der Schwerpunktgeschwindigkeit $v$ ergibt sich für die Reibungskraft
+\begin{equation}
+    F_\text{R} = \frac{I}{r^2} \, a,
+    \label{eq:reibkraft}
+\end{equation}
+wobei $a$ die Beschleunigung des Schwerpunkts bezeichnet.  
+
+Die Kräftebilanz am Schwerpunkt liefert
+\begin{equation}
+    m a = m g \sin(\varphi) - F_\text{R}.
+    \label{eq:kraftbilanz}
+\end{equation}
+Einsetzen von \hyperref[eq:reibkraft]{Gleichung \ref*{eq:reibkraft}} in 
+\hyperref[eq:kraftbilanz]{Gleichung \ref*{eq:kraftbilanz}} führt auf die allgemeine Form für die Beschleunigung:
+\begin{equation}
+    a = \frac{m g \sin(\varphi)}{m + \frac{I}{r^2}}.
+    \label{eq:beschleunigung}
+\end{equation}
+
+Das Trägheitsmoment hängt von der Geometrie des Körpers ab. Für einen Vollzylinder mit Radius $r$ und Masse $m$ gilt
+\begin{equation}
+    I_\text{Voll} = \frac{1}{2} m r^2,
+    \label{eq:traegheit_voll}
+\end{equation}
+während ein Hohlzylinder mit Innenradius $r_\text{i}$ und Außenradius $r_\text{a}$ das trägheitsmoment
+\begin{equation}
+    I_\text{Hohl} = \frac{1}{2} m \left(r_\text{a}^2 + r_\text{i}^2\right)
+    \label{eq:traegheit_hohl}
+\end{equation}
+besitzt.  
+
+Energiebetrachtungen zeigen, dass die Potentielleenergie
+\begin{equation}
+    E_\text{pot} = m g h
+    \label{eq:epot}
+\end{equation}
+beim Abrollen in Translationsenergie
+\begin{equation}
+    E_\text{trans} = \frac{1}{2} m v^2,
+    \label{eq:etrans}
+\end{equation}
+sowie Rotationsenergie
+\begin{equation}
+    E_\text{rot} = \frac{1}{2} I \omega^2
+    \label{eq:erot}
+\end{equation}
+übergeht.  
+Die Gesamtenergie des Systems bleibt dabei erhalten:
+\begin{equation}
+    E_\text{ges} = E_\text{pot} + E_\text{trans} + E_\text{rot}.
+    \label{eq:eges}
+\end{equation}
