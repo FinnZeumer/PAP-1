@@ -1,4 +1,4 @@
-\chapter{Disskusion}
+\chapter{Diskussion}
 Dieser Versuch bestand aus 4 Aufgaben. Wir wollen alle nacheinander Zusammenfassen und anschließend Disskutieren. Zum Schluss werden noch Kritiken geäußert.
 \section{Zusammenfassung}
 Erstmal die Zusammenfassung der Aufgaben.
@@ -267,8 +267,39 @@ Die alternative ist, dass unsere Messwere korrekt sind, und das Kabel tatsächli
 
 Bei der Kritik kann man sich kurz halten, jegliche Fehlerquellen lassen sich auf das Osziloskop zurückführen, bessere Technik würde die Werte genauer bestimmen. Natürlich wäre auch das anlegen größerer Messreihen sinnvoll gewesen, da so die Wahrscheinlichkeit für ausreißerwerte sinkt, beziehungsweise diese nicht so schwerwigend sind.
 
-\begin{figure}[h!]
+\section{Falsch genutzter Fehler}
+\label{sec:korrektur_des_Fehlers}
+
+In diesem Dokument wurde die Messungenauigkeit des Cursors bestimmt, die für jegliche Messungen genutzt wurden. Diese Werte sind:
+\begin{align*}
+    \Delta t &= 6,3\%\\
+    \Delta U_{<10mV} &= 7,1\% \\
+    \Delta U_{>10mV} &= 7,7\%.
+\end{align*}
+
+Dieser Wert setzt sich aus der Ungenauigkeit der doppelten Cursorgenauigkeit und den Messungenauigkeiten zusammen.
+Beide Werte für sich sind auch richtige und sinnvolle Angaben. 
+Jedoch ist das Kombinieren beider zu einer >>Step-Ungenauigkeit<< nicht möglich, da nur die Cursor durch steps reguliert werden. Die Ungenauigkeit >>DC gain accuracy<< und >>Time base accuracy<< sind jedoch Ungenauigkeiten des Messwertes. 
+Zwar ist es nicht komplett falsch, dass sich der Messfehler in die Steps integrieren lässt, jedoch ist ein Problem, dass der Messfehler nicht auf Steps limitiert ist. Diese Limitierung kommt gerade durch das Display, dies ist für die Messungenauigkeit in sich nicht wichtig.
+Die >>Time Base Accuracy<< liegt bei 0,005\% des Messwertes, die >>DC gain accuracy<< bei 3\% für alle Messungen über 10mV/Div. Zudem wurden diese prozentualen Fehler nicht auf Stetps, sondern auf Divs normiert. Für ganz akkurate Messungen sollte man den Fehler aufteilen:
+
+\begin{align*}
+    \Delta t &= 0,005\% \text{ des Messwertes} \\
+        &+ 6,3\% \text{ der Divgröße}\\
+        \\
+    \Delta U_{<10mV} &= 7,1\% \text{ der Divgröße} \\
+    \\
+    \Delta U_{>10mV} &= 3\% \text{ des Messwertes} \\
+        &+ 7,1\% \text{ der Divgröße}.
+\end{align*}
+
+
+
+Es zeigt sich, dass für die Zeitmessung keine groß anderen Ungenauigkeiten herausgekommen wären, da der Cursorfehler der Geräteungenauigkeit ohnehin überliegt. Für die Voltmessungen wurde der Fehler hier jetzt chronisch überschätzt. Zwar könnte der Fehler auch kleiner geworden sein, dies ist jedoch nur möglich, wenn das Signal eine Amplitude von unter einem Div hat. Dies ist jedoch bei diesen Rechnungen nie der Fall gewesen. Somit sind alle statistisch signifikanten Ergebnisse weiterhin als solche einzustufen. Dennoch ist dies ein Fehler in der Rechnung, den man nicht so stehen lassen sollte. 
+Der Divgrößenfehler ist dann jener, welcher die Ungenauigkeit der Messmethode zweier Cursor beschreibt.
+
+\begin{figure}[!ht]
     \centering
-    \includegraphics[width=0.3\textwidth]{img/25/memes/ergebnisse.pdf}
+    \includegraphics[width=0.45\textwidth]{img/25/memes/ergebnisse.pdf}
     \caption{Wieder ein Meme}
 \end{figure}

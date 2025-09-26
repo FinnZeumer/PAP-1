@@ -33,7 +33,7 @@ Beim Verbundzylinder ist die Masse hingegen näher an der Achse konzentriert, wa
 % /////////////// Aufgabe 2 ///////////////
 
 \section{Aufgabe 2: Bestimmung der Rollbeschleunigung}
-Zunächst werden die wichtigen Maße der Ebene vermerkt. Die Zylinder beschleunigen dabei über eien Strecke von $l_{r}' = (87,20 \pm 0,05) \, cm$. Die untere Kante der Abrollhöhe liegt bei $h` = (12,70 \pm 0,05) cm$. Wir müssen jedoch noch die Dicke der Holzplatte und der Metallplatte dazu addieren. Die Werte liegen bei $D_h'= (1,8 \pm 0,05) cm$ für die Holzplatte und $D_m'= (0,2 \pm 0,05) cm$ für die Metallplatte.
+Zunächst werden die wichtigen Maße der Ebene vermerkt. Die Zylinder beschleunigen dabei über eine Strecke von $l_{r}' = (87,20 \pm 0,05) \, cm$. Die untere Kante der Abrollhöhe liegt bei $h` = (12,70 \pm 0,05) cm$. Wir müssen jedoch noch die Dicke der Holzplatte und der Metallplatte dazu addieren. Die Werte liegen bei $D_h'= (1,8 \pm 0,05) cm$ für die Holzplatte und $D_m'= (0,2 \pm 0,05) cm$ für die Metallplatte.
 Der Fehler der gesamt Starthöhe ist nach \hyperref[eq:gauss_fehlfortpflanzung]{Gauß'scher Fehlerfortpflanzung (\ref*{eq:gauss_fehlfortpflanzung})}
 \begin{equation}
     \Delta h_s = 0,09 cm
@@ -79,12 +79,12 @@ und
 }.
 \end{equation}
 
-Nun wird überprüft, ob die beiden beechneten Winkel sich gegenseitig >>decken<<, diese also statistisch signifikant. Hierfür wurde die Gleichung zur \hyperref[eq:signifikante_abweichung]{Berechnung der signifikanten Abweichung (\ref*{eq:signifikante_abweichung})} genutzt:
+Nun wird überprüft, ob die beiden berechneten Winkel sich gegenseitig >>decken<<, diese also statistisch signifikant. Hierfür wurde die Gleichung zur \hyperref[eq:signifikante_abweichung]{Berechnung der signifikanten Abweichung (\ref*{eq:signifikante_abweichung})} genutzt:
 \begin{equation}
     \frac{\left| \alpha_{\sin} - \alpha_{\cos} \right|}{\sqrt{(\Delta \alpha_{\sin})^2 + (\Delta \alpha_{\cos})^2}} = 2,24\sigma. 
 \end{equation}
 
-Die Werte sind als eher nicht statistisch signifikant einzustufen. Mehr zur analyse in der \hyperref[ch:diskussion]{Diskussion}. In folgenden Rechnungen wir der Winkel $\alpha_{\cos}$ verwendet, da dieser die kleinere Ungenauigkeit aufweist. Die \hyperref[fig:maße_re]{Abbildung \ref{fig:maße_re}} zeigt die zur Berechnung benutzen Werte.
+Die Werte sind als eher nicht statistisch signifikant einzustufen. Mehr zur Analyse in der \hyperref[ch:diskussion]{Diskussion}. In folgenden Rechnungen wird der Winkel $\alpha_{\cos}$ verwendet, da dieser die kleinere Ungenauigkeit aufweist. Die \hyperref[fig:maße_re]{Abbildung \ref{fig:maße_re}} zeigt die zur Berechnung benutzen Werte.
 
 Die folgende Rechnung wird sich nun mit der Bestimmung der Beschleunigung befassen. Dazu wird \hyperref[eq:traegheit_voll]{Gleichung \ref*{eq:traegheit_voll}} in die \hyperref[eq:beschleunigung]{Gleichung \ref*{eq:beschleunigung}} eingesetzt. Folglich kommt man zum Ausdruck für den Vollzylinder:
 \begin{equation}
@@ -96,7 +96,7 @@ Die Ungenauigkeit $\Delta a_{voll}$ wird über die \hyperref[eq:gauss_fehlfortpf
     \Delta a_{voll} = \sqrt{\left(\frac{2}{3} g \cos(\alpha) \cdot \Delta \alpha^2\right)^2 + \left(\frac{2}{3}\sin(\alpha) \cdot \Delta g\right)^2}.
 \end{equation}
 
-Für die Erdbeschleunigung nutzen wir den Heidelberger Standartwert von $g_{heidelberg} = (9,80984 \pm 0, 00002) \frac{m}{s^2}$ Die Beschleunigung des Vollzylinders ist somit
+Für die Erdbeschleunigung nutzen wir den Heidelberger Standardwert von $g_{heidelberg} = (9,80984 \pm 0, 00002) \frac{m}{s^2}$ Die Beschleunigung des Vollzylinders ist somit
 \begin{equation}
     \boxed{
         a_{voll,lit} = (1,081 \pm 0,003) \frac{m}{s^2}
@@ -123,7 +123,7 @@ Die Ungenauigkeit der Hohlzylinderbeschleunigung wird via \hyperref[eq:gauss_feh
 
 \newpage
 
-$a_{holh}$ wird dabei via \hyperref[eq:a_h]{Glecihung \ref*{eq:a_h}} bestimmt. Der Innendurchmesser des Hohlzylinder ist $r = (4,00 \pm 0,05) cm$ und der Außendurchmesser $r = (5,00 \pm 0,05) cm$. Es wird wieder die Erdbeschleunigung für Heidelberg benutzt. Für Alpha wierd wieder $alpha_{\cos}$ eingesetzt, nach \hyperref[eq:alpha_cos]{Gleichung \ref*{eq:alpha_cos}}. Das Ergebnis ist somit:
+$a_{hohl}$ wird dabei via \hyperref[eq:a_h]{Gleichung \ref*{eq:a_h}} bestimmt. Der Innendurchmesser des Hohlzylinder ist $r = (4,00 \pm 0,05) cm$ und der Außendurchmesser $r = (5,00 \pm 0,05) cm$. Es wird wieder die Erdbeschleunigung für Heidelberg benutzt. Für Alpha wird wieder $\alpha_{\cos}$ eingesetzt, nach \hyperref[eq:alpha_cos]{Gleichung \ref*{eq:alpha_cos}}. Das Ergebnis ist somit:
 \begin{equation}
     \boxed{
         a_{hohl,lit} = (0,92 \pm 0,05) \frac{m}{s^2}
@@ -131,17 +131,24 @@ $a_{holh}$ wird dabei via \hyperref[eq:a_h]{Glecihung \ref*{eq:a_h}} bestimmt. D
     \label{eq:a_h_l}
 \end{equation}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/15/Forces.pdf}
+    \caption{3D-Rendering der auf einen Zylinder auf einer schrägen Ebene wirkenden Kräfte.}
+    \label{fig:zylinder_forces_klein}
+\end{figure}
+
 \newpage
 
 % /////////////// Aufgabe 3 ///////////////
 \section{Aufgabe 3: Bestimmung der realen Beschleunigung}
-Für die folgende Berechnung werden die Daten aus den Tabellen 2 und 3 des \hyperref[Protokoll]{Protokolls} benutzt. Die Lichtschranlen (LS) wurden homogen verteilt. Für sowohl den Voll-, als auch den Hohlzylinder wurden je fünf Messungen vorgenommen. Die vier Zeiten der Lichtschranken wurden jeweils notiert. Die Beschleunigung wird dabei graphsich bestimmt. 
+Für die folgende Berechnung werden die Daten aus den Tabellen 2 und 3 des \hyperref[Protokoll]{Protokolls} benutzt. Die Lichtschranken (LS) wurden homogen verteilt. Für sowohl den Voll-, als auch den Hohlzylinder wurden je fünf Messungen vorgenommen. Die vier Zeiten der Lichtschranken wurden jeweils notiert. Die Beschleunigung wird dabei grafisch bestimmt. 
 Wir wollen aus der Tabelle 3 die Daten der beiden Zylinder betrachten, dafür berechnen wir das \hyperref[eq:arithmetisches_mittel]{Arithmetisches Mittel (\ref*{eq:arithmetisches_mittel})} an jeder Lichtschranken für jeden der Beiden Zylinder. Wir werden die Zeitungenauigkeit über die Standardabweichung $\sigma_i$ für jede der Messungen und betrachten die Ungenauigkeit der Stoppuhr $\Delta t = 0,001s$. Diese Ungenauigkeit ist gerade die Skaleneinheit der Stoppuhr. Die Ungenauigkeit einer Durchschnittlichen Zeit liegt somit bei:
 \begin{equation}
     \Delta \overline{t_i} = \sqrt{(\sigma_i)^2 + (\Delta t)^2}.
 \end{equation}
 
-Da eine graphische Beschleunigung vorgenommenw wird, werden die Mittelwerte quadriert, damit sich eine Gerade zeichnet. Die Ungenauigkeit leigt somit
+Da eine grafische Beschleunigung vorgenommen wird, werden die Mittelwerte quadriert, damit sich eine Gerade zeichnet. Die Ungenauigkeit liegt somit
 \begin{equation}
     \Delta ({t_i}^2) = 2 \overline{t_i} \cdot \Delta \overline{t_i}.
 \end{equation}
@@ -168,8 +175,16 @@ Die Ergebnisse werden \hyperref[tab:mittelwerte]{tabellarisch (\ref*{tab:mittelw
 
 Die Ungenauigkeit der Strecke liegt bei $\Delta s = 0,05 cm$, was weit unter der Skala des Diagramms liegt (1 Kästchen $\hat = \, 0,4$cm). Dieser Fehler wird daher im folgenden ignoriert.
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.45\textwidth]{img/15/Zylindermasse.pdf}
+    \caption{3D-Rendering mit den vermessene Größen der Zylinder eingezeichnet (Maßstabsgetreu).}
+    \label{fig:zylinder_masse_klein}
+\end{figure}
+
+
 \subsection*{Vollzylinder}
-Zunächst wird der vollzylinder unteruscht. Wir wollen seine reale Beschleunigung anhand unserer Messdaten herausfinden. Dazu wird der \hyperref[fig:voll]{Graph \ref*{fig:voll}} betrachtet. Wir werden die Steigungen $\delta s/\delta t^2$ der Ausgleichsgeraden (blau) und der Fehlergeraden (orange) bestimmen. Die Werte sind dem Graphen zu entnehmen. Unsere Steigungen sind somit
+Zunächst wird der Vollzylinder untersucht. Wir wollen seine reale Beschleunigung anhand unserer Messdaten herausfinden. Dazu wird der \hyperref[fig:voll]{Graph \ref*{fig:voll}} betrachtet. Wir werden die Steigungen $\delta s/\delta t^2$ der Ausgleichsgeraden (blau) und der Fehlergeraden (orange) bestimmen. Die Werte sind dem Graphen zu entnehmen. Unsere Steigungen sind somit
 \begin{align}
     a_{voll,A} &= 0,4882 \frac{m}{s^2}\\
     a_{voll,F} &= 0,4616 \frac{m}{s^2}.
@@ -187,10 +202,10 @@ Wir wollen dies nun mit dem Wert auf \hyperref[eq:a_v_l]{Gleichung \ref*{eq:a_v_
     \frac{\left| a_{voll,lit} + a_{voll} \right|}{(\Delta a_{voll,lit})^2 + (\Delta a_{voll})^2} = 3,85\sigma.
 \end{equation}
 
-Somit lässt sich dieses Ergebnis als nicht statistisch signifikant einstufen. In der \hyperref[ch:diskussion]{Diskussion} wird drauf genauer eingegangen.
+Somit lässt sich dieses Ergebnis als nicht statistisch signifikant einstufen. In der \hyperref[ch:diskussion]{Diskussion} wird darauf genaue eingegangen.
 
 \subsection*{Hohlzylinder}
-Die Rechnung läuft analog zur Berechnug des Vollzylinders. Die Setigungne liegen bei:
+Die Rechnung läuft analog zur Berechnung des Vollzylinders. Die Steigungen liegen bei:
 \begin{align}
     a_{hohl,A} &= 0,3506 \frac{m}{s^2} \\
     a_{hohl,F} &= 0,3631 \frac{m}{s^2}.
@@ -203,7 +218,7 @@ Somit ist die Hohlzylinderbeschleunigung
 }.
 \end{equation}
 
-Wir vergleichen mit dem wert aus \hyperref[eq:a_h_l]{Gleichung \ref*{eq:a_h_l}}:
+Wir vergleichen mit dem Wert aus \hyperref[eq:a_h_l]{Gleichung \ref*{eq:a_h_l}}:
 \begin{equation}
     \frac{\left| a_{hohl,lit} - a_{hohl} \right|}{\sqrt{(\Delta a_{hohl,lit})^2 + (\Delta a_{hohl})^2}} = 4,25\sigma.
 \end{equation}
@@ -217,7 +232,7 @@ Auch dieser Wert ist nicht statistisch signifikant im Vergleich zu den berechnet
     \centering
     \hspace*{-2.35cm}
     \includegraphics[width=1.3\textwidth, page=3]{Protokolle/15/Chapter/Messprotokoll}
-    \caption{Graph für den Vollzylinder. Zurückgelegte Strecke $s$ gegen die Quadratzeit $t^2$. Blau ist die Ausgelichsgerade und orange die Fehlergerade.}
+    \caption{Graph für den Vollzylinder. Zurückgelegte Strecke $s$ gegen die Quadratzeit $t^2$. Blau ist die Ausgleichsgerade und orange die Fehlergerade.}
     \label{fig:voll}
 \end{figure}
 
@@ -227,7 +242,7 @@ Auch dieser Wert ist nicht statistisch signifikant im Vergleich zu den berechnet
     \centering
     \hspace*{-2.35cm}
     \includegraphics[width=1.3\textwidth, page=4]{Protokolle/15/Chapter/Messprotokoll}
-    \caption{Graph für den Hohlzylinder. Zurückgelegte Strecke $s$ gegen die Quadratzeit $t^2$. Blau ist die Ausgelichsgerade und orange die Fehlergerade.}
+    \caption{Graph für den Hohlzylinder. Zurückgelegte Strecke $s$ gegen die Quadratzeit $t^2$. Blau ist die Ausgleichsgerade und orange die Fehlergerade.}
     \label{fig:hohl}
 \end{figure}
 
@@ -240,7 +255,7 @@ Nun wird die Beschleunigung beider Zylinder über den Energieansatz bestimmt. Da
     \Delta E_{pot} = \sqrt{\left(mg \cdot \Delta h \right)^2 + \left(mh \cdot \Delta g \right)^2 + \left(hg \cdot \Delta m \right)^2}
 \end{equation}
 
-Die Messwerte, die in dieser Rechnung verwendet werden, sin den Tabellen 1 und 4 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Die Massen unserer Zylinder Schwerpunktgeschwindigkeit
+Die Messwerte, die in dieser Rechnung verwendet werden, sind den Tabellen 1 und 4 des \hyperref[Protokoll]{Protokolls} zu entnehmen. Die Massen unserer Zylinder Schwerpunktgeschwindigkeit
 \begin{align}
     m_{voll} &= (444 \pm 1) g \\
     m_{hohl} &= (443 \pm 1) g.
@@ -255,7 +270,7 @@ Die translatorische Energie eines Körpers berechnet sich über \hyperref[eq:etr
     \Delta E_{tans} = \sqrt{\left(\frac{v^2}{2} \cdot \Delta m\right)^2 + \left(m\cdot v \cdot \Delta v \right)^2}.
 \end{equation}
 
-Es sind wieder fünf Messungen für jeden der Beiden Zylinder gemacht wurden. Wir haben wieder 4 Lichtschranken (LS) aufgestellt, jedoch nur die LS3 und LS4 sind auf der Ebene befästigt wurden. LS1 und LS2 dienen zur Überprüfung der Beschleunigung. Über die gemessenen Zeiten der LS3 und LS4 lässt sich die Endgeschwindigkeit bestimmen. Die Distanz der beiden Lichtschranken lagt bei $\delta LS_{Ebene} = 16 cm$. Wir werden die Zylider wieder nacheinander betrachten.
+Es sind wieder fünf Messungen für jeden der Beiden Zylinder gemacht wurden. Wir haben wieder 4 Lichtschranken (LS) aufgestellt, jedoch nur die LS3 und LS4 sind auf der Ebene befestigt wurden. LS1 und LS2 dienen zur Überprüfung der Beschleunigung. Über die gemessenen Zeiten der LS3 und LS4 lässt sich die Endgeschwindigkeit bestimmen. Die Distanz der beiden Lichtschranken lag bei $\delta LS_{Ebene} = 16 cm$. Wir werden die Zylinder wieder nacheinander betrachten.
 
 \subsection*{Vollzylinder}
 Die potentielle Energie des Vollzyliders liegt also bei 
@@ -264,7 +279,7 @@ Die potentielle Energie des Vollzyliders liegt also bei
     E_{pot,voll} = (0,5532 \pm 0,0025)\, J
 }.
 \end{equation}
-Als nächstes wird die Geschwindigkeit des Vollzylinders bestimmt. Dazu werden die Werte aus \hyperref[tab:voll_ges]{Tabelle \ref*{tab:voll_ges}} genutzt. $\delta\overline{t}$ ist dabei der Mittelwert der Zeitdifferenzen von LS3 und LS4. Die mittlere Geschwindigkeit ist somit
+Als nächstes wird die Geschwindigkeit des Vollzylinders bestimmt. Dazu werden die Werte aus \hyperref[tab:Vollzylinder_ls]{Tabelle \ref*{tab:Vollzylinder_ls}} genutzt. $\delta\overline{t}$ ist dabei der Mittelwert der Zeitdifferenzen von LS3 und LS4. Die mittlere Geschwindigkeit ist somit
 \begin{equation}
     v = \frac{\delta s}{\overline{\delta t}}.
 \end{equation}
@@ -328,14 +343,36 @@ Für unseren Vollzylinder ist die Rotationsenergie somit
     \bottomrule
     \end{tabular}
     \caption{Messwerte für den Vollzylinder mit den Differenzen zwischen LS3 und LS4. $\Delta LS3,LS4 = 0,001s$}
-    \label{tab:vollzylinder_ls}
+    \label{tab:Vollzylinder_ls}
 \end{table}
 
 
 
 \subsection*{Hohlzylinder}
-Potentielle Energie und translatorische Energie werden Analog zum Vollzylinder bestimmt. Somit die die potentielle Energie
-Die Daten für die Berechnug sind der \hyperref[tab:hohl_ges]{Tabelle \ref*{tab:hohl_ges}} zu entnehmen. Aus diesen berechnet sich die Geschwindigkeit des Hohlzylinders:
+Potentielle Energie und translatorische Energie werden analog zum Vollzylinder bestimmt. Somit liegt die potentielle Energie
+Die Daten für die Berechnung sind der \hyperref[tab:hohlzylinder_ls]{Tabelle \ref*{tab:hohlzylinder_ls}} zu entnehmen.
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{c | c | c | c}
+    \toprule
+    Messung & LS3 [s] & LS4 [s] & $\delta$LS [s] \\
+    \hline
+    1 & 1,534 & 1,812 & 0,278 \\
+    2 & 1,527 & 1,804 & 0,277 \\
+    3 & 1,540 & 1,818 & 0,278 \\
+    4 & 1,556 & 1,835 & 0,279 \\
+    5 & 1,558 & 1,836 & 0,278 \\
+    \hline
+    Durchschnitt &     &     & \textbf{0,278} \\
+    \bottomrule
+    \end{tabular}
+    \caption{Messwerte für den Hohlzylinder mit den Differenzen zwischen LS3 und LS4. $\Delta LS3,LS4 = 0,001s$}
+    \label{tab:hohlzylinder_ls}
+\end{table}
+
+
+Aus diesen berechnet sich die Geschwindigkeit des Hohlzylinders:
 \begin{equation}
 \boxed{
     v_{hohl} = (0,5755 \pm 0,0019) \, \frac{m}{s}
@@ -354,7 +391,7 @@ und die Translationsenergie
 }.
 \end{equation}
 
-Zur Bessimung der Rotationsenergie wird \hyperref[eq:traegheit_hohl]{Gleichung \ref*{eq:traegheit_hohl}} in \hyperref[eq:erot]{Gleichung \ref*{eq:erot}} eingesetzt. Damit kommt man auf
+Zur Bestimmung der Rotationsenergie wird \hyperref[eq:traegheit_hohl]{Gleichung \ref*{eq:traegheit_hohl}} in \hyperref[eq:erot]{Gleichung \ref*{eq:erot}} eingesetzt. Damit kommt man auf
 \begin{equation}
     E_{rot,hohl} = \frac{1}{4} m \cdot v^2 \cdot \left(\frac{r^2}{R^2} + 1\right).
 \end{equation}
@@ -379,42 +416,21 @@ Die Rotationsenergie des Hohlzylinders wird somit bei
 }.
 \end{equation}
 
-Die kinetische Energie circa der potentiellen Energie entsprechen und etwas kleiener sein.
+Die kinetische Energie circa der potentiellen Energie entsprechen und etwas kleiner sein.
 \begin{equation}
     E_{rot} + E_{trans} = E_{pot}.
 \end{equation}
 
-Nun wird das Verhältnis der kinetischen und der potentiellen Energie gezogen, dises sollte im ideal Fall 1 sein (ohne weitere Reibungs- und Wärmeverluste).
+Nun wird das Verhältnis der kinetischen und der potentiellen Energie gezogen, dieses sollte im ideal Fall 1 sein (ohne weitere Reibungs- und Wärmeverluste).
 
 Für den Vollzylinder ist diese Abweichung
 \begin{equation}
     \frac{E_{rot,voll} + E_{trans,voll} }{E_{pot,voll}} = 25,5\%.
 \end{equation}
 
-Das heißt, gerade eimal 25,5\% der potentiellen Energie wurden in kinetische Energie umgesetzt. Dieser Satz ist definitiv weit unter der Erwartung und wird in der \hyperref[ch:diskussion]{Diskussion} besonders diskutiert.
+Das heißt, gerade einmal 25,5\% der potentiellen Energie wurden in kinetische Energie umgesetzt. Dieser Satz ist definitiv weit unter der Erwartung und wird in der \hyperref[ch:diskussion]{Diskussion} besonders diskutiert.
 
 für den Hohlzylinder sind die Ergebnisse ähnlich daneben:
 \begin{equation}
     \frac{E_{rot,hohl} + E_{trans,hohl} }{E_{pot,hohl}} = 24,2\%.
 \end{equation}
-
-
-
-\begin{table}[!ht]
-    \centering
-    \begin{tabular}{c | c | c | c}
-    \toprule
-    Messung & LS3 [s] & LS4 [s] & $\Delta$LS [s] \\
-    \hline
-    1 & 1,534 & 1,812 & 0,278 \\
-    2 & 1,527 & 1,804 & 0,277 \\
-    3 & 1,540 & 1,818 & 0,278 \\
-    4 & 1,556 & 1,835 & 0,279 \\
-    5 & 1,558 & 1,836 & 0,278 \\
-    \hline
-    Durchschnitt &     &     & \textbf{0,278} \\
-    \bottomrule
-    \end{tabular}
-    \caption{Messwerte für den Hohlzylinder mit den Differenzen zwischen LS3 und LS4. $\Delta LS3,LS4 = 0,001s$}
-    \label{tab:hohlzylinder_ls}
-\end{table}
