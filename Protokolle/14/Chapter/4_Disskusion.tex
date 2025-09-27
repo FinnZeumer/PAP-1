@@ -1,8 +1,129 @@
-\chapter{Disskusion}
+\chapter{Diskussion}
 \label{ch:diskussion}
 
 \section{Zusammenfassung}
+\subsection*{Aufgabe 1}
+In der ersten Aufgabe wurden das Pendel vermessen, die durchschnittliche Periodendauer bestimmt und ein erster Wert für die Erdbeschleunigung $g$ bestimmt. Die Ergebnisse sind gelistet:
 
-\section{Disskusion}
+Fadenlänge:
+\begin{equation}
+    \boxed{
+        l' = (88,1667 \pm 0,1118) cm
+    }.
+\end{equation}
+Deise wurde über die Spiegelskala und drei Messungen bestimmt.
+
+Den Radius der Kugel hat man über den Durchmesser der Kugelbestimmt. Für die Rechnungen wurde der Wert
+\begin{equation}
+    \boxed{
+        r_K = (1,50 \pm 0,06)cm
+    }
+\end{equation}
+verwendet. 
+
+Somit wurde das Pendel auf eine Länge von 
+\begin{equation}
+\boxed{
+    l = (89,67 \pm 0,13)cm
+}
+\end{equation}
+bestimmt.
+
+Die Periode für 400 Schwinungen belief sich auf 
+\begin{equation}
+    \underline{
+        T_{200} = (1,89365 \pm 0,00125)s
+    }.
+\end{equation}
+
+\subsection*{Aufgabe 2}
+In dieser Aufgabe wurden die Korrekturstherme bestimmt. Dazu wurden zunächst die Materialeigenschaften bestimmt und zum anderen der Auslenkugnswikel und die Dämpfung. Für das Material kamen die wichtigen Ergebnisse:
+Dichten (Literaturwerte)
+\begin{align}
+    \underline{\rho_L = 1,2 \cdot 10^{-3} \frac{g}{cm^3}} \\
+    \underline{\rho_K = 7,86 \frac{g}{cm^3}},
+\end{align}
+masse der Kugel:
+\begin{equation}
+    \boxed{
+        m_k = (111 \pm 13) g
+    },
+\end{equation}
+und Masse des Fadens
+\begin{equation}
+    \boxed{
+        m_f = (0,21771 \pm 0,00028) \, g
+    }.
+\end{equation}
+Diese wurden über das Volumen idealer Körper aus den Werten der Aufgabe 1 bestimmt wurden. 
+Die Dämpfung wurde über einen Graphen bestimmt:
+\begin{equation}
+\boxed{
+    \delta = (1,9 \pm 0,5) \cdot 10^{-3} s^{-1}
+}.
+\end{equation}
+
+Der Winkel belief sich auf einfache Trigometrie:
+\begin{equation}
+    \boxed{
+        \varphi_0 = (0,051 \pm 0,003) rad
+    }.
+\end{equation}
+
+\section{Diskussion}
+\subsection{Aufgabe 1}
+In der Aufgabe ein wurde der Durchmesser der Kugel auf zwei Methoden bestimmt, einmal über die Spiegelskala und einmal über die Schieblehre. Für die Endberechnung war der unterschied nicht relevant, das Ergebnis bleibt identisch. Dennoch soll einmal geklärt werden, welche Argumente für welchen Wert sprechen. 
+\paragraph{Schieblehre.} Der Vorteil an der Schieblehre ist, dass die Kugel still an einem Ort gehalten werden kann, wodurch keine Ungenauigkeit durch ungewollte Bewegungen entstanden ist. Zudem war die Ungenauigkeit kleiner.
+\paragraph{Spiegelskala.} Für die Spiegelskala spricht, dass hier mehr Messdaten aufgenommen wurden, wodurch der statistische Fehler etwas kleiner wird. Jedoch sind 3 Messungen hier nicht besonders ausschlaggebend. 
+
+Diese Argumente wurden berücksichtigt und somit wurde sich für die Schieblehre entschieden. Beide Werte sind sowieso statistisch signifikant:
+\begin{equation}
+    \frac{\left| D_{k,ss} - D_{k,sl} \right|}{\sqrt{(\Delta s_{ss})^2 + (\Delta s_{sl})^2 }} = 0,85\sigma.
+\end{equation}
+
+\subsection{Aufgabe 2}
+In der Diskussion ist nicht besonders viel zu nenen, denn die Ergebnisse sind allesamt wie man es erwarett hätte. Dies ist besonders gut daran zu erkennen, wie sich die signifikante Abweichung vom heidelberger Literaturwert entwickelt:
+
+Über 20 Perioden:
+\begin{equation}
+\boxed{
+    g  = ( 9,89 \pm 0,13) \frac{m}{s^2}
+}
+\end{equation}
+woraus sich die Abweichung von 
+\begin{equation}
+    \frac{\left| g_{lit} - g \right|}{\sqrt{(\Delta g)^2 + (\Delta g_{lit})^2}} = 0,62\sigma.
+\end{equation}
+ergeben hat.
+
+
+Über 200 Perioden:
+\begin{equation}
+    \boxed{
+        g_{200} = (9,812 \pm 0,019)
+    }
+\end{equation}
+woraus sich die Abweichung von 
+\begin{equation}
+    \frac{\left| g_{lit} - g_{200} \right|}{\sqrt{(\Delta g_{200})^2 + (\Delta g_{lit})^2}} = 0,11\sigma
+\end{equation}
+ergeben hat.
+
+
+Über 200 Perioden und die Korrekturstherme:
+\begin{equation}
+    \boxed{
+        g_K = (9,809 \pm 0,019) \frac{m}{s^2}
+    }
+\end{equation}
+woraus sich die Abweichung von 
+\begin{equation}
+    \frac{\left| g_K - g_{lit} \right|}{\sqrt{(\Delta g_K)^2 + (\Delta g_{lit})^2}} = 0,04\sigma.
+\end{equation}
+ergeben hat.
+
+Dies zeigt wunderbar, wie jede Stufe die Genauigkeit an den Literaturwert vergrößert hat. 
 
 \section{Kritik}
+Dieser Versuch hat besonders schön illustriert, wie Bemühungen für Präzision den Wert immer weiter vergenauern. Die Hauptfehlerquellen sind hier Menschliche Fehler gewesen, so wäre eine automatische Zeitmessung ein guter Verbesserungs Schritt. Auch das Auslenken per Hand hat zur fogle gehabt, dass die Schwinung nicht planar geweswen ist. Zuletzt war der vermutlich größte Fehler die Auslenkenung des Pendels nicht automtatisch gemessen zu haben.
+Auch das graphsiceh Auswerten war eine enorme Fehlerquelle, die viel Spielraum für verbesserung lässt. Trozt alledem ist das Ergebnis sehr zufriedenstellend, da eine abweichung von $0,04\sigma$ unglaublich gut ist.
