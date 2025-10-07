@@ -1,6 +1,75 @@
 \chapter{Einleitung}
 
 \section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Ziel des vorliegenden Versuchs ist die Bestimmung der Schallgeschwindigkeit in verschiedenen Gasen, insbesondere in Luft und Kohlenstoffdioxid, unter Verwendung zweier unabhängiger Messmethoden. Im ersten Teil des Experiments wird die Schallgeschwindigkeit mithilfe eines Quincke’schen Rohres über die Analyse stehender Wellen ermittelt. Im zweiten Teil erfolgt eine Bestimmung der Schallgeschwindigkeit über die direkte Messung der Laufzeit einer fortschreitenden Welle mittels eines Oszilloskops. Durch den Vergleich beider Verfahren sollen Unterschiede in der Genauigkeit und Empfindlichkeit der Methoden herausgearbeitet werden.
+
 \section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\cite{demtroeder17,skript25}
+
+\subsection{Schallausbreitung in Gasen}
+
+Schall breitet sich in Gasen als longitudinale mechanische Welle aus. Es handelt sich um eine Druckwele, bei der die Schwingungsrichtung der Teilchen entlnag der Ausbreitungsrichtung verläuft. Da Gase im Vergleich zu Festkörpern nur geringe Kopplungskräfte zwischen den Teilchen aufweisen, treten in ihnen keine Transversalwellen auf. Die Geschwindigkeit $c$ einer Schallwelle in einem idealen Gas ist abhängig von den Eigenschaften des Mediums und lässt sich theoretisch durch die folgende Beziehung berechnen:
+
+\begin{equation}
+c = \sqrt{\frac{\kappa R T}{M}}
+\label{eq:theorie_c}
+\end{equation}
+
+Hierbei ist $\kappa$ der Adiabatenkoeffizient, $R$ die allgemeine Gaskonstante, $T$ die absolute Temperatur und $M$ die molare Masse des betrachteten Gases.
+
+Für den Vergleich der gemessenen Werte mit Literaturwerten unter Normalbedingungen kann eine Temperaturkorrektur mittels
+
+\begin{equation}
+\frac{c_0}{c} = \sqrt{\frac{T_0}{T}}
+\label{eq:normbedingungen}
+\end{equation}
+
+durchgeführt werden, wobei $c_0$ die Schallgeschwindigkeit bei Temperatur $T_0$ und $c$ die bei Versuchstemperatur $T$ gemessene Geschwindigkeit bezeichnet.
+
+\subsection{Stehende Wellen im Quincke’schen Rohr}
+
+Im ersten Versuchsteil wird ein Quincke’sches Rohr verwendet, um stehende Wellen zu erzeugen und deren Eigenschaften zur Bestimmung der Schallgeschwindigkeit zu nutzen. Der Aufbau besteht aus einem vertikal ausgerichteten Rohr mit einem Lautsprecher am oberen Ende und einer verstellbaren Wassersäule am unteren Ende, die als reflektierendes Medium dient. Die vom Lautsprecher emittierte Schallwelle wird an der Wasseroberfläche reflektiert und interferiert mit der einfallenden Welle, wodurch es bei geeigneter Resonanzbedingung zur Ausbildung einer stehenden Welle kommt.
+
+Da sich am Lautsprecher ein Schwingungsbauch und an der Wasseroberfläche ein Schwingungsknoten ausbildet, ergibt sich für den Abstand $h$ zwischen Lautsprecher und Wasseroberfläche im Resonanzfall:
+
+\begin{equation}
+h = \frac{2n + 1}{4} \lambda \quad \text{mit} \quad n \in \mathbb{N}
+\label{eq:resonanzbedingung}
+\end{equation}
+
+Zur Bestimmung der Wellenlänge $\lambda$ misst man die Abstände $h_i$ bei mehreren aufeinanderfolgenden Lautstärkemaxima und berechnet die Differenz zwischen zwei benachbarten Maxima:
+
+\begin{equation}
+\lambda = 2(h_{i+1} - h_i)
+\label{eq:wellenlaenge}
+\end{equation}
+
+Schließlich lässt sich die Schallgeschwindigkeit $c$ über den bekannten Zusammenhang zwishen Frequenz $\nu$ und Wellenlänge $\lambda$ berechnen:
+
+\begin{equation}
+c = \nu \lambda
+\label{eq:c_aus_lambda}
+\end{equation}
+
+Die \hyperref[eq:resonanzbedingung]{Gleichung \ref*{eq:resonanzbedingung}} und \hyperref[eq:wellenlaenge]{Gleichung \ref*{eq:wellenlaenge}} werden dabei genutzt, um $\lambda$ zu bestimmen und anschließend in \hyperref[eq:c_aus_lambda]{Gleichung \ref*{eq:c_aus_lambda}} einzusetzen.
+
+\subsection{Laufzeitmessung einer fortschreitenden Schallwelle}
+
+Im zweiten Teil des Experiments wird die Schallgeschwindigkeit über die direkte Laufzeitmessung einer fortschreitenden Welle bestimmt. Hierzu wird ein Sinusgenerator verwendet, der ein elektrisches Signal sowohl an einen Lautsprecher als auch an Kanal 1 eines Oszilloskops überträgt. Der Lautsprecher wandelt das Signal in eine Schallwelle um, die sich über die Strecke $h$ zum Mikrofon ausbreitet. Dort wird sie wieder in ein elektrisches Signal umgewandelt und an Kanal 2 des Oszilloskops weitergegeben.
+
+Die Signale auf beiden Kanälen weisen eine Phasenverschiebung auf, die durch die endliche Laufzeit $\tau$ der Schallwelle verursacht wird. Diese ergibt sich aus dem Verhältnis von Abstand $h$ und Schallgsechwindigkeit $c$:
+
+\begin{equation}
+\tau = \frac{h}{c}
+\label{eq:laufzeit}
+\end{equation}
+
+Aus dieser Beziehung kann durch Messung von $\tau$ und $h$ die Schallgeschwindigkeit bestimmt werden. Alternativ lässt sich $\lambda$ über die bestimmung der Abstände zwischen Punkten gleicher Phasenverschiebung ermitteln, um wiederum über \hyperref[eq:c_aus_lambda]{Gleichung \ref*{eq:c_aus_lambda}} den Wert von $c$ zu berechnen.
+
+\subsection{Signalverarbeitung mittels Lock-In-Verstärker}
+
+Zur Verbesserung der Signalqualität im ersten Versuchsteil wird ein digital implementierter Lock-In-Verstärker verwendet. Dieser ermöglicht die selektive Messung von Signalen mit gleicher Frequenz wie das Referenz Signal durch Multiplikation des Eingangssignals mit dem Referenzsignal und anschließende Tiefpassfilterung. Dabei bleibt nur der Gleichanteil des gewünschten Signals erhalten, während Fremdsignale und Rauschen mit anderen Frequenzanteilen unterdrückt werden. Das Ausgangssignal ist im Idealfall proportional zur Amplitude und Phasendifferenz des gemessenen Signals relativ zum Referenzsignal.
+
+Dies erlaubt eine zuverlässige Detektion der Lautstärkemaxima, die zur Bestimmung der Resonanzbedingungen nach \hyperref[eq:resonanzbedingung]{Gleichung \ref*{eq:resonanzbedingung}} notwendig sind. Die gemessene Spannung am Ausgang des Lock-In-Verstärkers wird über ein analoges Multimeter abgelesen.
+

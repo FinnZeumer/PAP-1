@@ -1,8 +1,53 @@
-\chapter{Disskusion}
+\chapter{Diskussion}
 \label{Disskusion}
 
 \section{Zusammenfassung}
 
-\section{Disskusion}
+Im Experiment wurde die Schallgeschwindigkeit in Luft und Kohlenstoffdioxid bestimt. Dazu kamen zwei Methoden zum Einsatz: das Quincke'sche Rohr und die Laufzeitmsesung mit einem Oszilloskop. 
+
+Die theoretischen Schallgeschwindigkeiten ergeben sich nach
+\[
+c = \sqrt{\kappa \cdot \frac{R T}{M}}
+\]
+mit den Adiabatenkoeffizienten $\kappa_{Luft}=1{,}4$ und $\kappa_{CO_2}=1{,}3$, der idealen Gaskonstante $R = 8{,}314\,\frac{J}{mol\,K}$, der molaren Masse und $T=273{,}15\,K$. Daraus folgen:
+\begin{align}
+    \boxed{c_{\text{Luft, theo}} = 331{,}11\,\frac{m}{s}}, \\ 
+    \boxed{c_{\text{CO}_2, theo} = 259{,}03\,\frac{m}{s}}, \\ 
+    \boxed{\frac{c_{\text{Luft, theo}}}{c_{\text{CO}_2, theo}} = 1{,}278.}
+\end{align}
+
+Beim Quincke'schen Rohr wurde durch Variation der Wassersäule die Resonanzbedingung ermittelt, um aus den Abständen der Maxima die Wellenlänge und anschließen die Schallgeschwindigkeit zu berechnen. Für Luft und CO$_2$ ergaben sich unter Normalbedingungen:
+
+\begin{align}
+    \boxed{c_{0,\text{Luft}} = (360 \pm 30)\,\frac{m}{s}}, \\ 
+    \boxed{c_{0,\text{CO}_2} = (280 \pm 30)\,\frac{m}{s}}
+\end{align}
+
+Das Verhältnis der Schallgeschwindigkeiten beträgt:
+
+\begin{equation}
+    \boxed{\frac{c_{0,\text{Luft}}}{c_{0,\text{CO}_2}} = 1{,}29 \pm 0{,}17}
+\end{equation}
+
+In der Laufzeitmessung wurde die Zeitverschiebung zwischen Lautsprecher- und Mikrofonsignal im Oszilloskob analysiert. Die Schallgeschwindigkeit wurde für zwei Anzeigemodi bestimmt:
+
+\begin{align}
+    \boxed{c_{0,\,Y\!-\!t} = (360 \pm 60)\,\frac{m}{s}}, \\ 
+    \boxed{c_{0,\,X\!-\!Y} = (362 \pm 104)\,\frac{m}{s}}
+\end{align}
+
+Beide Methoden liefern konsistente Ergebnisse im Bereich von etwa $c \approx 350\,\frac{m}{s}$, was gut mit dem Theoretischen Wert $c_\text{theo} = 331\,\frac{m}{s}$ bei $0^\circ$C übereinstimmt. Die Abweichungen liegen im Bereich statistischer Unsicherheiten. Zusätzlich wurde gezeigt, dass die Schallgeschwindigkeit unabhängig von der Anregungsfrequenz ist.
+
+\section{Diskussion}
+
+Die gemessenen Werte stimmen innerhalb der Fehlergrenzen mit den theoretischen Referenzwerten überein. Für Luft ergibt sich eine signifikante Abweichung von $\sigma = 0{,}31\sigma$, für CO$_2$ von $\sigma = 0{,}24\sigma$. Beide Werte liegen unterhalb der Signifikanzgrenze und zeigen somit keine systematische Abweichung. Das Verhältnis der Schallgeschwindigkeiten beträgt $\frac{c_{0,\text{Luft}}}{c_{0,\text{CO}_2}} = 1{,}29 \pm 0{,}17$, was mit dem theoretischen Verhältnis $1{,}278$ gut übereinstimmt. Die Abweichung liegt mit $\sigma = 0{,}07\sigma$ im nicht signifikanten Bereich.
+
+Die Messung mit dem Oszilloskop bestätigt die Ergebnisse des Quincke'schen Rors. Vergleicht man den Referenzwert $c_{\text{Luft,theo}} = 331\,\frac{m}{s}$ mit dem im X-Y-Modus bestimmten Wert $c_{0,\,X\!-\!Y} = (362 \pm 104)\,\frac{m}{s}$, so ergibt sich ebenfalls keine signifikante Abweichung. Der Y-X-Modus zeigt mit Ablesefehler größere Unsicherheiten, da die beobachtete Phasenverschiebung 180° betrug. Damit verdoppelte sich der effektive Ablesefehler für eine volle Periode. Ohne diesen systematischen Fehler zeigt der Y-X-Modus jedoch eine deutlich höhere statistische Genauigkeit, da die Phasenlage präziser bestimmbar ist.
+
+Im Abschnitt zur aufgenommenen Stimme wurde das Frequenzspektrum analysiert. Die auftretenden Obertöne sind Vielfache der Grundfrequenz und entstehen durch Resonanzen des Vokaltrakts. Sie bestimmen die Klangfarbe der Stimme, während die Grundfrequenz die Tonhöhe vorgibt.
+
+Die Frequenzabhängigkeit der Schallgeschwindigkeit wurde durch Messungen bei 2\,kHz, 5\,kHz und 10\,kHz untersucht. In allen Fällen ergab sich die gleiche Schallgeschwindigkeit. Dies liegt daran, dass sich Frequenz und Wellenlänge reziprok verhalten ($c = \lambda \nu$). Erhöht sich die Frequenz, so verkleinert sich die Wellenlänge proportional, wodurch das Produkt konstant bleibt. Damit wurde die Invarianz der Schallgeschwindigkeit bestätigt.
 
 \section{Kritik}
+
+Die größten Fehlerquellen entstehen durch Ableseungenauigkeiten beim Bestimmen der Resonanzstellen und Phasenverschiebungen. Besonders im X-Y-Modus beeinflusst der doppelte Ablesefehler die Genauigkeit stark. Systematische Temperatur- oder Druckabweichungen wurden vernachlässigt, können aber ebenfalls Einfluss haben. Eine verbesserte Auswertung wäre durch digitale Signalverarbeitung oder automatische Phasenmessung möglich. Insgesamt sind die Ergebnisse physikalisch konsistent und bestätigen die theoretischen Modelle hinreichend genau.
