@@ -1,6 +1,67 @@
 \chapter{Einleitung}
+\label{ch:einleitung}
 
-\section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Motivation/Aufgabe}
+
+Ziel dieses Versuchs ist die Untersuchung grundlegender optischer Abbildungen sowie der dabei auftretenden Abbildungsfehler und Auflösungsgrenzen. Dazu werden verschiedene Linsensysteme analysiert: eine achromatisch korrigierte Linse (Achromat), eine bikonvexe Sammellinse sowie ein zusammengesetztes optisches System in Form eines Mikroskops. 
+
+Im Verlauf des Versuchs sollen zunächst die Brennweiten der verwendeten Linsen bestimmt und anschließend die chromatische und sphärische Aberration untersucht werden. Abschließend wird die Vergrößerung und das Auflösungsvermögen eines Mikroskops experimentell überprüft. Ziel ist es, die theoretischen Zusammenhänge zwischen den geometrischen Parametern einer Abbildung und der tatsächlichen optischen Abbildungsleistung experimentell zu verifizieren.
+
+\section{Physikalische Grundlagen}
+\cite{demtroeder17,skript25}
+
+\subsection*{Optische Abbildung und Linsengleichung}
+
+Eine optische Abbildung beschreibt den Vorgang, bei dem Lichtstrahlen von einem Gegenstand durch ein optisches System geleitet werden und anschließend ein Bild des Gegenstandes erzeugen. Für dünne Linsen gilt die Näherung, dass die Brechungen an beiden Grenzflächen der Linse zu einer einzigen, effektiven Brechung zusammengefasst werden können. 
+
+Der Zusammenhang zwischen Gegenstandsweite $g$, Bildweite $b$ und Brennweite $f$ wird durch die Linsengleichung beschrieben:
+
+\begin{equation}
+    \frac{1}{f} = \frac{1}{b} + \frac{1}{g}
+    \label{eq:linsengleichung}
+\end{equation}
+
+Der Abbildungsmaßstab $\beta$ beschreibt das Verhältnis der Bildgröße $B$ zur Gegenstandsgröße $G$ und ergibt sich zu
+
+\begin{equation}
+    \beta = \frac{B}{G} = \frac{b}{g}.
+    \label{eq:abbildungsmassstab}
+\end{equation}
+
+Durch Umformen von \hyperref[eq:linsengleichung]{Gleichung \ref*{eq:linsengleichung}} kann der Abbildungsmaßstab auch in Abhängigkeit der Brennweite geschrieben werden:
+
+\begin{equation}
+    \beta = \frac{b}{f} - 1.
+    \label{eq:abbildungsmassstab_f}
+\end{equation}
+
+\subsection*{Abbildungsfehler}
+
+Reale Linsen weichen von der idealisierten Annahme der dünnen Linse ab. Zwei wesentliche Abbildungsfehler sind die \textit{sphärische} und die \textit{chromatische Aberration}. 
+
+Die sphärische Aberration beschreibt die Abhängigkeit der Brennweite von der Eintrittsposition des Lichtstrahls auf der Linse. Strahlen, die weit entfernt von der optischen Achse einfallen, werden stärker gebrochen und fokussieren in einem anderen Punkt als achsennahe Strahlen. Dadurch verschlechtert sich die Bildschärfe. Eine Reduktion dieses Fehlers ist durch Abblenden (Begrenzung auf achsennahe Strahlen) oder durch den Einsatz asphärischer Linsen möglich.
+
+Die chromatische Aberration beruht auf der Wellenlängenabhängigkeit des Brechungsindex des Linsenmaterials. Blaues Licht mit kürzerer Wellenlänge wird stärker gebrochen als rotes Licht, wodurch unterschiedliche Brennweiten für verschiedene Farben entstehen. Dieser Effekt kann durch Achromate kompensiert werden, bei denen Linsen unterschiedlicher Dispersion kombiniert werden.
+
+\subsection*{Brennweitenbestimmung nach Bessel}
+
+Das Bessel-Verfahren erlaubt eine präzise Bestimmung der Brennweite einer Linse, ohne deren Hauptebenen kennen zu müssen. Bei einem festen Abstand $L$ zwischen Gegenstand und Schirm ($L > 4f$) existieren zwei Positionen der Linse, für die ein scharfes Bild entsteht. Aus dem Abstand $d$ dieser beiden Positionen ergibt sich die Brennweite zu
+
+\begin{equation}
+    f = \frac{L^2 - d^2}{4L}.
+    \label{eq:bessel}
+\end{equation}
+
+Da hier nur Differenzmessungen benötigt werden, ist das Verfahren besonders fehlerarm.
+
+\subsection*{Auflösungsvermögen eines Mikroskops}
+
+Die Vergrößerung eines Mikroskops ergibt sich aus dem Produkt der Vergrößerungen von Objektiv und Okular. Eine unbegrenzte Steigerung der Vergrößerung ist jedoch nicht möglich, da das Auflösungsvermögen durch die Wellennatur des Lichts begrenzt ist. Nach dem Rayleigh-Kriterium gilt für den minimal auflösbaren Abstand zweier Objektpunkte:
+
+\begin{equation}
+    G_{\text{min}} = 0{,}61 \, \frac{\lambda}{n \sin(\alpha)}.
+    \label{eq:auflösung}
+\end{equation}
+
+Hierbei ist $\lambda$ die Wellenlänge des verwendeten Lichts, $n$ der Brechungsindex des Mediums zwischen Objektiv und Objekt und $\alpha$ der halbe Öffnungswinkel des Objektivs. Der Term $n \sin(\alpha)$ wird als numerische Apertur (NA) bezeichnet. Durch Variation der Apertur lässt sich somit das Auflösungsvermögen experimentell untersuchen.
+
