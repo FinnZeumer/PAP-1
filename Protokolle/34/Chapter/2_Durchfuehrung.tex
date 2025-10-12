@@ -1,7 +1,21 @@
 \chapter{Durchführung}
+\label{ch:durchfuerung}
 
 \section{Versuchsaufbau}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Der Versuch wurde mit einem computergesteuerten Gitterspektrometer durchgeführt, das über eine Lichtleitfaser mit der Lichtquelle verbunden ist. Das austretende Licht wird über ein optisches Gitter auf eine CCD-Zeile abgebildet. Die Integrationszeit sowie die Anzahl der Mittelungen (\textit{Scans to Average}) wurden über die Software \textit{OceanView} eingestellt. Zur Kalibrierung wurden Dunkel- und Referenzmessungen durchgeführt, um den Dunkelstrom zu eliminieren und die Messungen zu normieren. Die Messküvetten unterschiedlicher Schichtdicke wurden in einem Halter fixiert und für jede Messreihe reproduzierbar positioniert.
 
 \section{Messverfahren}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Aufnahme des Absorptionsspektrums}
+Mit dem Modus \textit{Absorbance} der Software wurde das Absorptionsspektrum einer 12\,cm langen Küvette aufgenommen. Zunächst erfolgte eine Dunkelmessung bei ausgeschalteter Lichtquelle und eine Referenzmessung ohne Küvette. Anschließend wurde die Probe in den Strahlengang eingesetzt und das Spektrum im Bereich von 430\,nm bis 660\,nm aufgenommen. Mithilfe der Cursorfunktion wurden die Wellenlängen der charakteristischen Absorptionsbanden bestimmt.
+
+\subsection{Lambert'sches Verfahren}
+Zur Bestimmung des dekadischen Absorptionskoeffizienten~$k'$ wurde die Absorption bei konstanter Konzentration, aber variabler Schichtdicke~$l$ gemessen. Der Cursor wurde auf eine feste Wellenlänge von $\lambda = 525\,\text{nm}$ eingestellt. Die Integrationszeit wurde so gewählt, dass bei der kürzesten Küvette keine Sättigung auftrat. Für jede Küvette wurden fünf Intensitätsmessungen durchgeführt und Mittelwerte sowie Standardfehler berechnet. Bei der längsten Küvette wurde eine Korrektur der Intensität vorgenommen, da der Strahlengang durch die Küvette beeinflusst wurde. Die korrigierte Intensität wurde nach folgender Beziehung berechnet:
+\begin{equation}
+    I_\text{korr} = I \cdot \frac{D_\text{mK}^2}{D_\text{oK}^2}
+    \label{eq:correction}
+\end{equation}
+wobei $D_\text{mK}$ der Durchmesser der abgebildeten Lochblende mit Küvette und $D_\text{oK}$ derjenige ohne Küvette ist. Die Werte von~$I_\text{korr}$ wurden gegen~$l$ halblogarithmisch aufgetragen, um aus der Steigung~$k'$ zu bestimmen.
+
+\subsection{Beer'sches Verfahren}
+Im zweiten Teil wurde die Absorption bei konstanter Schichtdicke~$l$ und variierender Konzentration~$c$ gemessen. Eine Küvette wurde mit 21\,ml vollentsalztem Wasser befüllt und die Integrationszeit so eingestellt, dass keine Sättigung auftrat. Schrittweise wurden definierte Volumina einer {KMnO4}-Lösung bekannter Konzentration hinzugefügt, um Lösungen mit unterschiedlichen Konzentrationen zu erzeugen. Für jede Konzentration wurden fünf Intensitätsmessungen durchgeführt, gemittelt und gegen~$c$ aufgetragen. Nach dem Beer'schen Gesetz \hyperref[eq:beer]{Gleichung \ref*{eq:beer}} ergibt sich aus der Steigung des halblogarithmischen Diagramms das Produkt~$\varepsilon l$, aus dem bei bekanntem~$l$ der molare Extinktionskoeffizient~$\varepsilon$ berechnet wurde.
