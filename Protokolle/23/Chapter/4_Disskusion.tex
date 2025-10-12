@@ -1,7 +1,55 @@
-\chapter{Disskusion}
+\chapter{Diskussion}
 
 \section{Zusammenfassung}
+\subsection*{Aufgabe 1: Spannungsmessung mit verschiedenen Messgeräten}
+In dieser Aufgabe wurde die Batteriespannung sowie die Spannungen über den beiden Widerständen eines Spannungsteilers mit zwei unterschiedlichen Messmethoden bestimmt. Beim Einsatz des Drehspulinstruments beeinflusst dessen endlicher Innenwiderstand die Messergebnisse deutlich, was zu Abweichungen zwischen Batteriespannung und Teiler­spannungen führt. Es ergaben sich
+\begin{align*}
+U_0 &= (4,85 \pm 0,16)\,\text{V}, \\
+U_R &= (1,20 \pm 0,13)\,\text{V}, \\ 
+R &= (1000 \pm 229)\,\Omega.
+\end{align*}
+Die Summe der Teilerspannungen wich hierbei messbar von der Batteriespannung ab.  
+Mit dem Kompensator hingegen, der aufgrund seines sehr hohen Innenwiderstands als nahezu ideales Messgerät betrachtet werden kann, ergaben sich konsistente Ergebnisse:
+\begin{align*}
+    U_0 &= (4,405 \pm 0,011)\,\text{V}, \\
+    U_R &= (2,215 \pm 0,006)\,\text{V}.
+\end{align*}
+Hier stimmte die summe der beiden Teilspannungen innerhalb der Fehlergrenzen mit der Batteriespannung überein. Damit wird gezeigt, dass der Kompensator deutlich genauere Messungen liefert, während der Innenwiderstand des Drehspulinstruments einen systematischen Einfluss auf die Messergebnisse ausübt.
 
-\section{Disskusion}
+\subsection*{Aufgabe 2: Bestimmung des Innenwiderstands der Batterie}
+In dieser Aufgabe wurde der Innenwiderstand der Batterie durch MEssung der Klemmenspannung in Abhängigkeit von der Stromstärke bestimmt. Die Stromstärke wurde mithilfe eines Amperemeters und eines Schiebewiderstands variiert und die Spannungen mit dem Kompensator gemessen. Aus der linearen Ausgleichsgeraden im $U(I)$-Diagramm ergaben sich die Kenngrößen der Quelle:
+\begin{align*}
+    R_i &= (3,40 \pm 0,52)\,\Omega, \\
+    U_q &= (4,244 \pm 0,114)\,\text{V}.
+\end{align*}
+Damit konnte gezeigt werden, dass sich die Klemmenspannung mit zunehmender Stromstärke erwartungsgemäß linear verringert und die Steigung der Geraden den Innenwiderstand der Batterie beschreibt, während der Achsenabschnitt die Leerlaufspannung liefert.
 
-\section{Kritik}
+\subsection*{Aufgabe 3: Bestimmung des Lastwiderstands für maximale Leistung}
+In dieser Aufgabe wurde der Lastwiderstand bestimmt, bei dem die abgegebene Leistung der Batterie maximal ist. Durch Differentiation der Leistungsfunktion
+\begin{equation}
+    P(R_L) = U_q^2 \frac{R_L}{(R_i+R_L)^2}
+\label{eq:leistung}
+\end{equation}
+ergab sich als Bedingung für das Maximum
+\begin{equation}
+    R_L = R_i.
+\end{equation}
+Damit entspricht die maximale Leistungsabgabe dem Fall, dass Last- und Innenwiderstand gleich groß sind. Für diesen Fall folgt eine Klemmenspannung von
+\begin{equation}
+    U_k = \frac{U_q}{2} = (2,122 \pm 0,057)\,\text{V}.
+\end{equation}
+Somit konnte experimentell bestätigt werden, dass die maximale Leistung bei angepasster Last erreicht wird, wobei die Batterie an ihren Klemmen genau die halbe Quellenspannung liefert.
+
+\section{Diskussion}
+Die Ergebnisse der Messungen sind insgesamt konsistent mit den theoretischen Erwartungen. 
+
+\paragraph{In Aufgabe 1} zeigte sich, dass das Drehspulinstrument aufgrund seines endlichen Innenwiderstands systematische Abweichungen verursacht, während der Kompensator deutlich zuverlässigere Ergebnisse liefert. Dies ist plausibel, da ein großes Verhältnis von Last- zu Innenwiderstand den Einfluss des Messgeräts minimiert. 
+
+\paragraph{In Aufgabe 2} konnte die lineare Abhängigkeit zwischen Klemmenspannung und Stromstärke bestätigt werden. Der bestimte Innenwiderstand $R_i$ liegt in einer realistischen Größenordnung für Btaterien, und die Leerlaufspannung $U_q$ stimmt gut mit der direkt gemessenen Batteriespannung überein. 
+
+\paragraph{In Aufgabe 3} wurde experimentell überprüft, dass die maximale Leistungsabgabe bei $R_L = R_i$ auftritt. Dieses Resultat entspricht exakt der Theorie der Leistungsanpassung und bestätigt die Konsistenz der vorangegangenen Ergebnisse. 
+
+Insgesamt stimmen die Resultate mit den theoretischen Modellen überein und zeigen, dass die verwendeten Methoden trotz unvermeidbarer Messfehler geeignete und nachvollziehbare Ergebnisse liefern.
+
+\subsection*{Inkonsistenzen der Batteriespannung}
+Es fiel auf, dass die mit dem Kompensator gemessene Batteriespannung $U_0 = (4,405 \pm 0,011)\,\text{V}$ etwas niedriger lag als die direkt mit dem Drehspulinstrument gemessene Spannung von $4,85\,\text{V}$. Wie diese Abweichung zustande kommt, ist unklar. Jedoch ist festzuhalten, dass der Wert der über den Kompensator gemessen wurde, sinnvoll mit den Herstellerangaben der Batterie von $4,5\,\text{V}$ übereinstimmt. Das dieser Wert etwas darunetr liegt, wäre mit dem Alter der Batterie und der damit verbundenen Entladung zu erklären.
