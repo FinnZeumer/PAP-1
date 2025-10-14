@@ -9,7 +9,7 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
     \sigma^2 &= \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Variation}} \label{eq:variation} \\
     \sigma &= \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Standardabweichung}} \label{eq:standardabweichung} \\
     \Delta \bar{x} &= \frac{\sigma}{\sqrt{n}} = \sqrt{\frac{1}{n(n-1)} \sum_{i=1}^n(\bar x - x_i)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler des Mittelwerts}} \label{eq:fehler_mittelwert} \\
-    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß’sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
+    \Delta f &= \sqrt{\left(\frac{\partial f}{\partial x} \Delta x\right)^2 + \left(\frac{\partial f}{\partial y} \Delta y\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Gauß'sches Fehlerfortpflanzungsgesetz für $f(x,y)$}} \label{eq:gauss_fehlfortpflanzung} \\
     \Delta f &= \sqrt{(\Delta x)^2 + (\Delta y)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = x + y$}} \label{eq:fehler_summe} \\
     \Delta f &= |a| \Delta x \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{Fehler für $f = ax$}} \label{eq:fehler_proportional} \\
     \frac{\Delta f}{|f|} &= \sqrt{\left(\frac{\Delta x}{x}\right)^2 + \left(\frac{\Delta y}{y}\right)^2} \vphantom{\sqrt{\sum_i^n}^2} && \text{\textcolor{gray}{relativer Fehler für $f = xy$ oder $f = x/y$}} \label{eq:relativer_fehler} \\
@@ -18,3 +18,115 @@ Für die statistische Auswertung von $n$ Messwerten $x_i$ werden folgende Größ
 
 \twocolumn
 
+\section{Bestimmung der Sperrspannung}
+\label{sec:sperrspannung}
+
+In diesem Abschnitt wird die Sperrspannung $U_S$ für alle vermessenen Spektrallinien bestimmt.
+Zunächst werden die mit dem Multimeter gemessenen spannungswerte $U_I$ um den Dunkelstrom $U_{I0}$ korrigirt. Der korrigierte Spannungswert $U_k$ berechnet sich zu
+
+\begin{equation}
+\label{eq:uk}
+U_k = U_I - U_{I0}.
+\end{equation}
+
+Der zugehörige Fehler ergibt sich nach dem Gauß'schen Fehlerfortpflanzungsgesetz unter Verwendung von \hyperref[eq:gauss_fehlfortpflanzung]{Gleichung \ref*{eq:gauss_fehlfortpflanzung}} zu
+
+\begin{equation}
+\label{eq:duk}
+\Delta U_k = \sqrt{(\Delta U_I)^2 + (\Delta U_{I0})^2}.
+\end{equation}
+
+Die Einzelunsicherheiten $\Delta U_I$ und $\Delta U_{I0}$ setzen sich jeweils aus dem Ablesefehler und dem Multimeterfehler zusammen.
+Für Messwerte größer als $4,\text{V}$ wurde der Fehler des Messbereichs $4,\text{V}$ verwendet ($\pm 0,4\% + 1$ digt.), für kleinere Spannungen der Fehler des Messbereichs $400,\text{mV}$ ($\pm 0,25\% + 5$ digt.).
+
+Zur Bestimmung der Sperrspannung wird eine lineare Extrapolation des quadratischen Zusammenhangs zwischen Strom und Spannung durchgeführt. Dafür wird die Größe $U_p$ nach
+
+\begin{equation}
+\label{eq:up}
+U_p = \sqrt{U_k}
+\end{equation}
+
+berechnet. Der zugehörige Fehler ergibt sich über partielle Ableitung aus \hyperref[eq:gauss_fehlfortpflanzung]{Gleichung \ref*{eq:gauss_fehlfortpflanzung}} zu
+
+\begin{equation}
+\label{eq:dup}
+\Delta U_p = \frac{\Delta U_k}{2 \sqrt{U_k}}.
+\end{equation}
+
+Für jede Spektrallinie wird $U_p$ als Funktion der eingestellten Gegenspannung $U$ aufgetragen.
+An den linearen Bereich der resultierenden Kennlinie wird eine Ausgleichsgerade angelegt. Die Sperrspannung $U_S$ wird als Schnittpunkt dieser Geraden mit der Abszisse bestimmt.
+
+Der Fehler von $U$ wird vernachlässigt, da er im Vergleich zur Unsicherheit der Extrapolation gering ist. Der Fehler von $U_S$ ergibt sich überwiegend aus der Unsicherheit bei der Bestimmung des linearen Bereichs.
+Zur graphischen Abschätzung wird daher eine Fehlergerade eingezeichnet, die den Grenzfall eines noch plausibel linearen Bereichs darstellt.
+
+Die Ergebnisse der Berechnungen sind für jede Spektrallinie in einer Tabelle zusammengefasst.
+Die resultierenden Sperrspannungen sind in Tabelle~\ref{tab:sperrspannungen} aufgeführt.
+
+\begin{table}[h!]
+\centering
+\caption{Ermittelte Sperrspannungen der verschiedenen Spektrallinien.}
+\label{tab:sperrspannungen}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Farbe} & $\boldsymbol{\lambda\,[\text{nm}]}$ & $\boldsymbol{f\,[\text{THz}]}$ & $\boldsymbol{U_S\,[\text{V}]}$ \\
+\midrule
+UV      & 365 & 821,3 & $-2{,}17 \pm 0{,}09$ \\
+Violett & 405 & 740,2 & $-1{,}61 \pm 0{,}05$ \\
+Blau    & 436 & 687,9 & $-1{,}418 \pm 0{,}015$ \\
+Grün    & 546 & 549,0 & $-0{,}928 \pm 0{,}029$ \\
+Gelb    & 578 & 518,7 & $-0{,}755 \pm 0{,}015$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Bestimmung des Planckschen Wirkungsquantums}
+\label{sec:planck}
+
+In diesem Abschnitt wird das Plancksche Wirkungsquantum $h$ aus den zuvor bestimmten Sperrspannungen $U_S$ berechnet.  
+Dazu werden die Sperrspannungen als Funktion der Frequenzen des eingestrahlten Lichts aufgetragen.  
+Die Frequenzen werden aus den im Praktikumsskript angegebenen Wellenlängen übernommen, wobei kein zusätzlicher Fehler berücksichtigt wird.  
+\hyperref[tab:sperrspannungen]{Tabelle \ref*{tab:sperrspannungen}} enthält die relevanten Werte.  
+
+Aus der \hyperref[fig:final]{Abbildung \ref*{fig:final}} ergibt sich für den Betrag der Steigung der Ausgleichsgeraden:
+\begin{align}
+a &= 4,848 \cdot 10^{-15}\,\text{Vs} \label{eq:a_messwert}
+\end{align}
+Für die Fehlergerade wird erhalten:
+\begin{align}
+a' &= 4{,}428 \cdot 10^{-15}\,\text{Vs} \label{eq:a_fehlergerade}
+\end{align}
+Daraus folgt als gemitteltes Ergebnis:
+\begin{align}
+    \boxed{
+        a = (4{,}8 \pm 0{,}4)\,\text{Vs} \label{eq:a}
+    }
+\end{align}
+
+Das Plancksche Wirkungsquantum ergibt sich aus der Multiplikation der Steigung $a$ mit der Elementarladung $e$:
+\begin{align}
+h &= e \, a \label{eq:h}
+\end{align}
+mit
+\begin{align}
+e &= 1{,}602 \cdot 10^{-19}\,\text{C}. \label{eq:e}
+\end{align}
+Für die Fehlerfortpflanzung gilt gemäß \hyperref[eq:fehler_proportional]{Gleichung~\ref*{eq:fehler_proportional}}:
+\begin{align}
+\Delta h &= e \, \Delta a \label{eq:dh}
+\end{align}
+
+Eingesetzt ergibt sich:
+\begin{align}
+    \boxed{
+        h = (7{,}7 \pm 0,6) \cdot 10^{-34}\,\text{Js} \label{eq:h_result}
+    }
+\end{align}
+
+Zum Vergleich dient der Literaturwert
+\begin{align}
+h_\text{lit} &= 6{,}626070 \cdot 10^{-34}\,\text{Js}. \label{eq:h_lit}
+\end{align}
+Die Abweichung in Einheiten der Standardabweichung berechnet sich nach \hyperref[eq:signifikante_abweichung]{Gleichung~\ref*{eq:signifikante_abweichung}} zu:
+\begin{align}
+\frac{|h - h_\text{lit}|}{\Delta h} &= 1{,}79\,\sigma \label{eq:abweichung}
+\end{align}
