@@ -1,7 +1,42 @@
 \chapter{Durchführung}
+\label{ch:durchfuerung}
 
 \section{Versuchsaufbau}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Für die Meßungen wird ein Prismenspektrometer verwendet, das aus einem drehbaren Tisch mit Teilkreis, einem Kolliemator und einem drehbaren Fernrohr besteht. Der Kollimator dient zur Erzeugung eines parallel verlaufenden Lichtbündels. Seine Spaltöffnung wird von einer Quecksilberdampflampe beleuchtet, um Spektrallinien mit definierten Wellenlängen zu erzeugen. Das austretende Lichtbündel trifft auf das Prisma, das auf dem drehbaren Tisch zentriert positioniert wird. Das Fernrohr ist auf unendliche Entfernung fokussiert und erlaubt die Beobachtung der gebrochenen Strahlen.
+
+Zur präzisen Winkelmessung ist der Tisch mit einer Grad Skala und einem Nonius ausgestattet. Über den Nonius können Winkel bis auf eine Bogensekunde genau abgelesen werden. Die Drehachsen von Fernrohr und Kollimator liegen in einer Ebene mit der mitte des Prismas, wodurch systematische Abweichnugen minimiert werden. Das Gesamtystem ist auf einer stabilen optischen bank montiert.
 
 \section{Messverfahren}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\subsection{Bestimmung des Prismenwinkels}
+Zur Bestimmung des Prismenwinkels \(A\) wird der Kollimator so ausgerichtet, dass das Lichtbündel senkrecht auf eine der beiden brechenden Flächen fällt. Das Fernrohr wird so eingestellt, dass das reflektierte Licht von beiden Flächen beobachtet werden kann. Der Winkel zwischen den beiden Spiegelbildern des Spalts entspricht dem doppelten Prismenwinkel:
+\begin{equation}
+A = \frac{1}{2} \left| \varphi_1 - \varphi_2 \right|
+\label{eq:prismenwinkel}
+\end{equation}
+Hierbei sind \(\varphi_1\) und \(\varphi_2\) die abgelesenen Richtungswinkel der reflektierten Strahlen.
+
+\subsection{Bestimmung des minimalen Ablenkungswinkels}
+Zur Messung des minimalen Ablenkungswinkels \(\delta_{\text{min}}\) wird das Prisma so Positioniert, dass der gebrochene Strahl beim Drehen des Prismas einen Punkt minimaler Ablenkung erreicht. In diesem Fall verlaufen Ein- und Austrittsstrahl symmetrisch zur Prismenbasis. Es werden die Winkelstellungen des direkten Strahls \(\varphi_0\) und des gebrochenen Strahls \(\varphi\) gemessen. Der minimale Ablenkungswinkel ergibt sich zu
+\begin{equation}
+\delta_{\text{min}} = \left| \varphi - \varphi_0 \right|
+\label{eq:ablwinkel}
+\end{equation}
+
+\subsection{Berechnung des Brechungsindex}
+Aus dem gemessenen Prismenwinkel \(A\) und dem minimalen Ablenkungswinkel \(\delta_{\text{min}}\) kann der Brechungsindex für jede Wellenlänge \(\lambda\) berechnet werden. Es gilt \hyperref[eq:dispersion]{Gleichung \ref*{eq:dispersion}}.
+
+Die Bestimmung von \(n(\lambda)\) erfolgt für mehrere spektral Linien der Quecksilberdampflampe. Die Zuordnung der Linien zu ihren Wellenlängen wird aus tabellierten Literaturwerten vorgenommen.
+
+\subsection{Dispersionsanalyse}
+Zur Analyse der Dispersion werden die experimentell bestimmten Werte \(n(\lambda)\) gegen \(\lambda\) aufgetragen und mithilfe einer Dispersionsgleichung angepasst. Zur Beschreibung eignet sich die empirische \hyperref[eq:cauchy]{Cauchy-Gleichung \ref*{eq:cauchy}}.
+
+Durch Ausgleichsrechnung können die Konstanten \(A\), \(B\) und \(C\) bestimmt werden. Alternativ kann auch eine Sellmeier-Gleichung verwendet werden, um Resonanzeffekte besser zu berücksichtigen.
+
+\subsection{Berechnung der Abbe-Zahl}
+Das Dispersionsverhalten des verwendeten Glases wird abschließend über die Abbe-Zahl \(\nu\) charakterisiert \hyperref[eq:abbe]{Gleichung\ref*{eq:abbe}}
+
+Dabei bezeichnen \(n_C\), \(n_D\) und \(n_F\) die Brechungsindizes der Fraunhofer-Linien C (656\,nm), D (589\,nm) und F (486\,nm). Eine hohe Abbe-Zahl deutet auf geringe Dispersion hin, während eine niedrige Abbe-Zahl ein stark dispersives Material kennzeichnet.
+
+Alle Messungen werden mehrfach wiederholt, um statistische Unsicherheiten zu reduzieren. Der Mittelwert und die Standardabweichung werden zur weiteren Auswertung verwendet.

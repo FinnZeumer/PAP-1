@@ -1,6 +1,61 @@
 \chapter{Einleitung}
+\label{ch:einleitung}
 
-\section{Aufgabe/Motivation}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\section{Physikalische Grundlage}
-lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\section{Motivation/Aufgabe}
+
+Das Ziel des vorliegenden Versuchs beschteht in der Untersuchung der lichtbrechenden Eigenschaften eines Prismas und der experimentelen Bestimmung der Dispersion. Dabei soll die spektrale Abhängigkeit des Brechungsindex \( n(\lambda) \) ermittelt werden, um die Dispersionsgleichung eines gegebenen Glasprismas zu bestimmen. Durch die experimentelle Analyse der Ablenkungswinkel verschiedener Wellenlängen lassen sich der minimale Ablenkungswinkel und damit der Brechungsindex für jede Spektrallinie berechnen. 
+
+Die Ergebnisse ermöglichen eine Quantitative Beschreibung der Dispersion und gestatten die Charakterisiernug des verwendeten Glases. Über die anpassung einer theoretischen Dispersionsfunktion an die Messwerte kann zudem der Abbe'sche Zahlenwert berechnet und das Dispersionsverhalten des Materials eingeordnet werden. Ziel ist somit, die Zusammenhänge zwischen Brechungsindex, Wellenlänge und Materialeigenschaften experimentell zu verifizieren und theoretisch zu beschreiben.
+
+\section{Physikalische Grundlagen}
+\cite{skript25}
+Die Brechung von Licht beim Übergang zwischen zwei Medien mit unterschiedlichen Brechungsindizes wird durch das Snellius'sche Brechungsgesetz beschrieben:
+\begin{equation}
+n_1 \sin(\alpha) = n_2 \sin(\beta)
+\label{eq:snellius}
+\end{equation}
+wobei \( n_1 \) und \( n_2 \) die Brechungsindizes der beiden Medien sind, und \(\alpha\) bzw. \(\beta\) die Einfalls- und Brechungswinkel darstellen. Dieses Gesetz ist die Grundlage der geometrischen Optik und beschreibt den Zusammenhang zwischen Einfalls- und Brechungsrichtung eines Lichtstrahls an einer Grenzfläche.
+
+In einem Prisma mit Öffnungswinkel \( A \) wird ein einfallender Lichtstrahl zweimal gebrochen. Die Gesamtablenkung \( \delta \) hängt von der Wellenlänge des Lichts ab. Für den Fall der symmetrischen Strahlführung, bei der der Strahl im Prisma den gleichen Winkel zu beiden Prismenflächen bildet, ergibt sich der minimale Ablenkungswinkel \( \delta_{\text{min}} \). Dieser ist über die geometrische Beziehung mit dem Brechungsindex des Prismas verknüpft:
+\begin{equation}
+n = \frac{\sin\left(\frac{A + \delta_{\text{min}}}{2}\right)}{\sin\left(\frac{A}{2}\right)}
+\label{eq:dispersion}
+\end{equation}
+Diese \hyperref[eq:dispersion]{Gleichung \ref*{eq:dispersion}} erlaubt die Bestimmung des Brechungsindex aus Messungen des minimalen Ablenkungswinkels. Da \( n \) eine Funktion der Wellenlänge \(\lambda\) ist, lässt sich die Dispersion des Prismas experimentell erfassen.
+
+Zur quantitativen Beschreibung der Dispersionsabhängigkeit kann eine empirische Näherung, etwa die Cauchy-Gleichung,
+\begin{equation}
+n(\lambda) = A + \frac{B}{\lambda^2} + \frac{C}{\lambda^4}
+\label{eq:cauchy}
+\end{equation}
+verwendet werden, wobei \(A\), \(B\) und \(C\) Materialabhängige Konstanten darstellen. Alternativ beschreibt die Sellmeier-Gleichung die Dispersionskurve genauer durch Resonanz Frequenzen des Mediums. 
+
+Ein wichtiges Maß für das Dispersionsverhalten eines Glases ist die Abbe-Zahl \( \nu \), definiert durch
+\begin{equation}
+\nu = \frac{n_D - 1}{n_F - n_C}
+\label{eq:abbe}
+\end{equation}
+wobei \(n_D\), \(n_F\) und \(n_C\) die Brechungsindizes für die Fraunhofer-Linien D (589\,nm), F (486\,nm) und C (656\,nm) sind. Eine hohe Abbe-Zahl weist auf geringe Dispersion hin, während eine niedrige Abbe-Zahl ein stark dispersives Glas kennzeichnet. 
+
+Durch die experimentelle Bestimmung der Werte \( n(\lambda) \) und die Anpassung der theoretischen Modelle lässt sich das Dispersionsverhalten des Prismas präzise charakterisieren. Damit bietet der Versuch eine Verbindung zwischen geometrischer Optik und materialabhängiger Wellenoptik.
+
+\subsection{Energieniveaus und Balmer-Serie}
+
+In Atomen und Molekülen können Elektronen nur bestimmte diskrete Energiewerte einnehmen. Übergänge eines Elektrons von einem energetisch höheren in einen energetisch niedrigeren Zustand führen zur Emission eines Photons. Die Wellenlänge $\lambda$ dieses Photons wird durch die Energiedifferenz $\Delta E$ der beteiligten Zustände bestimmt:  
+\begin{equation}
+\lambda = \frac{hc}{\Delta E},
+\end{equation}  
+wobei $h$ das Planck'sche Wirkungsquantum und $c$ die Lichtgeschwindigkeit im Vakuum darstellen. Aufgrund der diskreten Energieniveaus von Atomen und Molekülen werden nur bestimmte Wellenlängen emittiert, was sich in Form von schmalen Linien im Spektrum zeigt.
+
+Ein anschauliches Beispiel bietet das Wasserstoffatom. Nach dem Bohrschen Atommodell befinden sich Elektronen auf diskreten Schalen, die nach steigender Energie nummeriert werden. Die Elektronenschale mit der niedrigsten Energie wird als die erste Schale bezeichnet. Springt ein Elektron von der $m$-ten in die $n$-te Schale ($m>n$), so kann die Wellenlänge des emittierten Photons mithilfe der Rydberg-Formel berechnet werden:  
+\begin{equation}
+\frac{1}{\lambda} = R_\infty \left(\frac{1}{n^2} - \frac{1}{m^2}\right),
+\label{eq:konst}
+\end{equation}  
+wobei $R_\infty = 1,097373 \cdot 10^7 \,\mathrm{m^{-1}}$ die Rydberg-Konstante ist.
+
+Spezifisch für Übergänge auf die zweite Schale ($n=2$) ergibt sich die sogenannte Balmer-Serie:  
+\begin{equation}
+\frac{1}{\lambda} = R_\infty \left(\frac{1}{2^2} - \frac{1}{m^2}\right),
+\end{equation}  
+die die im sichtbaren Bereich beobachtbaren Spektrallinien des Wasserstoffatoms beschreibt.
